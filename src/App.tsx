@@ -6,6 +6,7 @@ import Form from './pages/Form';
 import UseParams from './pages/UseParams';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
+import ReduxSample from './pages/ReduxSample';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
             <Route path='/form' element={
               <Form />
             } />
+            <Route path='/redux' element={<ReduxSample />} />
             <Route path='/useParams/:name?/:family?' element={<UseParams />} />
             <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
           </Routes>
