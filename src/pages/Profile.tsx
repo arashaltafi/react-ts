@@ -1,3 +1,5 @@
+import GoBack from "../Components/GoBack"
+
 interface ProfileProps {
     name: string
     family: string
@@ -29,6 +31,8 @@ const Profile = (props: ProfileProps) => {
             <div className="text-lg text-center text-white bg-pink-400 my-6 p-4 w-[70%] mx-auto rounded-lg shadow-xl">Is Single: {props.isSingle ? 'Yes' : 'No'}</div>
             <div className="text-lg text-center text-white bg-pink-400 my-6 p-4 w-[70%] mx-auto rounded-lg shadow-xl">Language: {props.language.join(', ')}</div>
             <div className="text-lg text-center text-white bg-pink-400 my-6 p-4 w-[70%] mx-auto rounded-lg shadow-xl">Country: {props.country}</div>
+
+            <GoBack class="btnError mt-16 flex mx-auto" />
         </>
     )
 }
