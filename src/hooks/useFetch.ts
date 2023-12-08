@@ -18,10 +18,12 @@ const useFetch = (url: string) => {
 
     const fetchData = async () => {
         try {
+            setIsLoading(true);
             const response = await axios.get(url);
             setData(response.data);
         } catch (error) {
             setErrorMessage('Error fetching data');
+            setIsLoading(false);
         } finally {
             setIsLoading(false);
         }
