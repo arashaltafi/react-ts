@@ -16,9 +16,9 @@ const UseMemoSample = () => {
     return (
         <>
             <div className='title'>useMemo</div>
-            <div className={'flex flex-col items-center justify-center w-1/2 m-4 p-4' + (theme ? ' bg-red-400' : ' bg-blue-400')}>
+            <div className={'w-full h-full flex flex-col items-center justify-center gap-16' + (theme ? ' bg-red-400' : ' bg-blue-400')}>
                 <h1>{addNumber}</h1>
-                <input type="text" onChange={(e) => setNum(parseInt(e.target.value))} />
+                <input className='p-4 m-2 text-lg bg-gray-200 rounded-lg text-center' type="number" onChange={(e) => setNum(parseInt(e.target.value))} />
                 <br /><hr />
                 <button className='btnSuccess' onClick={() => { setTheme(!theme) }}> change theme </button>
             </div>
