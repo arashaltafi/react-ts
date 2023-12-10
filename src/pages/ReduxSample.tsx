@@ -13,7 +13,7 @@ const ReduxSample = () => {
 
     return (
         <>
-            <div className='w-full h-screen flex flex-col justify-center items-center gap-16'>
+            <div className='w-full py-4 flex flex-col justify-center items-center gap-16'>
                 <div className='title'>ReduxSample</div>
                 <input className='p-4 m-2 text-lg bg-gray-300 rounded-lg text-center' onChange={(e) => setNewUsername(e.target.value)} type="text" />
                 <div className='flex flex-row items-center justify-center gap-8'>
