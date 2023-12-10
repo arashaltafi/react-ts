@@ -30,9 +30,11 @@ const Formik = () => {
         },
     })
 
+    const { values, touched, errors, setFieldValue } = formik;
+
     return (
         <>
-            <div className='title'>Formik</div>
+            <div className='title mt-4'>Formik</div>
             <form onSubmit={formik.handleSubmit} className='flex flex-col gap-4 items-center justify-center p-16' autoComplete="off">
                 <label className='subtitle' htmlFor="firstName">First Name</label>
                 <input
@@ -44,7 +46,8 @@ const Formik = () => {
                     value={formik.values.firstName}
                     placeholder='Enter First Name ...'
                 />
-                <label className='subtitle' htmlFor="lastName">Last Name</label>
+                {errors.firstName && <p className='text-red-500'>{errors.firstName}</p>}
+                <label className='subtitle mt-12' htmlFor="lastName">Last Name</label>
                 <input
                     className='px-4 py-6 text-center text-2xl font-bold bg-gray-200 border-2 border-black shadow-lg rounded-lg'
                     id="lastName"
@@ -54,7 +57,8 @@ const Formik = () => {
                     value={formik.values.lastName}
                     placeholder='Enter Last Name ...'
                 />
-                <label className='subtitle' htmlFor="email">Email Address</label>
+                {errors.lastName && <p className='text-red-500'>{errors.lastName}</p>}
+                <label className='subtitle mt-12' htmlFor="email">Email Address</label>
                 <input
                     className='px-4 py-6 text-center text-2xl font-bold bg-gray-200 border-2 border-black shadow-lg rounded-lg'
                     id="email"
@@ -64,7 +68,8 @@ const Formik = () => {
                     value={formik.values.email}
                     placeholder='Enter Email ...'
                 />
-                <label className='subtitle' htmlFor="age">Age</label>
+                {errors.email && <p className='text-red-500'>{errors.email}</p>}
+                <label className='subtitle mt-12' htmlFor="age">Age</label>
                 <input
                     className='px-4 py-6 text-center text-2xl font-bold bg-gray-200 border-2 border-black shadow-lg rounded-lg'
                     id="age"
@@ -74,7 +79,8 @@ const Formik = () => {
                     value={formik.values.age}
                     placeholder='Enter Age ...'
                 />
-                <label className='subtitle' htmlFor="password">Password</label>
+                {errors.age && <p className='text-red-500'>{errors.age}</p>}
+                <label className='subtitle mt-12' htmlFor="password">Password</label>
                 <input
                     className='px-4 py-6 text-center text-2xl font-bold bg-gray-200 border-2 border-black shadow-lg rounded-lg'
                     id="password"
@@ -84,7 +90,8 @@ const Formik = () => {
                     value={formik.values.password}
                     placeholder='Enter Password ...'
                 />
-                <label className='subtitle' htmlFor="confirmPassword">Confirm Password</label>
+                {errors.password && <p className='text-red-500'>{errors.password}</p>}
+                <label className='subtitle mt-12' htmlFor="confirmPassword">Confirm Password</label>
                 <input
                     className='px-4 py-6 text-center text-2xl font-bold bg-gray-200 border-2 border-black shadow-lg rounded-lg'
                     id="confirmPassword"
@@ -94,7 +101,7 @@ const Formik = () => {
                     value={formik.values.confirmPassword}
                     placeholder='Enter Confirm Password ...'
                 />
-
+                {errors.confirmPassword && <p className='text-red-500'>{errors.confirmPassword}</p>}
                 <button
                     className='btnSuccess bg-green-600 mt-8 py-4 px-6 text-2xl rounded-xl shadow-xl'
                     type="submit">
