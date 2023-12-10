@@ -30,8 +30,6 @@ const Formik = () => {
         },
     })
 
-    const { values, touched, errors, setFieldValue } = formik;
-
     return (
         <>
             <div className='title mt-4'>Formik</div>
@@ -46,7 +44,7 @@ const Formik = () => {
                     value={formik.values.firstName}
                     placeholder='Enter First Name ...'
                 />
-                {errors.firstName && <p className='text-red-500'>{errors.firstName}</p>}
+                {formik.errors.firstName && <p className='text-red-500'>{formik.errors.firstName}</p>}
                 <label className='subtitle mt-12' htmlFor="lastName">Last Name</label>
                 <input
                     className='px-4 py-6 text-center text-2xl font-bold bg-gray-200 border-2 border-black shadow-lg rounded-lg'
@@ -57,7 +55,7 @@ const Formik = () => {
                     value={formik.values.lastName}
                     placeholder='Enter Last Name ...'
                 />
-                {errors.lastName && <p className='text-red-500'>{errors.lastName}</p>}
+                {formik.errors.lastName && <p className='text-red-500'>{formik.errors.lastName}</p>}
                 <label className='subtitle mt-12' htmlFor="email">Email Address</label>
                 <input
                     className='px-4 py-6 text-center text-2xl font-bold bg-gray-200 border-2 border-black shadow-lg rounded-lg'
@@ -68,7 +66,7 @@ const Formik = () => {
                     value={formik.values.email}
                     placeholder='Enter Email ...'
                 />
-                {errors.email && <p className='text-red-500'>{errors.email}</p>}
+                {formik.errors.email && <p className='text-red-500'>{formik.errors.email}</p>}
                 <label className='subtitle mt-12' htmlFor="age">Age</label>
                 <input
                     className='px-4 py-6 text-center text-2xl font-bold bg-gray-200 border-2 border-black shadow-lg rounded-lg'
@@ -79,7 +77,7 @@ const Formik = () => {
                     value={formik.values.age}
                     placeholder='Enter Age ...'
                 />
-                {errors.age && <p className='text-red-500'>{errors.age}</p>}
+                {formik.errors.age && <p className='text-red-500'>{formik.errors.age}</p>}
                 <label className='subtitle mt-12' htmlFor="password">Password</label>
                 <input
                     className='px-4 py-6 text-center text-2xl font-bold bg-gray-200 border-2 border-black shadow-lg rounded-lg'
@@ -90,7 +88,7 @@ const Formik = () => {
                     value={formik.values.password}
                     placeholder='Enter Password ...'
                 />
-                {errors.password && <p className='text-red-500'>{errors.password}</p>}
+                {formik.errors.password && <p className='text-red-500'>{formik.errors.password}</p>}
                 <label className='subtitle mt-12' htmlFor="confirmPassword">Confirm Password</label>
                 <input
                     className='px-4 py-6 text-center text-2xl font-bold bg-gray-200 border-2 border-black shadow-lg rounded-lg'
@@ -101,7 +99,7 @@ const Formik = () => {
                     value={formik.values.confirmPassword}
                     placeholder='Enter Confirm Password ...'
                 />
-                {errors.confirmPassword && <p className='text-red-500'>{errors.confirmPassword}</p>}
+                {formik.errors.confirmPassword && <p className='text-red-500'>{formik.errors.confirmPassword}</p>}
                 <button
                     className='btnSuccess bg-green-600 mt-8 py-4 px-6 text-2xl rounded-xl shadow-xl'
                     type="submit">
