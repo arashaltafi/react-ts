@@ -32,6 +32,8 @@ const ReduxSample = () => {
                 <p className='subtitle'>{numberSelector.numbers}</p>
 
                 <GoBack class="btnError mt-16 flex mx-auto" />
+
+                <img src='https://www.cameraegg.org/wp-content/uploads/2013/03/Canon-EOS-100D-Rebel-SL1-Sample-Image.jpg' alt='arash' width={300} height={300} />
             </div>
         </>
     )
