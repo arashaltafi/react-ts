@@ -10,6 +10,7 @@ import ReduxSample from './pages/ReduxSample';
 import UseMemoSample from './pages/UseMemoSample';
 import Formik from './pages/Formik';
 import LocaleLanguage from './pages/LocaleLanguage';
+import CustomIDB from './pages/CustomIDB';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
             <Route path='/useMemo' element={<UseMemoSample />} />
             <Route path='/formik' element={<Formik />} />
             <Route path='/localeLanguage' element={<LocaleLanguage />} />
+            <Route path='/customIDB' element={<CustomIDB />} />
             <Route path='/useParams/:name?/:family?' element={<UseParams />} />
             <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
           </Routes>
