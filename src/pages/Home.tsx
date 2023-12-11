@@ -17,6 +17,7 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/redux')}>ReduxSample</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/useMemo')}>useMemoSample</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/formik')}>Formik</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/localeLanguage')}>LocaleLanguage</button>
 
       <span className='w-[90%] h-[1px] bg-zinc-800' />
 
@@ -28,6 +29,7 @@ const Home = () => {
         <Link to='/redux'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>ReduxSample</h1></Link>
         <Link to='/useMemo'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>useMemoSample</h1></Link>
         <Link to='/formik'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Formik</h1></Link>
+        <Link to='/localeLanguage'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>LocaleLanguage</h1></Link>
       </nav>
     </div>
   )
