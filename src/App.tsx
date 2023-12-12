@@ -12,6 +12,7 @@ import UseMemoSample from './pages/UseMemoSample';
 import Formik from './pages/Formik';
 import LocaleLanguage from './pages/LocaleLanguage';
 import CustomIDB from './pages/CustomIDB';
+import ZustandSample from './pages/ZustandSample';
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
             <Form />
           } />
           <Route path='/redux' element={<ReduxSample />} />
+          <Route path='/zustand' element={<ZustandSample />} />
           <Route path='/useMemo' element={<UseMemoSample />} />
           <Route path='/formik' element={<Formik />} />
           <Route path='/localeLanguage' element={<LocaleLanguage />} />
