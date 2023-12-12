@@ -14,6 +14,7 @@ import LocaleLanguage from './pages/LocaleLanguage';
 import CustomIDB from './pages/CustomIDB';
 import ZustandSample from './pages/ZustandSample';
 import Neshan from './pages/Neshan';
+import MapBox from './pages/MapBox';
 
 function App() {
 
@@ -57,6 +58,7 @@ function App() {
           <Route path='/localeLanguage' element={<LocaleLanguage />} />
           <Route path='/customIDB' element={<CustomIDB />} />
           <Route path='/neshan' element={<Neshan />} />
+          <Route path='/mapbox' element={<MapBox />} />
           <Route path='/useParams/:name?/:family?' element={<UseParams />} />
           <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
         </Routes>

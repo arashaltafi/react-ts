@@ -21,6 +21,7 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/localeLanguage')}>LocaleLanguage</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/customIDB')}>CustomIDB</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/neshan')}>Neshan</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/mapbox')}>MapBox</button>
 
       <span className='w-[90%] h-[1px] bg-zinc-800' />
 
@@ -36,6 +37,7 @@ const Home = () => {
         <Link to='/localeLanguage'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>LocaleLanguage</h1></Link>
         <Link to='/customIDB'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>CustomIDB</h1></Link>
         <Link to='/neshan'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Neshan</h1></Link>
+        <Link to='/mapbox'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>MapBox</h1></Link>
       </nav>
     </div>
   )
