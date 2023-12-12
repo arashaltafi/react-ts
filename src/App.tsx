@@ -13,6 +13,7 @@ import Formik from './pages/Formik';
 import LocaleLanguage from './pages/LocaleLanguage';
 import CustomIDB from './pages/CustomIDB';
 import ZustandSample from './pages/ZustandSample';
+import Neshan from './pages/Neshan';
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
           <Route path='/formik' element={<Formik />} />
           <Route path='/localeLanguage' element={<LocaleLanguage />} />
           <Route path='/customIDB' element={<CustomIDB />} />
+          <Route path='/neshan' element={<Neshan />} />
           <Route path='/useParams/:name?/:family?' element={<UseParams />} />
           <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
         </Routes>
