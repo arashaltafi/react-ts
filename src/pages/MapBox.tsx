@@ -1,49 +1,112 @@
-import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import mapboxgl from "mapbox-gl";
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import mapboxgl from 'mapbox-gl';
 import Divider from '../Components/Divider';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpYWhhcmlhbjUiLCJhIjoiY2wyMWUzeGZiMTU4bjNjbWt5Zjk3NHZ6cyJ9.oPpYJC4Xxc315h6S8Tl8Ig';
+
+const locations = [
+    {
+        coordinates: [-74.5, 40],
+        radius: 1000
+    },
+    {
+        coordinates: [35.699005714533264, 51.33638524905276],
+        radius: 1000
+    },
+    {
+        coordinates: [35.70098380940479, 51.39117847652718],
+        radius: 200
+    },
+    {
+        coordinates: [35.71183652796547, 51.40704216281115],
+        radius: 300
+    }
+]
 
 const MapBox = () => {
-
-
     const Map = ReactMapboxGl({
         accessToken:
             'pk.eyJ1IjoiYWxpYWhhcmlhbjUiLCJhIjoiY2wyMWUzeGZiMTU4bjNjbWt5Zjk3NHZ6cyJ9.oPpYJC4Xxc315h6S8Tl8Ig'
     });
 
+    const [map, setMap] = useState<any>(null);
 
     useEffect(() => {
-        mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpYWhhcmlhbjUiLCJhIjoiY2wyMWUzeGZiMTU4bjNjbWt5Zjk3NHZ6cyJ9.oPpYJC4Xxc315h6S8Tl8Ig';
-        const map = new mapboxgl.Map({
-            container: 'mapbox', // container ID
-            style: 'mapbox://styles/mapbox/dark-v10', // style URL
-            center: [32.14963227368696, 54.16016113907029], // starting position [lng, lat]
-            zoom: 9 // starting zoom
-        });
-
-        map.on('load', () => {
-            map.addLayer({
-                id: 'terrain-data',
-                type: 'line',
-                source: {
-                    type: 'vector',
-                    url: 'mapbox://mapbox.mapbox-terrain-v2'
-                },
-                'source-layer': 'contour'
+        const initializeMap = () => {
+            const newMap = new mapboxgl.Map({
+                container: 'map', // container id
+                style: 'mapbox://styles/mapbox/dark-v10', // style URL
+                center: [-74.5, 40], // starting position [lng, lat]
+                zoom: 9, // starting zoom
             });
-        });
 
-    })
+            // Add navigation controls to the map
+            newMap.addControl(new mapboxgl.NavigationControl());
+
+            setMap(newMap);
+        };
+
+        // Check if the map is not initialized
+        if (!map) initializeMap();
+
+        // Clean up on unmount
+        return () => map?.remove();
+    }, []);
+
+    useEffect(() => {
+        // Check if the map is initialized
+        if (map) {
+            // Add markers and circles to the map
+            locations.forEach((location, index) => {
+                const { coordinates, radius } = location;
+
+                const latLng = new mapboxgl.LngLat(coordinates[0], coordinates[1]);
+
+                // Add a marker to the map
+                new mapboxgl.Marker().setLngLat(latLng).addTo(map);
+
+                // Add a circle to the map
+                map.addSource(`circle-source-${index}`, {
+                    type: 'geojson',
+                    data: {
+                        type: 'Feature',
+                        geometry: {
+                            type: 'Point',
+                            coordinates: coordinates,
+                        },
+                    },
+                });
+
+                map.addLayer({
+                    id: `circle-layer-${index}`,
+                    type: 'circle',
+                    source: `circle-source-${index}`,
+                    paint: {
+                        'circle-color': '#FF0000',
+                        'circle-radius': radius,
+                    },
+                });
+            });
+
+            // Clean up on unmount
+            return () => {
+                locations.forEach((_, index) => {
+                    map.removeLayer(`circle-layer-${index}`);
+                    map.removeSource(`circle-source-${index}`);
+                });
+            };
+        }
+    }, []);
 
     return (
         <>
-            <div id='mapbox' className='w-full h-[90%]'></div>
-
+            <div id="map" style={{ width: '100%', height: '100%' }} />
             <Divider />
 
             <Map
-                style="mapbox://styles/mapbox/streets-v10"
+                style="mapbox://styles/mapbox/streets-v11"
                 className='w-full h-[90%]'
             >
                 <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
@@ -51,7 +114,7 @@ const MapBox = () => {
                 </Layer>
             </Map>;
         </>
-    )
-}
+    );
+};
 
-export default MapBox
+export default MapBox;

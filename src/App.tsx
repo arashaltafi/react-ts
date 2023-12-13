@@ -14,6 +14,7 @@ import LocaleLanguage from './pages/LocaleLanguage';
 import CustomIDB from './pages/CustomIDB';
 import ZustandSample from './pages/ZustandSample';
 import Neshan from './pages/Neshan';
+import Hoc from './Components/Hoc';
 import MapBox from './pages/MapBox';
 import LocationSample from './pages/LocationSample';
 
@@ -29,40 +30,42 @@ function App() {
     <div className="h-screen w-full">
       <Provider store={store}>
         <Routes>
-          <Route path='/test'>
-            <Route path='test2' element={
-              <div>Test 2</div>
+          <Route element={<Hoc />}>
+            <Route path='/test'>
+              <Route path='test2' element={
+                <div>Test 2</div>
+              } />
+            </Route>
+            <Route path='/' element={
+              <Home />
             } />
+            <Route path='/customHook' element={
+              <CustomHook />
+            } />
+            <Route path='/profile' element={
+              <Profile
+                name={'arash'}
+                family={'altafi'}
+                age={26}
+                language={['javascript', 'html', 'css', 'typescript', 'react', 'nodejs']}
+                isSingle={true}
+                country={countries.iran} />
+            } />
+            <Route path='/form' element={
+              <Form />
+            } />
+            <Route path='/redux' element={<ReduxSample />} />
+            <Route path='/zustand' element={<ZustandSample />} />
+            <Route path='/useMemo' element={<UseMemoSample />} />
+            <Route path='/formik' element={<Formik />} />
+            <Route path='/localeLanguage' element={<LocaleLanguage />} />
+            <Route path='/customIDB' element={<CustomIDB />} />
+            <Route path='/neshan' element={<Neshan />} />
+            <Route path='/mapbox' element={<MapBox />} />
+            <Route path='/locationSample' element={<LocationSample />} />
+            <Route path='/useParams/:name?/:family?' element={<UseParams />} />
+            <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
           </Route>
-          <Route path='/' element={
-            <Home />
-          } />
-          <Route path='/customHook' element={
-            <CustomHook />
-          } />
-          <Route path='/profile' element={
-            <Profile
-              name={'arash'}
-              family={'altafi'}
-              age={26}
-              language={['javascript', 'html', 'css', 'typescript', 'react', 'nodejs']}
-              isSingle={true}
-              country={countries.iran} />
-          } />
-          <Route path='/form' element={
-            <Form />
-          } />
-          <Route path='/redux' element={<ReduxSample />} />
-          <Route path='/zustand' element={<ZustandSample />} />
-          <Route path='/useMemo' element={<UseMemoSample />} />
-          <Route path='/formik' element={<Formik />} />
-          <Route path='/localeLanguage' element={<LocaleLanguage />} />
-          <Route path='/customIDB' element={<CustomIDB />} />
-          <Route path='/neshan' element={<Neshan />} />
-          <Route path='/mapbox' element={<MapBox />} />
-          <Route path='/locationSample' element={<LocationSample />} />
-          <Route path='/useParams/:name?/:family?' element={<UseParams />} />
-          <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
         </Routes>
       </Provider>
     </div>
