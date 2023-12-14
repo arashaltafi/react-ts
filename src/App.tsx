@@ -17,6 +17,10 @@ import Neshan from './pages/Neshan';
 import Hoc from './Components/Hoc';
 import MapBox from './pages/MapBox';
 import LocationSample from './pages/LocationSample';
+import StyledComponents from './Components/StyledComponents';
+import Libraries from './pages/Libraries';
+import ReactIcons from './Components/ReactIcons';
+import Bootstrap from './Components/Bootstrap';
 
 function App() {
 
@@ -63,6 +67,10 @@ function App() {
             <Route path='/neshan' element={<Neshan />} />
             <Route path='/mapbox' element={<MapBox />} />
             <Route path='/locationSample' element={<LocationSample />} />
+            <Route path='/libraries' element={<Libraries />} />
+            <Route path='/styledComponents' element={<StyledComponents />} />
+            <Route path='/reactIcons' element={<ReactIcons />} />
+            <Route path='/bootstrap' element={<Bootstrap />} />
             <Route path='/useParams/:name?/:family?' element={<UseParams />} />
             <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
           </Route>
