@@ -4,14 +4,24 @@ import strings from '../localiztion/localizations'
 const LocaleLanguage = () => {
     const [language, setLanguage] = useState('en');
 
+    useEffect(() => {
+        strings.setLanguage(localStorage.getItem('language') || 'en');
+        setLanguage(localStorage.getItem('language') || 'en');
+    }, []);
+    
+
     const handleChangeLang = (lang: string) => {
         strings.setLanguage(lang);
         setLanguage(lang);
+        localStorage.setItem('language', lang)
+        console.log('handleChangeLang: ', lang);
     }
 
     useEffect(() => {
         console.log('Language: ', strings.getLanguage());
     }, [language]);
+
+
 
     return (
         <>
