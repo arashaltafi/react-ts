@@ -1,6 +1,6 @@
-import { makeStyles } from '@mui/styles';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme: Theme) => ({
     root: {
         display: "flex",
         flexDirection: "column",
@@ -31,5 +31,9 @@ export const useStyles = makeStyles((theme) => ({
     },
     marginTop: {
         marginTop: 50
+    },
+    test: {
+        color: theme.palette.error.main,
+        backgroundColor: theme.palette.secondary.main
     }
 }));

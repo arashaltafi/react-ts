@@ -23,9 +23,12 @@ const MaterialUI = () => {
                 <div className={'flex items-center justify-center gap-8 mt-8'}>
                     <Button variant="contained" color="primary">Button</Button>
                     <Button variant="text" color="primary">Text</Button>
-                    <Button variant="contained" color="error">Contained</Button>
+                    <Button variant="contained" color="error" sx={{ color: 'text.white' }}>Contained</Button>
                     <Button variant="outlined" color="success">Outlined</Button>
+                    <Button variant="outlined" color="success" startIcon={<AlarmAddRoundedIcon />} size='large' sx={{ paddingLeft: 4, paddingRight: 4 }}>Outlined</Button>
                 </div>
+
+                <Button sx={{ marginTop: 4 }} variant="contained" className={classes.test}>Custom className</Button>
 
                 {/* TextField */}
                 <TextField className={classes.marginTop} label="Input" variant="outlined" fullWidth margin="normal" placeholder="Type something" />
@@ -65,10 +68,10 @@ const MaterialUI = () => {
                     </Select>
                 </FormControl>
 
-            <div className='flex items-center justify-center mt-8 gap-8'>
-                    <AlarmAddRoundedIcon sx={{width: 70, height: 70}} className='hover:text-red-500 cursor-pointer'/>
-                    <Person sx={{width: 70, height: 70}} className='hover:text-red-500 cursor-pointer'/>
-                    <Brightness4RoundedIcon sx={{width: 70, height: 70}} className='hover:text-red-500 cursor-pointer'/>
+                <div className='flex items-center justify-center mt-8 gap-8'>
+                    <AlarmAddRoundedIcon sx={{ width: 70, height: 70 }} className='hover:text-red-500 cursor-pointer' />
+                    <Person sx={{ width: 70, height: 70 }} className='hover:text-red-500 cursor-pointer' />
+                    <Brightness4RoundedIcon sx={{ width: 70, height: 70 }} className='hover:text-red-500 cursor-pointer' />
                 </div>
             </Container>
         </div>
