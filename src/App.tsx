@@ -24,6 +24,7 @@ import Bootstrap from './Components/Bootstrap';
 import ChakraUI from './Components/ChakraUI';
 import MaterialUI from './Components/MaterialUI';
 import FramerMotion from './Components/FramerMotion';
+import CustomHooks from './Components/CustomHooks';
 
 function App() {
 
@@ -70,13 +71,16 @@ function App() {
             <Route path='/neshan' element={<Neshan />} />
             <Route path='/mapbox' element={<MapBox />} />
             <Route path='/locationSample' element={<LocationSample />} />
-            <Route path='/libraries' element={<Libraries />} />
-            <Route path='/styledComponents' element={<StyledComponents />} />
-            <Route path='/reactIcons' element={<ReactIcons />} />
-            <Route path='/bootstrap' element={<Bootstrap />} />
-            <Route path='/chakraUI' element={<ChakraUI />} />
-            <Route path='/materialUI' element={<MaterialUI />} />
-            <Route path='/framerMotion' element={<FramerMotion />} />
+            <Route path='/libraries'>
+              <Route path='' element={<Libraries />} />
+              <Route path='styledComponents' element={<StyledComponents />} />
+              <Route path='reactIcons' element={<ReactIcons />} />
+              <Route path='bootstrap' element={<Bootstrap />} />
+              <Route path='chakraUI' element={<ChakraUI />} />
+              <Route path='materialUI' element={<MaterialUI />} />
+              <Route path='framerMotion' element={<FramerMotion />} />
+              <Route path='customHooks' element={<CustomHooks />} />
+            </Route>
             <Route path='/useParams/:name?/:family?' element={<UseParams />} />
             <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
           </Route>
