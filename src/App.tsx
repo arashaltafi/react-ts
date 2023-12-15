@@ -21,6 +21,7 @@ import StyledComponents from './Components/StyledComponents';
 import Libraries from './pages/Libraries';
 import ReactIcons from './Components/ReactIcons';
 import Bootstrap from './Components/Bootstrap';
+import ChakraUI from './Components/ChakraUI';
 
 function App() {
 
@@ -71,6 +72,7 @@ function App() {
             <Route path='/styledComponents' element={<StyledComponents />} />
             <Route path='/reactIcons' element={<ReactIcons />} />
             <Route path='/bootstrap' element={<Bootstrap />} />
+            <Route path='/chakraUI' element={<ChakraUI />} />
             <Route path='/useParams/:name?/:family?' element={<UseParams />} />
             <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
           </Route>
