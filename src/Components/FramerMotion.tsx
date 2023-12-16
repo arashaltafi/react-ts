@@ -1,13 +1,15 @@
 import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react"
+import { IoReloadCircleOutline } from "react-icons/io5";
 
 const FramerMotion = () => {
     const [selectedId, setSelectedId] = useState(null)
 
     return (
         <>
-            <button onClick={() => window.location.reload()} className="p-2 m-4 bg-purple-500 rounded-full text-white font-bold">
+            <button onClick={() => window.location.reload()} className="p-3 m-4 bg-purple-500 rounded-full text-white font-bold text-center flex flex-col gap-2 items-center justify-center hover:bg-purple-700 transition hover:scale-105">
                 reload
+                <IoReloadCircleOutline />
             </button>
             <motion.div
                 className='title py-12 no-underline'
