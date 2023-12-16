@@ -7,7 +7,7 @@ const FramerMotion = () => {
 
     return (
         <>
-            <button onClick={() => window.location.reload()} className="p-3 m-4 bg-purple-500 rounded-full text-white font-bold text-center flex flex-col gap-2 items-center justify-center hover:bg-purple-700 transition hover:scale-105">
+            <button onClick={() => window.location.reload()} className="p-3 m-4 bg-purple-500 rounded-full text-white font-bold text-center text-lg flex flex-col gap-2 items-center justify-center hover:bg-purple-700 transition hover:scale-105">
                 reload
                 <IoReloadCircleOutline />
             </button>
@@ -19,7 +19,7 @@ const FramerMotion = () => {
                 FramerMotion
             </motion.div>
             <motion.div
-                className='flex flex-col gap-8 items-center justify-center text-center'
+                className='flex flex-col gap-8 items-center justify-center text-center py-16'
                 initial={{ x: '-100px' }}
                 animate={{ x: 0 }}
                 transition={{ duration: 0.1, delay: 0, type: 'spring', stiffness: 200 }}
@@ -141,7 +141,50 @@ const FramerMotion = () => {
                     <h2>Gestures</h2>
                 </motion.div>
 
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    Simple Animation
+                </motion.div>
+
+                <motion.div
+                    initial={{ x: -100 }}
+                    animate={{ x: 0 }}
+                    transition={{ type: 'spring', stiffness: 120 }}
+                >
+                    Spring Animation
+                </motion.div>
+
+                <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: 'tween', duration: 0.5 }}
+                >
+                    Tween Animation
+                </motion.div>
+
+                <motion.div
+                    initial={{ rotate: 0 }}
+                    animate={{ rotate: 360 }}
+                    transition={{ type: 'tween', duration: 1, repeat: Infinity }}
+                >
+                    Infinite Rotation
+                </motion.div>
+
+                <motion.div
+                    initial={{ y: -100 }}
+                    animate={{ y: 0 }}
+                    transition={{ type: 'tween', duration: 0.5 }}
+                    whileHover={{ scale: 1.2 }}
+                >
+                    Hover Animation
+                </motion.div>
+
             </motion.div>
+
         </>
     )
 }
