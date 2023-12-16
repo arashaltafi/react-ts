@@ -26,10 +26,10 @@ const FramerMotion = () => {
                 <motion.div
                     drag
                     dragConstraints={{
-                        top: -50,
-                        left: -50,
-                        right: 50,
-                        bottom: 50,
+                        top: -20,
+                        left: -20,
+                        right: 20,
+                        bottom: 20,
                     }}
                 >
                     <h2>drag dragConstraints Example</h2>
