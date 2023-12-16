@@ -53,9 +53,14 @@ const ChakraUI = () => {
                         fontSize={'xl'}
                         p={8}
                         sx={{ height: '40px', width: '300px' }}
-                        type="text"
-                        _hover={{ bgColor: 'gray.200' }}
-                        placeholder='Enter Your Name ...' />
+                        type="number"
+                        max={11}
+                        min={4}
+                        _hover={{ bgColor: 'gray.200', borderRadius: '10px', border: "2px solid", borderColor: 'red.300' }}
+                        _focus={{ bgColor: 'gray.300' }}
+                        _active={{ bgColor: 'gray.400' }}
+                        _placeholder={{ color: 'gray.500' }}
+                        placeholder='Enter Your Phone ...' />
 
                     <Divider />
 
@@ -111,7 +116,7 @@ const ChakraUI = () => {
 
                 <VStack spacing={4} align="center" className='m-16'>
                     <Heading size="xl">Chakra UI Widgets</Heading>
-                    <Text fontSize="lg" color="gray.500">Sample usage of Chakra UI components</Text>
+                    <Text fontSize={20} color="gray.500">Sample usage of Chakra UI components</Text>
 
                     {/* Button */}
                     <Button colorScheme="teal">Button</Button>

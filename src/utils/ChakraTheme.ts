@@ -1,6 +1,28 @@
 import { extendTheme } from "@chakra-ui/react";
 
 const chakraTheme = extendTheme({
+    styles: {
+        //global styles for all components
+        global: {
+            lineHeight: 1.5,
+            fontSize: "16px",
+            fontFamily: "Roboto",
+            fontWeight: 400,
+            color: 'white',
+            backgroundColor: 'black',
+            '*': {
+                boxSizing: "border-box",
+                margin: 0,
+                padding: 0,    
+            },
+            body: {
+                margin: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: '100vh',
+            }
+        }
+    },
     colors: {
         transparent: "transparent",
         primary: {
@@ -17,7 +39,7 @@ const chakraTheme = extendTheme({
         },
     },
     fontSizes: {
-        title: "1.5rem",
+        title: "2rem",
         subtitle: "1.25rem",
     },
     breakPoints: {
