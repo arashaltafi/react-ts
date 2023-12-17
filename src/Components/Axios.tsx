@@ -14,8 +14,7 @@ const Axios = () => {
     return () => {
       dispatch(axiosSlice.actions.reset())
     }
-  })
-
+  }, [])
 
   const handleClick = (e: any) => {
     e.preventDefault()
@@ -26,13 +25,13 @@ const Axios = () => {
     try {
       await callApi({
         method: "GET",
-        url: `test_json.php`,
+        url: `test_200.php`,
         callBack: (response: any) => {
-          console.log("handleClickGet", response);
+          console.log("handleClickGet response", response);
         },
       });
     } catch (error) {
-
+      console.log("handleClickGet error", error);
     }
   }
 

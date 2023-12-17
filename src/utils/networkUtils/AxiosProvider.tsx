@@ -2,14 +2,18 @@ import { useDispatch } from "react-redux";
 import axios from "./customAxios";
 import { useEffect, useState } from "react";
 import axiosSlice from "../../redux/axiosSlice";
+import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 
 const AxiosProvider = () => {
     const dispatch = useDispatch();
-    const [loading, setLoading] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean | any>(null);
     const [error, setError] = useState<any>(null);
 
     useEffect(() => {
+        if (loading === null) return;
+
         console.log("loading", loading);
+
         dispatch(axiosSlice.actions.setLoading({ isLoading: loading }))
     }, [loading])
 
@@ -31,15 +35,19 @@ const AxiosProvider = () => {
         }
     }, [error])
 
-    axios.interceptors.request.use(
-        (config) => requestHandler(config),
-        (error) => requestErrorHandler(error)
-    );
+    useEffect(() => {
+        console.log("axios", axios);
 
-    axios.interceptors.response.use(
-        (response) => responseHandler(response),
-        (error) => responseErrorHandler(error)
-    );
+        axios.interceptors.request.use(
+            (config: AxiosRequestConfig) => requestHandler(config),
+            (error: AxiosError) => requestErrorHandler(error)
+        );
+    
+        axios.interceptors.response.use(
+            (response: AxiosResponse) => responseHandler(response),
+            (error: AxiosError) => responseErrorHandler(error)
+        );
+    }, [])
 
     const requestHandler = (config: any) => {
         console.log("requestHandler", config);
@@ -47,20 +55,20 @@ const AxiosProvider = () => {
         return config;
     };
 
-    const requestErrorHandler = (error: any) => {
+    const requestErrorHandler = (error: AxiosError) => {
         console.log("requestErrorHandler", error);
         setLoading(false);
         setError(error);
         return Promise.reject(error);
     };
 
-    const responseHandler = (response: any) => {
+    const responseHandler = (response: AxiosResponse) => {
         console.log("responseHandler", response);
         setLoading(false);
         return response;
     };
 
-    const responseErrorHandler = (error: any) => {
+    const responseErrorHandler = (error: AxiosError) => {
         console.log("responseErrorHandler", error);
         setLoading(false)
         setError(error)
