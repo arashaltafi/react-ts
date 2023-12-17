@@ -26,6 +26,7 @@ import MaterialUI from './Components/MaterialUI';
 import FramerMotion from './Components/FramerMotion';
 import CustomHooks from './Components/CustomHooks';
 import ReactPdf from './Components/ReactPdf';
+import Axios from './Components/Axios';
 
 function App() {
 
@@ -82,6 +83,7 @@ function App() {
               <Route path='framerMotion' element={<FramerMotion />} />
               <Route path='customHooks' element={<CustomHooks />} />
               <Route path='reactPdf' element={<ReactPdf />} />
+              <Route path='axios' element={<Axios />} />
             </Route>
             <Route path='/useParams/:name?/:family?' element={<UseParams />} />
             <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
