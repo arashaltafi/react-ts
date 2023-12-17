@@ -25,6 +25,7 @@ import ChakraUI from './Components/ChakraUI';
 import MaterialUI from './Components/MaterialUI';
 import FramerMotion from './Components/FramerMotion';
 import CustomHooks from './Components/CustomHooks';
+import ReactPdf from './Components/ReactPdf';
 
 function App() {
 
@@ -80,6 +81,7 @@ function App() {
               <Route path='materialUI' element={<MaterialUI />} />
               <Route path='framerMotion' element={<FramerMotion />} />
               <Route path='customHooks' element={<CustomHooks />} />
+              <Route path='reactPdf' element={<ReactPdf />} />
             </Route>
             <Route path='/useParams/:name?/:family?' element={<UseParams />} />
             <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
