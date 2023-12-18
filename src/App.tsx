@@ -31,6 +31,7 @@ import ReCaptcha from './Components/ReCaptchaSample';
 import I8NextSample from './Components/I8NextSample';
 import './localiztion/i18nextSetting';
 import { useTranslation } from 'react-i18next';
+import RechartsSample from './Components/RechartsSample';
 
 function App() {
 
@@ -92,6 +93,7 @@ function App() {
               <Route path='axios' element={<Axios />} />
               <Route path='reCaptcha' element={<ReCaptcha />} />
               <Route path='i8Next' element={<I8NextSample />} />
+              <Route path='recharts' element={<RechartsSample />} />
             </Route>
             <Route path='/useParams/:name?/:family?' element={<UseParams />} />
             <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
