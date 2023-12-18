@@ -27,6 +27,7 @@ import FramerMotion from './Components/FramerMotion';
 import CustomHooks from './Components/CustomHooks';
 import ReactPdf from './Components/ReactPdf';
 import Axios from './Components/Axios';
+import ReCaptcha from './Components/ReCaptchaSample';
 
 function App() {
 
@@ -84,6 +85,7 @@ function App() {
               <Route path='customHooks' element={<CustomHooks />} />
               <Route path='reactPdf' element={<ReactPdf />} />
               <Route path='axios' element={<Axios />} />
+              <Route path='reCaptcha' element={<ReCaptcha />} />
             </Route>
             <Route path='/useParams/:name?/:family?' element={<UseParams />} />
             <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
