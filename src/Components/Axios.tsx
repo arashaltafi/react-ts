@@ -73,7 +73,7 @@ const Axios = () => {
           {
             axiosSelector.error ? <>{axiosSelector.error}</> :
               axiosSelector.isLoading ? <Loading /> :
-                axiosSelector.data ? <code>{JSON.stringify(axiosSelector.data)}</code> : <>Please Call Api</>
+                axiosSelector.data ? <code>{JSON.stringify(axiosSelector.data, null, 2)}</code> : <>Please Call Api</>
           }
         </div>
 

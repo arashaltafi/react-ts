@@ -18,7 +18,7 @@ const Form = () => {
     })
 
     const onFormSubmit = (data: object) => {
-        console.log(data)
+        alert(JSON.stringify(data, null, 2));
     }
 
     return (
