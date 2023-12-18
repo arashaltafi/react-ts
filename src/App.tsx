@@ -28,13 +28,18 @@ import CustomHooks from './Components/CustomHooks';
 import ReactPdf from './Components/ReactPdf';
 import Axios from './Components/Axios';
 import ReCaptcha from './Components/ReCaptchaSample';
+import I8NextSample from './Components/I8NextSample';
+import './localiztion/i18nextSetting';
+import { useTranslation } from 'react-i18next';
 
 function App() {
 
+  const { t, i18n } = useTranslation();
   const location = useLocation()
 
   useEffect(() => {
     console.log(location);
+    console.log('i18n', i18n.languages);
   }, [location])
 
   return (
@@ -86,6 +91,7 @@ function App() {
               <Route path='reactPdf' element={<ReactPdf />} />
               <Route path='axios' element={<Axios />} />
               <Route path='reCaptcha' element={<ReCaptcha />} />
+              <Route path='i8Next' element={<I8NextSample />} />
             </Route>
             <Route path='/useParams/:name?/:family?' element={<UseParams />} />
             <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />

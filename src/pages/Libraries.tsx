@@ -17,6 +17,7 @@ const Libraries = () => {
                 <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/reactPdf">ReactPdf</Link>
                 <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/axios">Axios</Link>
                 <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/reCaptcha">ReCaptcha</Link>
+                <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/i8Next">I8Next</Link>
             </div>
         </>
     )
