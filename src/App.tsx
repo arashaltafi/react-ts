@@ -34,6 +34,7 @@ import { useTranslation } from 'react-i18next';
 import RechartsSample from './Components/RechartsSample';
 import SwalSample from './Components/SwalSample';
 import Swal2Sample from './Components/Swal2Sample';
+import ReactSpinners from './Components/ReactSpinners';
 
 function App() {
 
@@ -98,6 +99,7 @@ function App() {
               <Route path='recharts' element={<RechartsSample />} />
               <Route path='swal' element={<SwalSample />} />
               <Route path='swal2' element={<Swal2Sample />} />
+              <Route path='reactSpinners' element={<ReactSpinners />} />
             </Route>
             <Route path='/useParams/:name?/:family?' element={<UseParams />} />
             <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />

@@ -21,6 +21,7 @@ const Libraries = () => {
                 <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/recharts">Recharts</Link>
                 <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/swal">Swal</Link>
                 <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/swal2">Swal2</Link>
+                <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/reactSpinners">ReactSpinners</Link>
             </div>
         </>
     )
