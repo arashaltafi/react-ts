@@ -35,6 +35,7 @@ import RechartsSample from './Components/RechartsSample';
 import SwalSample from './Components/SwalSample';
 import Swal2Sample from './Components/Swal2Sample';
 import ReactSpinners from './Components/ReactSpinners';
+import CustomHover from './Components/CustomHover';
 
 function App() {
 
@@ -100,6 +101,7 @@ function App() {
               <Route path='swal' element={<SwalSample />} />
               <Route path='swal2' element={<Swal2Sample />} />
               <Route path='reactSpinners' element={<ReactSpinners />} />
+              <Route path='customHover' element={<CustomHover />} />
             </Route>
             <Route path='/useParams/:name?/:family?' element={<UseParams />} />
             <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
