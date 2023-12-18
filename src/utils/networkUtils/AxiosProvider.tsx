@@ -8,6 +8,7 @@ const AxiosProvider = () => {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState<boolean | any>(null);
     const [error, setError] = useState<any>(null);
+    const [data, setData] = useState<any>(null);
 
     useEffect(() => {
         if (loading === null) return;
@@ -24,30 +25,34 @@ const AxiosProvider = () => {
 
         if (!error.response) {
             dispatch(axiosSlice.actions.setError({ error: 'Internet Error!' }))
-        } else if (error.response.status >= 300) {
-            dispatch(axiosSlice.actions.setError({ error: 'Redirect Error!' }))
-        } else if (error.response.status >= 400) {
-            dispatch(axiosSlice.actions.setError({ error: 'Client Error!' }))
         } else if (error.response.status >= 500) {
             dispatch(axiosSlice.actions.setError({ error: 'Server Error!' }))
+        } else if (error.response.status >= 400) {
+            dispatch(axiosSlice.actions.setError({ error: 'Client Error!' }))
+        } else if (error.response.status >= 300) {
+            dispatch(axiosSlice.actions.setError({ error: 'Redirect Error!' }))
         } else {
             dispatch(axiosSlice.actions.setError({ error: error.response.message }))
         }
     }, [error])
 
     useEffect(() => {
-        console.log("axios", axios);
+        if (data === null) return;
 
-        axios.interceptors.request.use(
-            (config: AxiosRequestConfig) => requestHandler(config),
-            (error: AxiosError) => requestErrorHandler(error)
-        );
-    
-        axios.interceptors.response.use(
-            (response: AxiosResponse) => responseHandler(response),
-            (error: AxiosError) => responseErrorHandler(error)
-        );
-    }, [])
+        console.log("data", data);
+
+        dispatch(axiosSlice.actions.setData({ data: data }))
+    }, [data])
+
+    axios.interceptors.request.use(
+        (config: AxiosRequestConfig) => requestHandler(config),
+        (error: AxiosError) => requestErrorHandler(error)
+    );
+
+    axios.interceptors.response.use(
+        (response: AxiosResponse) => responseHandler(response),
+        (error: AxiosError) => responseErrorHandler(error)
+    );
 
     const requestHandler = (config: any) => {
         console.log("requestHandler", config);
@@ -65,6 +70,7 @@ const AxiosProvider = () => {
     const responseHandler = (response: AxiosResponse) => {
         console.log("responseHandler", response);
         setLoading(false);
+        setData(response.data);
         return response;
     };
 

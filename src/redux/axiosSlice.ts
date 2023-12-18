@@ -4,7 +4,8 @@ const axiosSlice = createSlice({
     name: 'axios',
     initialState: {
         isLoading: false,
-        error: null
+        error: null,
+        data: null
     },
     reducers: {
         setLoading: (state, action) => {
@@ -12,6 +13,9 @@ const axiosSlice = createSlice({
         },
         setError: (state, action) => {
             state.error =  action.payload.error
+        },
+        setData: (state, action) => {
+            state.data =  action.payload.data
         },
         reset: (state) => {
             state.isLoading = false
