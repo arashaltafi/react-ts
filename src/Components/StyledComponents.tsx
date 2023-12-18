@@ -23,6 +23,10 @@ const StyledComponents = () => {
   }
 `;
 
+const Button2 = styled(Button)`
+  border-radius: 8px;
+`;
+
 
   return (
     <div className='w-full h-full flex flex-col'>
@@ -31,6 +35,7 @@ const StyledComponents = () => {
       <div className='flex flex-col gap-4 items-center justify-center text-center'>
         <Button>Normal</Button>
         <Button $primary>Primary</Button>
+        <Button2>Button2</Button2>
       </div>
 
       <div className='flex items-end justify-center flex-grow pb-16'>
