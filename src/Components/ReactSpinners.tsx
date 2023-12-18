@@ -1,5 +1,28 @@
 import React from 'react'
 import BarLoader from 'react-spinners/BarLoader'
+import BeatLoader from 'react-spinners/BeatLoader'
+import BounceLoader from 'react-spinners/BounceLoader'
+import CircleLoader from 'react-spinners/CircleLoader'
+import ClimbingBoxLoader from 'react-spinners/ClimbingBoxLoader'
+import ClipLoader from 'react-spinners/ClipLoader'
+import ClockLoader from 'react-spinners/ClockLoader'
+import DotLoader from 'react-spinners/DotLoader'
+import FadeLoader from 'react-spinners/FadeLoader'
+import GridLoader from 'react-spinners/GridLoader'
+import HashLoader from 'react-spinners/HashLoader'
+import MoonLoader from 'react-spinners/MoonLoader'
+import PacmanLoader from 'react-spinners/PacmanLoader'
+import PropagateLoader from 'react-spinners/PropagateLoader'
+import PuffLoader from 'react-spinners/PuffLoader'
+import PulseLoader from 'react-spinners/PulseLoader'
+import RingLoader from 'react-spinners/RingLoader'
+import RiseLoader from 'react-spinners/RiseLoader'
+import RotateLoader from 'react-spinners/RotateLoader'
+import ScaleLoader from 'react-spinners/ScaleLoader'
+import SkewLoader from 'react-spinners/SkewLoader'
+import SquareLoader from 'react-spinners/SquareLoader'
+import SyncLoader from 'react-spinners/SyncLoader'
+import Divider from './Divider'
 
 const ReactSpinners = () => {
 
@@ -8,68 +31,40 @@ const ReactSpinners = () => {
         window.open("https://www.davidhu.io/react-spinners/", "_blank")
     }
 
-    const handleClick1 = () => {
-        
-    }
-
-    const handleClick2 = () => {
-
-    }
-
-    const handleClick3 = () => {
-
-    }
-
-    const handleClick4 = () => {
-
-    }
-
-    const handleClick5 = () => {
-
-    }
-
-    const handleClick6 = () => {
-
-    }
-
-    const handleClick7 = () => {
-
-    }
-
-    const handleClick8 = () => {
-
-    }
-
-    const handleClick9 = () => {
-
-    }
-
-    const handleClick10 = () => {
-
-    }
-
     return (
         <div className='w-full h-full flex flex-col'>
             <div className='title py-12 no-underline'>React Spinners</div>
 
-            <div className='flex flex-col gap-8 items-center justify-center text-center'>
-            <BarLoader color="#36d7b7" />
-                <button className='btnSuccess bg-red-500' onClick={handleClick1}>Sample 1</button>
-                <button className='btnSuccess bg-blue-500' onClick={handleClick2}>Sample 2</button>
-                <button className='btnSuccess bg-green-500' onClick={handleClick3}>Sample 3</button>
-                <button className='btnSuccess bg-yellow-500' onClick={handleClick4}>Sample 4</button>
-                <button className='btnSuccess bg-purple-500' onClick={handleClick5}>Sample 5</button>
-                <button className='btnSuccess bg-orange-500' onClick={handleClick6}>Sample 6</button>
-                <button className='btnSuccess bg-sky-500' onClick={handleClick7}>Sample 7</button>
-                <button className='btnSuccess bg-zinc-500' onClick={handleClick8}>Sample 8</button>
-                <button className='btnSuccess bg-pink-500' onClick={handleClick9}>Sample 9</button>
-                <button className='btnSuccess bg-lime-500' onClick={handleClick10}>Sample 10</button>
+            <div className='grid grid-cols-3 gap-20 items-center justify-center self-stretch justify-items-center'>
+                <BarLoader color="#F44336" />
+                <BeatLoader color="#673AB7" />
+                <BounceLoader color="#2196F3" />
+                <CircleLoader color="#4CAF50" />
+                <ClimbingBoxLoader color="#E91E63" />
+                <ClipLoader color="#FFEB3B" />
+                <ClockLoader color="#FF5722" />
+                <DotLoader color="#9E9D24" />
+                <FadeLoader color="#4527A0" />
+                <GridLoader color="#36d7b7" />
+                <HashLoader color="#00838F" />
+                <MoonLoader color="#448AFF" />
+                <PacmanLoader color="#E040FB" />
+                <PropagateLoader color="#E91E63" />
+                <PuffLoader color="#FF6E40" />
+                <PulseLoader color="#757575" />
+                <RingLoader color="#6D4C41" />
+                <RiseLoader color="#607D8B" />
+                <RotateLoader color="#9C27B0" />
+                <ScaleLoader color="#3F51B5" />
+                <SkewLoader color="#F44336" />
+                <SquareLoader color="#CDDC39" />
+                <SyncLoader color="#36d7b7" />
             </div>
 
-            <div className='flex items-end justify-center flex-grow py-16'>
+            <div className='flex items-end justify-center flex-grow py-24'>
                 <a className='subtitle text-center hover:text-sky-500 hover:underline'
                     onClick={(e) => handleClick(e)}
-                    href="https://www.davidhu.io/react-spinners/">Swal</a>
+                    href="https://www.davidhu.io/react-spinners/">ReactSpinners</a>
             </div>
         </div>
     )
