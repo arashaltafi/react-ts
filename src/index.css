@@ -38,17 +38,6 @@ code {
   }
 
   .customHover {
-    @apply shadow-none bg-transparent p-0 h-auto float-none;
-    transform-style: preserve-3d;
-  }
-
-  .customHover span, .customHover img {
-    @apply block mx-auto bg-gradient-to-r from-orange-500 to-pink-600 text-white text-2xl py-4 px-8 leading-10 float-none transition-all duration-150 ease-out h-auto rounded-full overflow-hidden transform rotate-0 scale-100 filter drop-shadow-md font-semibold tracking-wide;
-    will-change: transform, filter;
-    perspective-origin: 0 0;
-  }
-
-  #customHoverBest {
-    @apply transition-all duration-100 hover:cursor-pointer shadow-slate-800 shadow-xl;
+    @apply transition-all duration-100 hover:cursor-pointer shadow-slate-900 shadow-2xl rounded-xl overflow-hidden;
   }
 }

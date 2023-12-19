@@ -1,14 +1,18 @@
-import { useEffect } from 'react'
-import { CustomHoverUtils, CustomHoverUtilsBest } from '../utils/CustomHoverUtils'
+import { useEffect, useState } from 'react'
 import Divider from './Divider'
+import { CustomHoverAnimation, CustomMouseMove } from '../utils/CustomHover'
 
 const CustomHover = () => {
+
+  //customHover
   useEffect(() => {
-    CustomHoverUtils()
+    CustomHoverAnimation('.customHover')
   }, [])
 
+  //mouse move animation
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   useEffect(() => {
-    CustomHoverUtilsBest()
+    CustomMouseMove(setMousePosition)
   }, []);
 
   return (
@@ -16,19 +20,30 @@ const CustomHover = () => {
       <div className='title py-12 no-underline'>CustomHover</div>
 
       <div className='flex flex-col gap-8 items-center justify-center text-center'>
-        <button className="customHover p-8"><span>Hover!</span></button>
 
-        <Divider />
-
-        <div id='customHoverBest' className='rounded-xl overflow-hidden w-52 h-52'>
+        <div className='customHover w-52 h-52'>
           <img src="https://arashaltafi.ir/arash.jpg" alt="arash" />
         </div>
 
         <Divider />
 
-        <div id='customHoverBest' className='rounded-xl overflow-hidden'>
+        <div className='customHover'>
           <button className='btnSuccess px-8 py-4'>Test</button>
         </div>
+
+        <Divider />
+
+        <div
+          className='w-52 h-52 overflow-hidden rounded-full border-8 border-solid border-zinc-800 bg-no-repeat'
+          style={{
+            backgroundPosition: `calc(50% + ${mousePosition.x}px) calc(50% + ${mousePosition.y}px)`,
+            backgroundImage: 'url("https://arashaltafi.ir/arash.jpg")',
+            backgroundSize: '105% 105%'
+          }}>
+
+        </div>
+
+        <Divider />
 
       </div>
     </div>
