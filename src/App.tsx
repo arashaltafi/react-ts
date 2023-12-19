@@ -36,6 +36,7 @@ import SwalSample from './Components/SwalSample';
 import Swal2Sample from './Components/Swal2Sample';
 import ReactSpinners from './Components/ReactSpinners';
 import CustomHover from './Components/CustomHover';
+import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
 
@@ -51,60 +52,62 @@ function App() {
     <div className="h-screen w-full">
       <Provider store={store}>
         <Routes>
-          <Route element={<Hoc />}>
-            <Route path='/test'>
-              <Route path='test2' element={
-                <div>Test 2</div>
+          <Route element={<ScrollToTop />}>
+            <Route element={<Hoc />}>
+              <Route path='/test'>
+                <Route path='test2' element={
+                  <div>Test 2</div>
+                } />
+              </Route>
+              <Route path='/' element={
+                <Home />
               } />
+              <Route path='/customHook' element={
+                <CustomHook />
+              } />
+              <Route path='/profile' element={
+                <Profile
+                  name={'arash'}
+                  family={'altafi'}
+                  age={26}
+                  language={['javascript', 'html', 'css', 'typescript', 'react', 'nodejs']}
+                  isSingle={true}
+                  country={countries.iran} />
+              } />
+              <Route path='/form' element={
+                <Form />
+              } />
+              <Route path='/redux' element={<ReduxSample />} />
+              <Route path='/zustand' element={<ZustandSample />} />
+              <Route path='/useMemo' element={<UseMemoSample />} />
+              <Route path='/formik' element={<Formik />} />
+              <Route path='/localeLanguage' element={<LocaleLanguage />} />
+              <Route path='/customIDB' element={<CustomIDB />} />
+              <Route path='/neshan' element={<Neshan />} />
+              <Route path='/mapbox' element={<MapBox />} />
+              <Route path='/locationSample' element={<LocationSample />} />
+              <Route path='/libraries'>
+                <Route path='' element={<Libraries />} />
+                <Route path='styledComponents' element={<StyledComponents />} />
+                <Route path='reactIcons' element={<ReactIcons />} />
+                <Route path='bootstrap' element={<Bootstrap />} />
+                <Route path='chakraUI' element={<ChakraUI />} />
+                <Route path='materialUI' element={<MaterialUI />} />
+                <Route path='framerMotion' element={<FramerMotion />} />
+                <Route path='customHooks' element={<CustomHooks />} />
+                <Route path='reactPdf' element={<ReactPdf />} />
+                <Route path='axios' element={<Axios />} />
+                <Route path='reCaptcha' element={<ReCaptcha />} />
+                <Route path='i8Next' element={<I8NextSample />} />
+                <Route path='recharts' element={<RechartsSample />} />
+                <Route path='swal' element={<SwalSample />} />
+                <Route path='swal2' element={<Swal2Sample />} />
+                <Route path='reactSpinners' element={<ReactSpinners />} />
+                <Route path='customHover' element={<CustomHover />} />
+              </Route>
+              <Route path='/useParams/:name?/:family?' element={<UseParams />} />
+              <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
             </Route>
-            <Route path='/' element={
-              <Home />
-            } />
-            <Route path='/customHook' element={
-              <CustomHook />
-            } />
-            <Route path='/profile' element={
-              <Profile
-                name={'arash'}
-                family={'altafi'}
-                age={26}
-                language={['javascript', 'html', 'css', 'typescript', 'react', 'nodejs']}
-                isSingle={true}
-                country={countries.iran} />
-            } />
-            <Route path='/form' element={
-              <Form />
-            } />
-            <Route path='/redux' element={<ReduxSample />} />
-            <Route path='/zustand' element={<ZustandSample />} />
-            <Route path='/useMemo' element={<UseMemoSample />} />
-            <Route path='/formik' element={<Formik />} />
-            <Route path='/localeLanguage' element={<LocaleLanguage />} />
-            <Route path='/customIDB' element={<CustomIDB />} />
-            <Route path='/neshan' element={<Neshan />} />
-            <Route path='/mapbox' element={<MapBox />} />
-            <Route path='/locationSample' element={<LocationSample />} />
-            <Route path='/libraries'>
-              <Route path='' element={<Libraries />} />
-              <Route path='styledComponents' element={<StyledComponents />} />
-              <Route path='reactIcons' element={<ReactIcons />} />
-              <Route path='bootstrap' element={<Bootstrap />} />
-              <Route path='chakraUI' element={<ChakraUI />} />
-              <Route path='materialUI' element={<MaterialUI />} />
-              <Route path='framerMotion' element={<FramerMotion />} />
-              <Route path='customHooks' element={<CustomHooks />} />
-              <Route path='reactPdf' element={<ReactPdf />} />
-              <Route path='axios' element={<Axios />} />
-              <Route path='reCaptcha' element={<ReCaptcha />} />
-              <Route path='i8Next' element={<I8NextSample />} />
-              <Route path='recharts' element={<RechartsSample />} />
-              <Route path='swal' element={<SwalSample />} />
-              <Route path='swal2' element={<Swal2Sample />} />
-              <Route path='reactSpinners' element={<ReactSpinners />} />
-              <Route path='customHover' element={<CustomHover />} />
-            </Route>
-            <Route path='/useParams/:name?/:family?' element={<UseParams />} />
-            <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
           </Route>
         </Routes>
       </Provider>
