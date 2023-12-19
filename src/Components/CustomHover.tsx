@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Divider from './Divider'
-import { CustomHoverAnimation, CustomMouseMove } from '../utils/CustomHover'
+import { CustomHoverAnimation, CustomMouseMove } from '../utils/CustomHoverUtils'
 
 const CustomHover = () => {
 
@@ -41,6 +41,21 @@ const CustomHover = () => {
             backgroundSize: '105% 105%'
           }}>
 
+        </div>
+
+        <Divider />
+
+
+        <button className="neumorphism mb-16">
+          test
+        </button>
+
+        <Divider />
+
+        <div className='neumorphism w-64 mb-16'>
+          <img src="https://arashaltafi.ir/arash.jpg" alt="arash" className='w-full rounded-xl' />
+          <h2 className='mt-2 mx-auto text-3xl font-bold text-center'>Title</h2>
+          <h4 className='mt-2 text-lg text-start'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
         </div>
 
         <Divider />

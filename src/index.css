@@ -40,4 +40,18 @@ code {
   .customHover {
     @apply transition-all duration-100 hover:cursor-pointer shadow-slate-900 shadow-2xl rounded-xl overflow-hidden;
   }
+
+  .neumorphism {
+    @apply bg-[#f0f0f0] text-black border-none py-4 px-6 text-lg cursor-pointer rounded-xl;
+    box-shadow: 5px 5px 15px #c7c7c7, -5px -5px 15px #ffffff;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 8px 8px 20px #c7c7c7, -8px -8px 20px #ffffff;
+    }
+
+    &:active {
+      box-shadow: inset 5px 5px 15px #c7c7c7, inset -5px -5px 15px #ffffff;
+    }
+  }
 }
