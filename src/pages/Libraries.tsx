@@ -2,6 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Libraries = () => {
+
+    const handleClick = () => {
+        window.open('https://particles.js.org/')
+    }
+
     return (
         <>
             <div className="title no-underline py-16">Libraries</div>
@@ -23,6 +28,7 @@ const Libraries = () => {
                 <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/swal2">Swal2</Link>
                 <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/reactSpinners">ReactSpinners</Link>
                 <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/customHover">CustomHover</Link>
+                <p className='cursor-pointer btnSuccess text-xl text-center py-6 bg-pink-500 w-96' onClick={handleClick}>particles</p>
             </div>
         </>
     )
