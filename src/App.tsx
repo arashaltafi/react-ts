@@ -38,6 +38,18 @@ import ReactSpinners from './Components/ReactSpinners';
 import CustomHover from './Components/CustomHover';
 import ScrollToTop from './utils/ScrollToTop';
 import AwesomeReveal from './Components/AwesomeReveal';
+import ParticlesPages from './pages/ParticlesPages';
+import ParticlesBubbles from './particlesPages/ParticlesBubbles';
+import ParticlesLinks from './particlesPages/ParticlesLinks';
+import ParticlesSnow from './particlesPages/ParticlesSnow';
+import ParticlesConfetti from './particlesPages/ParticlesConfetti';
+import ParticlesFire from './particlesPages/ParticlesFire';
+import ParticlesFirefly from './particlesPages/ParticlesFirefly';
+import ParticlesFireworks from './particlesPages/ParticlesFireworks';
+import ParticlesFountain from './particlesPages/ParticlesFountain';
+import ParticlesHyperspace from './particlesPages/ParticlesHyperspace';
+import ParticlesTriangles from './particlesPages/ParticlesTriangles';
+import ParticlesStars from './particlesPages/ParticlesTriangles copy';
 
 function App() {
 
@@ -106,6 +118,20 @@ function App() {
                 <Route path='reactSpinners' element={<ReactSpinners />} />
                 <Route path='customHover' element={<CustomHover />} />
                 <Route path='awesomeReveal' element={<AwesomeReveal />} />
+              </Route>
+              <Route path='/particles'>
+                <Route path='' element={<ParticlesPages />} />
+                <Route path='snow' element={<ParticlesSnow />} />
+                <Route path='bubbles' element={<ParticlesBubbles />} />
+                <Route path='confetti' element={<ParticlesConfetti />} />
+                <Route path='fire' element={<ParticlesFire />} />
+                <Route path='firefly' element={<ParticlesFirefly />} />
+                <Route path='fireworks' element={<ParticlesFireworks />} />
+                <Route path='fountain' element={<ParticlesFountain />} />
+                <Route path='hyperspace' element={<ParticlesHyperspace />} />
+                <Route path='triangles' element={<ParticlesTriangles />} />
+                <Route path='links' element={<ParticlesLinks />} />
+                <Route path='stars' element={<ParticlesStars />} />
               </Route>
               <Route path='/useParams/:name?/:family?' element={<UseParams />} />
               <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />

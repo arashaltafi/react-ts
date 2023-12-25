@@ -24,6 +24,7 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/mapbox')}>MapBox</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/locationSample')}>LocationSample</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/libraries')}>Libraries</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/particles')}>Particles</button>
 
       <span className='w-[90%] h-[1px] bg-zinc-800' />
 
@@ -42,6 +43,7 @@ const Home = () => {
         <Link to='/mapbox'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>MapBox</h1></Link>
         <Link to='/locationSample'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>LocationSample</h1></Link>
         <Link to='/libraries'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Libraries</h1></Link>
+        <Link to='/particles'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Particles</h1></Link>
       </nav>
     </div>
   )
