@@ -56,12 +56,6 @@
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.10.1",
     "ts-jest": "^29.1.1",
-    "typescript": "^4.4.2",
-    "ui-neumorphism": "^1.1.3",
-    "usehooks-ts": "^2.9.1",
-    "web-vitals": "^2.1.0",
-    "yup": "^1.3.2",
-    "zustand": "^4.4.7",
     "tsparticles": "^3.0.2",
     "tsparticles-engine": "^2.12.0",
     "tsparticles-preset-bubbles": "^2.12.0",
@@ -74,7 +68,13 @@
     "tsparticles-preset-links": "^2.12.0",
     "tsparticles-preset-snow": "^2.12.0",
     "tsparticles-preset-stars": "^2.12.0",
-    "tsparticles-preset-triangles": "^2.12.0"
+    "tsparticles-preset-triangles": "^2.12.0",
+    "typescript": "^4.4.2",
+    "ui-neumorphism": "^1.1.3",
+    "usehooks-ts": "^2.9.1",
+    "web-vitals": "^2.1.0",
+    "yup": "^1.3.2",
+    "zustand": "^4.4.7"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -109,6 +109,7 @@
     "@testing-library/react": "^14.1.2",
     "babel-jest": "^29.7.0",
     "jest": "^27.5.1",
+    "prettier": "3.1.1",
     "tailwindcss": "^3.3.6"
   },
   "jest": {
