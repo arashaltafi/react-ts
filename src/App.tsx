@@ -37,6 +37,7 @@ import Swal2Sample from './Components/Swal2Sample';
 import ReactSpinners from './Components/ReactSpinners';
 import CustomHover from './Components/CustomHover';
 import ScrollToTop from './utils/ScrollToTop';
+import AwesomeReveal from './Components/AwesomeReveal';
 
 function App() {
 
@@ -104,6 +105,7 @@ function App() {
                 <Route path='swal2' element={<Swal2Sample />} />
                 <Route path='reactSpinners' element={<ReactSpinners />} />
                 <Route path='customHover' element={<CustomHover />} />
+                <Route path='awesomeReveal' element={<AwesomeReveal />} />
               </Route>
               <Route path='/useParams/:name?/:family?' element={<UseParams />} />
               <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
