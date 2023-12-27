@@ -1,6 +1,6 @@
 import { Profile, countries } from './pages/Profile';
 import Home from './pages/Home';
-import { useEffect } from 'react';
+import { useEffect, useId } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import CustomHook from './pages/CustomHook';
 import Form from './pages/Form';
@@ -55,6 +55,13 @@ function App() {
 
   const { t, i18n } = useTranslation();
   const location = useLocation()
+
+  const useId1 = useId();
+  const useId2 = useId();
+  const useId3 = useId();
+  console.log("idUnique 1", useId1)
+  console.log("idUnique 2", useId2)
+  console.log("idUnique 3", useId3)
 
   useEffect(() => {
     console.log(location);
