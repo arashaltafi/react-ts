@@ -51,6 +51,7 @@ import ParticlesHyperspace from './particlesPages/ParticlesHyperspace';
 import ParticlesTriangles from './particlesPages/ParticlesTriangles';
 import ParticlesStars from './particlesPages/ParticlesTriangles copy';
 import NotistackSample from './Components/NotistackSample';
+import LottieSample from './Components/LottieSample';
 
 function App() {
 
@@ -127,6 +128,7 @@ function App() {
                 <Route path='customHover' element={<CustomHover />} />
                 <Route path='awesomeReveal' element={<AwesomeReveal />} />
                 <Route path='notistackSample' element={<NotistackSample />} />
+                <Route path='lottieSample' element={<LottieSample />} />
               </Route>
               <Route path='/particles'>
                 <Route path='' element={<ParticlesPages />} />
