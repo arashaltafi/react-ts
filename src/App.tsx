@@ -53,6 +53,7 @@ import ParticlesStars from './particlesPages/ParticlesTriangles copy';
 import NotistackSample from './Components/NotistackSample';
 import LottieSample from './Components/LottieSample';
 import ReactourSample from './Components/ReactourSample';
+import VibrateSample from './Components/VibrateSample';
 
 function App() {
 
@@ -131,6 +132,7 @@ function App() {
                 <Route path='notistackSample' element={<NotistackSample />} />
                 <Route path='lottieSample' element={<LottieSample />} />
                 <Route path='reactourSample' element={<ReactourSample />} />
+                <Route path='vibrateSample' element={<VibrateSample />} />
               </Route>
               <Route path='/particles'>
                 <Route path='' element={<ParticlesPages />} />
