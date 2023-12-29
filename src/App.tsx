@@ -50,6 +50,7 @@ import ParticlesFountain from './particlesPages/ParticlesFountain';
 import ParticlesHyperspace from './particlesPages/ParticlesHyperspace';
 import ParticlesTriangles from './particlesPages/ParticlesTriangles';
 import ParticlesStars from './particlesPages/ParticlesTriangles copy';
+import NotistackSample from './Components/NotistackSample';
 
 function App() {
 
@@ -125,6 +126,7 @@ function App() {
                 <Route path='reactSpinners' element={<ReactSpinners />} />
                 <Route path='customHover' element={<CustomHover />} />
                 <Route path='awesomeReveal' element={<AwesomeReveal />} />
+                <Route path='notistackSample' element={<NotistackSample />} />
               </Route>
               <Route path='/particles'>
                 <Route path='' element={<ParticlesPages />} />
