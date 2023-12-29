@@ -13,7 +13,7 @@ const SpringBottomSheet = () => {
     const focusRef = useRef<HTMLButtonElement>(null)
 
     return (
-        <div className="w-full h-screen py-8 flex flex-col gap-16">
+        <div className="w-full md:w-2/3 lg:w-1/2 h-screen mx-auto py-8 flex flex-col gap-16">
             <h1 className='title'>SpringBottomSheet</h1>
             <div className='w-full h-full flex items-center justify-center flex-col gap-8'>
                 <button className='btnSuccess bg-red-500' onClick={() => setOpenBasic(true)}>Open Basic</button>
@@ -24,6 +24,8 @@ const SpringBottomSheet = () => {
                 <BottomSheet
                     open={openBasic}
                     ref={sheetRef}
+                    onDismiss={() => setOpenBasic(false)}
+                    blocking={false}
                 >
                     Basic Sample
                     <button
@@ -35,91 +37,6 @@ const SpringBottomSheet = () => {
                     </button>
                 </BottomSheet>
 
-
-                <BottomSheet
-                    open={openNonBlocking}
-                    onDismiss={() => setOpenNonBlocking(false)}
-                    blocking={false}
-                    header={
-                        <input
-                            className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-300 focus:bg-white focus:ring-0"
-                            type="text"
-                            placeholder="Text input field in a sticky header"
-                        />
-                    }
-                    snapPoints={({ maxHeight }) => [maxHeight / 4, maxHeight * 0.6]}
-                >
-                    <div>
-                        <p>
-                            When <code>blocking</code> is <code>false</code> it's possible to
-                            use the Bottom Sheet as an height adjustable sidebar/panel.
-                        </p>
-                        <p>
-                            You can combine this with <code>onDismissable</code> to fine-tune
-                            the behavior you want.
-                        </p>
-                    </div>
-                </BottomSheet>
-
-
-                <BottomSheet
-                    open={openSticky}
-                    onDismiss={() => setOpenSticky(false)}
-                    defaultSnap={({ snapPoints, lastSnap }) =>
-                        lastSnap ?? Math.min(...snapPoints)
-                    }
-                    snapPoints={({ maxHeight }) => [
-                        maxHeight - maxHeight / 5,
-                        maxHeight * 0.6,
-                    ]}
-                    header={
-                        <h1 className="flex items-center text-xl justify-center font-bold text-gray-800">
-                            Sticky!
-                        </h1>
-                    }
-                    footer={
-                        <button onClick={() => setOpenSticky(false)} className="w-full">
-                            Done
-                        </button>
-                    }
-                >
-                    <div>
-                        <p>
-                            Just as with content, if the header or footer changes their height
-                            the sheet will readjust accordingly.
-                        </p>
-                        <div>
-                            <div className="bg-gray-200 block rounded-md h-10 w-full my-10" />
-                            <p>
-                                Putting the "Done" button in a sticky footer is a nice touch on
-                                long bottom sheets with a lot of content. And on resize events
-                                the sticky elements are always visible, unlike the "Dismiss"
-                                button in the first example that needs to be animated first.
-                            </p>
-                            <div className="bg-gray-200 block rounded-md h-10 w-full my-10" />
-                        </div>
-                        <p>
-                            When you provide a header the draggable area increases, making it
-                            easier for users to adjust the height of the bottom sheet.
-                        </p>
-                        <p>
-                            The same is true for a sticky footer, as it supports drag gestures
-                            as well to optimize for large phones where the header might be
-                            difficult to reach with one hand.
-                        </p>
-                        <div>
-                            <div className="bg-gray-200 block rounded-md h-10 w-full my-10" />
-                            <p>
-                                Additionally this bottom sheet uses stable viewpoints that are
-                                equivalent to vh CSS units. Predictable heights like this is
-                                also handy if there's content loaded async, or you're
-                                implementing a virtual list so the sheet can't rely on measuring
-                                the height of its content.
-                            </p>
-                            <div className="bg-gray-200 block rounded-md h-10 w-full my-10" />
-                        </div>
-                    </div>
-                </BottomSheet>
 
 
                 <BottomSheet
@@ -192,6 +109,95 @@ const SpringBottomSheet = () => {
                         />
                     </div>
                 </BottomSheet>
+
+            
+
+                <BottomSheet
+                    open={openSticky}
+                    onDismiss={() => setOpenSticky(false)}
+                    defaultSnap={({ snapPoints, lastSnap }) =>
+                        lastSnap ?? Math.min(...snapPoints)
+                    }
+                    snapPoints={({ maxHeight }) => [
+                        maxHeight - maxHeight / 5,
+                        maxHeight * 0.6,
+                    ]}
+                    header={
+                        <h1 className="flex items-center text-xl justify-center font-bold text-gray-800">
+                            Sticky!
+                        </h1>
+                    }
+                    footer={
+                        <button onClick={() => setOpenSticky(false)} className="w-full">
+                            Done
+                        </button>
+                    }
+                >
+                    <div>
+                        <p>
+                            Just as with content, if the header or footer changes their height
+                            the sheet will readjust accordingly.
+                        </p>
+                        <div>
+                            <div className="bg-gray-200 block rounded-md h-10 w-full my-10" />
+                            <p>
+                                Putting the "Done" button in a sticky footer is a nice touch on
+                                long bottom sheets with a lot of content. And on resize events
+                                the sticky elements are always visible, unlike the "Dismiss"
+                                button in the first example that needs to be animated first.
+                            </p>
+                            <div className="bg-gray-200 block rounded-md h-10 w-full my-10" />
+                        </div>
+                        <p>
+                            When you provide a header the draggable area increases, making it
+                            easier for users to adjust the height of the bottom sheet.
+                        </p>
+                        <p>
+                            The same is true for a sticky footer, as it supports drag gestures
+                            as well to optimize for large phones where the header might be
+                            difficult to reach with one hand.
+                        </p>
+                        <div>
+                            <div className="bg-gray-200 block rounded-md h-10 w-full my-10" />
+                            <p>
+                                Additionally this bottom sheet uses stable viewpoints that are
+                                equivalent to vh CSS units. Predictable heights like this is
+                                also handy if there's content loaded async, or you're
+                                implementing a virtual list so the sheet can't rely on measuring
+                                the height of its content.
+                            </p>
+                            <div className="bg-gray-200 block rounded-md h-10 w-full my-10" />
+                        </div>
+                    </div>
+                </BottomSheet>
+
+
+
+                <BottomSheet
+                    open={openNonBlocking}
+                    onDismiss={() => setOpenNonBlocking(false)}
+                    blocking={true}
+                    header={
+                        <input
+                            className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-300 focus:bg-white focus:ring-0"
+                            type="text"
+                            placeholder="Text input field in a sticky header"
+                        />
+                    }
+                    snapPoints={({ maxHeight }) => [maxHeight / 4, maxHeight * 0.6]}
+                >
+                    <div>
+                        <p>
+                            When <code>blocking</code> is <code>false</code> it's possible to
+                            use the Bottom Sheet as an height adjustable sidebar/panel.
+                        </p>
+                        <p>
+                            You can combine this with <code>onDismissable</code> to fine-tune
+                            the behavior you want.
+                        </p>
+                    </div>
+                </BottomSheet>
+
 
             </div>
         </div>
