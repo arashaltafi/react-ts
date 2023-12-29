@@ -54,6 +54,7 @@
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.8",
     "react-spring-bottom-sheet": "^3.4.1",
+    "react-virtualized": "^9.22.5",
     "reactour": "^1.19.2",
     "recharts": "^2.10.3",
     "redux": "^5.0.0",
