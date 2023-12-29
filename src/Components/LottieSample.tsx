@@ -25,7 +25,7 @@ const LottieSample = () => {
 
         <Divider />
 
-        <Lottie className='w-48 h-48' animationData={loading2} loop={true} />
+        <Lottie className='w-48 h-48' animationData={loading2} loop={false} onComplete={() => console.log("complete")} />
 
         <Divider />
 
