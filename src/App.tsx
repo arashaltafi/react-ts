@@ -55,6 +55,7 @@ import LottieSample from './Components/LottieSample';
 import ReactourSample from './Components/ReactourSample';
 import VibrateSample from './Components/VibrateSample';
 import SpringBottomSheet from './Components/SpringBottomSheet';
+import ReactVirtualized from './Components/ReactVirtualized';
 
 function App() {
 
@@ -135,6 +136,7 @@ function App() {
                 <Route path='reactourSample' element={<ReactourSample />} />
                 <Route path='vibrateSample' element={<VibrateSample />} />
                 <Route path='springBottomSheet' element={<SpringBottomSheet />} />
+                <Route path='reactVirtualized' element={<ReactVirtualized />} />
               </Route>
               <Route path='/particles'>
                 <Route path='' element={<ParticlesPages />} />
