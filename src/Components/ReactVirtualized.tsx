@@ -1,17 +1,23 @@
 import { useRef, useState } from 'react';
 import { List, AutoSizer, CellMeasurer, CellMeasurerCache } from 'react-virtualized';
+import { faker } from '@faker-js/faker/locale/fa';
+import Divider from './Divider';
 
 const ReactVirtualized = () => {
 
   const cache = useRef(new CellMeasurerCache({
-    fixedWidth: true,
-    defaultHeight: 100
+    fixedWidth: false,
+    defaultHeight: 200
   }));
 
   const [count, setCount] = useState<{
     id: number;
     name: string;
+    sex: string;
     bio: string;
+    job: string;
+    email: string;
+    avatar: string;
   }[]>([])
 
   const addNewItem = () => {
@@ -19,8 +25,12 @@ const ReactVirtualized = () => {
       [...Array(1000).keys()].map(key => {
         return {
           id: key,
-          name: 'name',
-          bio: 'bio'
+          name: faker.person.fullName(),
+          sex: faker.person.sex(),
+          bio: faker.person.bio(),
+          job: faker.person.jobTitle(),
+          email: faker.internet.email(),
+          avatar: faker.image.avatar()
         }
       })
     )
@@ -32,20 +42,26 @@ const ReactVirtualized = () => {
 
       <button className='btnSuccess' onClick={addNewItem}>Add +</button>
 
-      <div className='w-full h-screen text-center'>
+      <div className='w-full h-screen text-center' style={{ direction: 'rtl' }}>
         <AutoSizer>
           {({ width, height }) => (
             <List
               width={width}
               height={height}
               rowCount={count.length}
-              rowHeight={cache.current.rowHeight}
+              rowHeight={cache.current.rowHeight({ index: 0 }) + 200}
               deferredMeasurementCache={cache.current}
               rowRenderer={({ key, index, style, parent }: any) => (
                 <CellMeasurer key={key} cache={cache.current} parent={parent} rowIndex={index} columnIndex={0}>
                   <ul style={style}>
-                    <li>ID {count[index].id}</li>
-                    <li>Name {count[index].name}</li>
+                    <li>آیدی: {count[index].id}</li>
+                    <li>نام: {count[index].name}</li>
+                    <li>مرد یا زن: {count[index].sex}</li>
+                    <li>بیو: {count[index].bio}</li>
+                    <li>شغل: {count[index].job}</li>
+                    <li>ایمیل: {count[index].email}</li>
+                    <img className='w-28 h-28 mx-auto rounded-2xl' src={count[index].avatar} alt="User Avatar" />
+                    <Divider />
                   </ul>
                 </CellMeasurer>
               )}
