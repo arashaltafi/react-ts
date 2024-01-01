@@ -58,6 +58,7 @@ import SpringBottomSheet from './Components/SpringBottomSheet';
 import ReactVirtualized from './Components/ReactVirtualized';
 import ReactWindow from './Components/ReactWindow';
 import CryptoSample from './Components/CryptoSample';
+import Animation from './Components/Animation';
 
 function App() {
 
@@ -141,6 +142,7 @@ function App() {
                 <Route path='reactVirtualized' element={<ReactVirtualized />} />
                 <Route path='reactWindow' element={<ReactWindow />} />
                 <Route path='cryptoSample' element={<CryptoSample />} />
+                <Route path='animation' element={<Animation />} />
               </Route>
               <Route path='/particles'>
                 <Route path='' element={<ParticlesPages />} />
