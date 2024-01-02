@@ -1,8 +1,13 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { useOrientation } from 'react-use';
 
 const Home = () => {
 
   const navigate = useNavigate();
+
+  const { angle, type } = useOrientation();
+  console.log("angle", angle)
+  console.log("type", type)
 
   return (
     <div className='py-16 px-8 flex flex-col justify-center items-center gap-16 bg-zinc-200'>
@@ -10,6 +15,13 @@ const Home = () => {
         style={{ color: 'red', backgroundColor: 'yellow', padding: '10px', borderRadius: '10px', fontWeight: 'bold', fontSize: '20px' }}>
         Welcome to Home
       </p>
+      <div>
+        {type === 'landscape-primary' ? (
+          <p>Landscape</p>
+        ) : (
+          <p>Portrait</p>
+        )}
+      </div>
       <p className='text-lg bg-zinc-800 text-white text-center p-4 rounded-lg -mb-4'>Navigate with useNavigate</p>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/customHook')}>CustomHook</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/profile')}>Profile</button>
