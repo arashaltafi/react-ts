@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import MultiSoundPlayer from '../Components/MultiSoundPlayerProps ';
 
 const Home = () => {
 
@@ -27,6 +28,18 @@ const Home = () => {
           <p>Portrait</p>
         )}
       </div>
+
+      <div>
+        <h1>Multi-Sound Player</h1>
+        <MultiSoundPlayer sounds={
+          [
+            { url: 'https://dls.music-fa.com/tagdl/1402/Reza%20Bahram%20-%20Mane%20Divane%20(320).mp3', volume: 1, isPlaying: false },
+            { url: 'https://dls.music-fa.com/tagdl/ati/Behnam%20Bani%20-%20Zakhm%20Kari%20(128).mp3', volume: 1, isPlaying: false },
+            { url: 'https://dls.music-fa.com/tagdl/downloads/Behnam%20Bani%20-%20Ghorse%20Ghamar%20(128).mp3', volume: 1, isPlaying: false },
+          ]
+        } />
+      </div>
+
       <p className='text-lg bg-zinc-800 text-white text-center p-4 rounded-lg -mb-4'>Navigate with useNavigate</p>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/customHook')}>CustomHook</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/profile')}>Profile</button>
