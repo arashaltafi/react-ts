@@ -1,13 +1,18 @@
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useOrientation } from 'react-use';
 
 const Home = () => {
 
   const navigate = useNavigate();
 
-  const { angle, type } = useOrientation();
-  console.log("angle", angle)
-  console.log("type", type)
+  const [orientation, setOrientation] = useState<number | null>(null);
+
+  useEffect(() => {
+    setOrientation(window.orientation);
+    window.addEventListener('orientationchange', () => {
+      setOrientation(window.orientation);
+    });
+  }, [])
 
   return (
     <div className='py-16 px-8 flex flex-col justify-center items-center gap-16 bg-zinc-200'>
@@ -16,7 +21,7 @@ const Home = () => {
         Welcome to Home
       </p>
       <div>
-        {type === 'landscape-primary' ? (
+        {orientation ? (
           <p>Landscape</p>
         ) : (
           <p>Portrait</p>
