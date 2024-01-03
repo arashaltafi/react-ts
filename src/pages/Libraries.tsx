@@ -38,6 +38,9 @@ const Libraries = () => {
                 <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/reactWindow">ReactWindow</Link>
                 <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/cryptoSample">CryptoSample</Link>
                 <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/animation">Animation</Link>
+                <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/download1">Download 1</Link>
+                <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/download2">Download 2</Link>
+                <Link className='btnSuccess text-xl text-center py-6 bg-pink-500 w-96' to="/libraries/download3">Download 3</Link>
                 <p className='cursor-pointer btnSuccess text-xl text-center py-6 bg-pink-500 w-96' onClick={handleClick}>particles</p>
             </div>
         </>

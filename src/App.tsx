@@ -59,6 +59,9 @@ import ReactVirtualized from './Components/ReactVirtualized';
 import ReactWindow from './Components/ReactWindow';
 import CryptoSample from './Components/CryptoSample';
 import Animation from './Components/Animation';
+import DownloadSample1 from './Components/DownloadSample1';
+import DownloadSample2 from './Components/DownloadSample2';
+import DownloadSample3 from './Components/DownloadSample3';
 
 function App() {
 
@@ -143,6 +146,9 @@ function App() {
                 <Route path='reactWindow' element={<ReactWindow />} />
                 <Route path='cryptoSample' element={<CryptoSample />} />
                 <Route path='animation' element={<Animation />} />
+                <Route path='download1' element={<DownloadSample1 />} />
+                <Route path='download2' element={<DownloadSample2 />} />
+                <Route path='download3' element={<DownloadSample3 />} />
               </Route>
               <Route path='/particles'>
                 <Route path='' element={<ParticlesPages />} />
