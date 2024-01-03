@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import MultiSoundPlayer from '../Components/MultiSoundPlayerProps ';
 
 const Home = () => {
 
@@ -29,17 +28,6 @@ const Home = () => {
         )}
       </div>
 
-      <div>
-        <h1>Multi-Sound Player</h1>
-        <MultiSoundPlayer sounds={
-          [
-            { url: 'https://dls.music-fa.com/tagdl/1402/Reza%20Bahram%20-%20Mane%20Divane%20(320).mp3', volume: 1, isPlaying: false },
-            { url: 'https://dls.music-fa.com/tagdl/ati/Behnam%20Bani%20-%20Zakhm%20Kari%20(128).mp3', volume: 1, isPlaying: false },
-            { url: 'https://dls.music-fa.com/tagdl/downloads/Behnam%20Bani%20-%20Ghorse%20Ghamar%20(128).mp3', volume: 1, isPlaying: false },
-          ]
-        } />
-      </div>
-
       <p className='text-lg bg-zinc-800 text-white text-center p-4 rounded-lg -mb-4'>Navigate with useNavigate</p>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/customHook')}>CustomHook</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/profile')}>Profile</button>
@@ -55,6 +43,7 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/locationSample')}>LocationSample</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/libraries')}>Libraries</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/particles')}>Particles</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/audioPlayer')}>AudioPlayer</button>
 
       <span className='w-[90%] h-[1px] bg-zinc-800' />
 
@@ -74,6 +63,7 @@ const Home = () => {
         <Link to='/locationSample'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>LocationSample</h1></Link>
         <Link to='/libraries'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Libraries</h1></Link>
         <Link to='/particles'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Particles</h1></Link>
+        <Link to='/audioPlayer'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>AudioPlayer</h1></Link>
       </nav>
     </div>
   )

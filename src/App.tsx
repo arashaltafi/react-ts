@@ -62,6 +62,7 @@ import Animation from './Components/Animation';
 import DownloadSample1 from './Components/DownloadSample1';
 import DownloadSample2 from './Components/DownloadSample2';
 import DownloadSample3 from './Components/DownloadSample3';
+import AudioPlayer from './pages/AudioPlayer';
 
 function App() {
 
@@ -118,6 +119,13 @@ function App() {
               <Route path='/neshan' element={<Neshan />} />
               <Route path='/mapbox' element={<MapBox />} />
               <Route path='/locationSample' element={<LocationSample />} />
+              <Route path='/audioPlayer' element={<AudioPlayer sounds={
+                [
+                  { url: 'https://dls.music-fa.com/tagdl/1402/Reza%20Bahram%20-%20Mane%20Divane%20(320).mp3', volume: 1, isPlaying: false },
+                  { url: 'https://dls.music-fa.com/tagdl/ati/Behnam%20Bani%20-%20Zakhm%20Kari%20(128).mp3', volume: 1, isPlaying: false },
+                  { url: 'https://dls.music-fa.com/tagdl/downloads/Behnam%20Bani%20-%20Ghorse%20Ghamar%20(128).mp3', volume: 1, isPlaying: false },
+                ]
+              } />} />
               <Route path='/libraries'>
                 <Route path='' element={<Libraries />} />
                 <Route path='styledComponents' element={<StyledComponents />} />
