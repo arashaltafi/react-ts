@@ -63,6 +63,7 @@ import DownloadSample1 from './Components/DownloadSample1';
 import DownloadSample2 from './Components/DownloadSample2';
 import DownloadSample3 from './Components/DownloadSample3';
 import AudioPlayer from './pages/AudioPlayer';
+import SpeedMeter from './Components/SpeedMeter';
 
 function App() {
 
@@ -157,6 +158,7 @@ function App() {
                 <Route path='download1' element={<DownloadSample1 />} />
                 <Route path='download2' element={<DownloadSample2 />} />
                 <Route path='download3' element={<DownloadSample3 />} />
+                <Route path='speedMeter' element={<SpeedMeter />} />
               </Route>
               <Route path='/particles'>
                 <Route path='' element={<ParticlesPages />} />
