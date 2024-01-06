@@ -68,6 +68,7 @@ import Index from './backgroundAnimation/Index';
 import Sample1 from './backgroundAnimation/Sample1';
 import BestReference from './Components/BestReference';
 import ReactIconSax from './Components/ReactIconSax';
+import ScrollableFeedSample from './Components/ScrollableFeedSample';
 
 function App() {
 
@@ -160,6 +161,7 @@ function App() {
                 <Route path='vibrateSample' element={<VibrateSample />} />
                 <Route path='springBottomSheet' element={<SpringBottomSheet />} />
                 <Route path='reactVirtualized' element={<ReactVirtualized />} />
+                <Route path='scrollableFeedSample' element={<ScrollableFeedSample />} />
                 <Route path='reactWindow' element={<ReactWindow />} />
                 <Route path='cryptoSample' element={<CryptoSample />} />
                 <Route path='animation' element={<Animation />} />
