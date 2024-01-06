@@ -67,6 +67,7 @@ import SpeedMeter from './Components/SpeedMeter';
 import Index from './backgroundAnimation/Index';
 import Sample1 from './backgroundAnimation/Sample1';
 import BestReference from './Components/BestReference';
+import ReactIconSax from './Components/ReactIconSax';
 
 function App() {
 
@@ -137,6 +138,7 @@ function App() {
                 <Route path='' element={<Libraries />} />
                 <Route path='styledComponents' element={<StyledComponents />} />
                 <Route path='reactIcons' element={<ReactIcons />} />
+                <Route path='reactIconSax' element={<ReactIconSax />} />
                 <Route path='bootstrap' element={<Bootstrap />} />
                 <Route path='chakraUI' element={<ChakraUI />} />
                 <Route path='materialUI' element={<MaterialUI />} />
