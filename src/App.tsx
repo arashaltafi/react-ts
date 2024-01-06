@@ -66,10 +66,6 @@ import AudioPlayer from './pages/AudioPlayer';
 import SpeedMeter from './Components/SpeedMeter';
 import Index from './backgroundAnimation/Index';
 import Sample1 from './backgroundAnimation/Sample1';
-import Sample2 from './backgroundAnimation/Sample2';
-import Sample3 from './backgroundAnimation/Sample3';
-import Sample4 from './backgroundAnimation/Sample4';
-import Sample5 from './backgroundAnimation/Sample5';
 
 function App() {
 
@@ -183,10 +179,6 @@ function App() {
               <Route path='/backgroundAnimation'>
                 <Route path='' element={<Index />} />
                 <Route path='sample1' element={<Sample1 />} />
-                <Route path='sample2' element={<Sample2 />} />
-                <Route path='sample3' element={<Sample3 />} />
-                <Route path='sample4' element={<Sample4 />} />
-                <Route path='sample5' element={<Sample5 />} />
               </Route>
               <Route path='/useParams/:name?/:family?' element={<UseParams />} />
               <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
