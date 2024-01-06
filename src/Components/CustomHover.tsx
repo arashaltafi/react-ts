@@ -52,6 +52,12 @@ const CustomHover = () => {
 
         <Divider />
 
+        <button className="neumorphism2 mb-16">
+          test 2
+        </button>
+
+        <Divider />
+
         <div className='neumorphism w-64 mb-16'>
           <img src="https://arashaltafi.ir/arash.jpg" alt="arash" className='w-full rounded-xl' />
           <h2 className='mt-2 mx-auto text-3xl font-bold text-center'>Title</h2>

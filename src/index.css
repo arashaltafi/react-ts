@@ -64,4 +64,19 @@ code {
       box-shadow: inset 5px 5px 15px #c7c7c7, inset -5px -5px 15px #ffffff;
     }
   }
+
+  .neumorphism2 {
+    @apply py-4 px-6 rounded-xl bg-[#e0e0e0];
+    background: #e0e0e0;
+    box-shadow: 13px 13px 26px #c5c5c5, -13px -13px 26px #fbfbfb;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 8px 8px 20px #c7c7c7, -8px -8px 20px #ffffff;
+    }
+
+    &:active {
+      box-shadow: inset 5px 5px 15px #c7c7c7, inset -5px -5px 15px #ffffff;
+    }
+  }
 }
