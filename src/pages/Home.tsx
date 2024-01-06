@@ -29,6 +29,7 @@ const Home = () => {
       </div>
 
       <p className='text-lg bg-zinc-800 text-white text-center p-4 rounded-lg -mb-4'>Navigate with useNavigate</p>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/bestReference')}>BestReference</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/customHook')}>CustomHook</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/profile')}>Profile</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/form')}>Form</button>
@@ -50,6 +51,7 @@ const Home = () => {
 
       <p className='text-lg bg-zinc-800 text-white text-center p-4 rounded-lg -mb-4'>Navigate with Link</p>
       <nav>
+        <Link to='/bestReference'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>BestReference</h1></Link>
         <Link to='/customHook'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>CustomHook</h1></Link>
         <Link to='/profile'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Profile</h1></Link>
         <Link to='/form'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Form</h1></Link>

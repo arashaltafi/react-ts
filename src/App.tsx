@@ -66,6 +66,7 @@ import AudioPlayer from './pages/AudioPlayer';
 import SpeedMeter from './Components/SpeedMeter';
 import Index from './backgroundAnimation/Index';
 import Sample1 from './backgroundAnimation/Sample1';
+import BestReference from './Components/BestReference';
 
 function App() {
 
@@ -90,6 +91,9 @@ function App() {
         <Routes>
           <Route element={<ScrollToTop />}>
             <Route element={<Hoc />}>
+              <Route path='/bestReference' element={
+                <BestReference />
+              } />
               <Route path='/test'>
                 <Route path='test2' element={
                   <div>Test 2</div>
