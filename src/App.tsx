@@ -69,6 +69,7 @@ import Sample1 from './backgroundAnimation/Sample1';
 import BestReference from './Components/BestReference';
 import ReactIconSax from './Components/ReactIconSax';
 import ScrollableFeedSample from './Components/ScrollableFeedSample';
+import CircularProgressbarSample from './Components/CircularProgressbarSample';
 
 function App() {
 
@@ -169,6 +170,7 @@ function App() {
                 <Route path='download2' element={<DownloadSample2 />} />
                 <Route path='download3' element={<DownloadSample3 />} />
                 <Route path='speedMeter' element={<SpeedMeter />} />
+                <Route path='circularProgressbarSample' element={<CircularProgressbarSample percentage={60} />} />
               </Route>
               <Route path='/particles'>
                 <Route path='' element={<ParticlesPages />} />
