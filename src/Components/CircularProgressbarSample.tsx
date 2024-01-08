@@ -1,12 +1,36 @@
 import { CircularProgressbar, CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Divider from './Divider';
+import { useEffect, useState } from 'react';
 
 interface CircularProgressbarSampleProps {
     percentage: number
 }
 
 const CircularProgressbarSample = (props: CircularProgressbarSampleProps) => {
+
+    const [progress, setProgress] = useState(props.percentage);
+
+    useEffect(() => {
+        setProgress(props.percentage);
+
+        const interval = setInterval(() => {
+            setProgress((prevProgress) => {
+                const newProgress = prevProgress + 1;
+                if (newProgress >= 100) {
+                    console.log('progress >= 100');
+                    clearInterval(interval);
+                    return 100;
+                }
+                return newProgress;
+            });
+        }, 100);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [props.percentage]);
+
     return (
         <div className="w-full h-screen py-8 flex flex-col gap-16">
             <h1 className='title'>CircularProgressbar</h1>
@@ -30,12 +54,12 @@ const CircularProgressbarSample = (props: CircularProgressbarSampleProps) => {
 
                 <div className='w-48 h-48'>
                     <CircularProgressbar
-                        value={props.percentage}
+                        value={progress}
                         maxValue={100}
                         strokeWidth={10}
                         circleRatio={1}
                         counterClockwise={false}
-                        text={`${props.percentage}%`} />
+                        text={`${progress}%`} />
                 </div>
 
             </div>
