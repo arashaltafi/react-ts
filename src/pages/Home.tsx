@@ -33,6 +33,7 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/customHook')}>CustomHook</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/profile')}>Profile</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/form')}>Form</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/firebaseSample')}>FirebaseSample</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/redux')}>ReduxSample</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/zustand')}>ZustandSample</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/useMemo')}>useMemoSample</button>
@@ -55,6 +56,7 @@ const Home = () => {
         <Link to='/customHook'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>CustomHook</h1></Link>
         <Link to='/profile'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Profile</h1></Link>
         <Link to='/form'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Form</h1></Link>
+        <Link to='/firebaseSample'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>FirebaseSample</h1></Link>
         <Link to='/redux'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>ReduxSample</h1></Link>
         <Link to='/zustand'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>ZustandSample</h1></Link>
         <Link to='/useMemo'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>useMemoSample</h1></Link>

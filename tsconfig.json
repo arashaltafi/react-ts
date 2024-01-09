@@ -22,7 +22,7 @@
   },
   "include": [
     "src"
-  ],
+, "src/firebase-messaging-sw.js"  ],
   "typeAcquisition": {
     "include": ["jest"]
   }

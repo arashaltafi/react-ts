@@ -70,6 +70,7 @@ import BestReference from './Components/BestReference';
 import ReactIconSax from './Components/ReactIconSax';
 import ScrollableFeedSample from './Components/ScrollableFeedSample';
 import CircularProgressbarSample from './Components/CircularProgressbarSample';
+import FirebaseSample from './firebase/FirebaseSample';
 
 function App() {
 
@@ -130,6 +131,7 @@ function App() {
                 <Route path='/neshan' element={<Neshan />} />
                 <Route path='/mapbox' element={<MapBox />} />
                 <Route path='/locationSample' element={<LocationSample />} />
+                <Route path='/firebaseSample' element={<FirebaseSample />} />
                 <Route path='/audioPlayer' element={<AudioPlayer sounds={
                   [
                     { url: 'https://dls.music-fa.com/tagdl/1402/Reza%20Bahram%20-%20Mane%20Divane%20(320).mp3', volume: 1, isPlaying: false },
