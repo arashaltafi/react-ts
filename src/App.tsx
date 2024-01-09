@@ -1,6 +1,6 @@
 import { Profile, countries } from './pages/Profile';
 import Home from './pages/Home';
-import { useEffect, useId } from 'react';
+import { Suspense, useEffect, useId } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import CustomHook from './pages/CustomHook';
 import Form from './pages/Form';
@@ -91,110 +91,112 @@ function App() {
   return (
     <div className="h-screen w-full">
       <Provider store={store}>
-        <Routes>
-          <Route element={<ScrollToTop />}>
-            <Route element={<Hoc />}>
-              <Route path='/bestReference' element={
-                <BestReference />
-              } />
-              <Route path='/test'>
-                <Route path='test2' element={
-                  <div>Test 2</div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route element={<ScrollToTop />}>
+              <Route element={<Hoc />}>
+                <Route path='/bestReference' element={
+                  <BestReference />
                 } />
+                <Route path='/test'>
+                  <Route path='test2' element={
+                    <div>Test 2</div>
+                  } />
+                </Route>
+                <Route path='/' element={
+                  <Home />
+                } />
+                <Route path='/customHook' element={
+                  <CustomHook />
+                } />
+                <Route path='/profile' element={
+                  <Profile
+                    name={'arash'}
+                    family={'altafi'}
+                    age={26}
+                    language={['javascript', 'html', 'css', 'typescript', 'react', 'nodejs']}
+                    isSingle={true}
+                    country={countries.iran} />
+                } />
+                <Route path='/form' element={
+                  <Form />
+                } />
+                <Route path='/redux' element={<ReduxSample />} />
+                <Route path='/zustand' element={<ZustandSample />} />
+                <Route path='/useMemo' element={<UseMemoSample />} />
+                <Route path='/formik' element={<Formik />} />
+                <Route path='/localeLanguage' element={<LocaleLanguage />} />
+                <Route path='/customIDB' element={<CustomIDB />} />
+                <Route path='/neshan' element={<Neshan />} />
+                <Route path='/mapbox' element={<MapBox />} />
+                <Route path='/locationSample' element={<LocationSample />} />
+                <Route path='/audioPlayer' element={<AudioPlayer sounds={
+                  [
+                    { url: 'https://dls.music-fa.com/tagdl/1402/Reza%20Bahram%20-%20Mane%20Divane%20(320).mp3', volume: 1, isPlaying: false },
+                    { url: 'https://dls.music-fa.com/tagdl/ati/Behnam%20Bani%20-%20Zakhm%20Kari%20(128).mp3', volume: 1, isPlaying: false },
+                    { url: 'https://dls.music-fa.com/tagdl/downloads/Behnam%20Bani%20-%20Ghorse%20Ghamar%20(128).mp3', volume: 1, isPlaying: false },
+                  ]
+                } />} />
+                <Route path='/libraries'>
+                  <Route path='' element={<Libraries />} />
+                  <Route path='styledComponents' element={<StyledComponents />} />
+                  <Route path='reactIcons' element={<ReactIcons />} />
+                  <Route path='reactIconSax' element={<ReactIconSax />} />
+                  <Route path='bootstrap' element={<Bootstrap />} />
+                  <Route path='chakraUI' element={<ChakraUI />} />
+                  <Route path='materialUI' element={<MaterialUI />} />
+                  <Route path='framerMotion' element={<FramerMotion />} />
+                  <Route path='customHooks' element={<CustomHooks />} />
+                  <Route path='reactPdf' element={<ReactPdf />} />
+                  <Route path='axios' element={<Axios />} />
+                  <Route path='reCaptcha' element={<ReCaptcha />} />
+                  <Route path='i8Next' element={<I8NextSample />} />
+                  <Route path='recharts' element={<RechartsSample />} />
+                  <Route path='swal' element={<SwalSample />} />
+                  <Route path='swal2' element={<Swal2Sample />} />
+                  <Route path='reactSpinners' element={<ReactSpinners />} />
+                  <Route path='customHover' element={<CustomHover />} />
+                  <Route path='awesomeReveal' element={<AwesomeReveal />} />
+                  <Route path='notistackSample' element={<NotistackSample />} />
+                  <Route path='lottieSample' element={<LottieSample />} />
+                  <Route path='reactourSample' element={<ReactourSample />} />
+                  <Route path='vibrateSample' element={<VibrateSample />} />
+                  <Route path='springBottomSheet' element={<SpringBottomSheet />} />
+                  <Route path='reactVirtualized' element={<ReactVirtualized />} />
+                  <Route path='scrollableFeedSample' element={<ScrollableFeedSample />} />
+                  <Route path='reactWindow' element={<ReactWindow />} />
+                  <Route path='cryptoSample' element={<CryptoSample />} />
+                  <Route path='animation' element={<Animation />} />
+                  <Route path='download1' element={<DownloadSample1 />} />
+                  <Route path='download2' element={<DownloadSample2 />} />
+                  <Route path='download3' element={<DownloadSample3 />} />
+                  <Route path='speedMeter' element={<SpeedMeter />} />
+                  <Route path='circularProgressbarSample' element={<CircularProgressbarSample percentage={60} />} />
+                </Route>
+                <Route path='/particles'>
+                  <Route path='' element={<ParticlesPages />} />
+                  <Route path='snow' element={<ParticlesSnow />} />
+                  <Route path='bubbles' element={<ParticlesBubbles />} />
+                  <Route path='confetti' element={<ParticlesConfetti />} />
+                  <Route path='fire' element={<ParticlesFire />} />
+                  <Route path='firefly' element={<ParticlesFirefly />} />
+                  <Route path='fireworks' element={<ParticlesFireworks />} />
+                  <Route path='fountain' element={<ParticlesFountain />} />
+                  <Route path='hyperspace' element={<ParticlesHyperspace />} />
+                  <Route path='triangles' element={<ParticlesTriangles />} />
+                  <Route path='links' element={<ParticlesLinks />} />
+                  <Route path='stars' element={<ParticlesStars />} />
+                </Route>
+                <Route path='/backgroundAnimation'>
+                  <Route path='' element={<Index />} />
+                  <Route path='sample1' element={<Sample1 />} />
+                </Route>
+                <Route path='/useParams/:name?/:family?' element={<UseParams />} />
+                <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
               </Route>
-              <Route path='/' element={
-                <Home />
-              } />
-              <Route path='/customHook' element={
-                <CustomHook />
-              } />
-              <Route path='/profile' element={
-                <Profile
-                  name={'arash'}
-                  family={'altafi'}
-                  age={26}
-                  language={['javascript', 'html', 'css', 'typescript', 'react', 'nodejs']}
-                  isSingle={true}
-                  country={countries.iran} />
-              } />
-              <Route path='/form' element={
-                <Form />
-              } />
-              <Route path='/redux' element={<ReduxSample />} />
-              <Route path='/zustand' element={<ZustandSample />} />
-              <Route path='/useMemo' element={<UseMemoSample />} />
-              <Route path='/formik' element={<Formik />} />
-              <Route path='/localeLanguage' element={<LocaleLanguage />} />
-              <Route path='/customIDB' element={<CustomIDB />} />
-              <Route path='/neshan' element={<Neshan />} />
-              <Route path='/mapbox' element={<MapBox />} />
-              <Route path='/locationSample' element={<LocationSample />} />
-              <Route path='/audioPlayer' element={<AudioPlayer sounds={
-                [
-                  { url: 'https://dls.music-fa.com/tagdl/1402/Reza%20Bahram%20-%20Mane%20Divane%20(320).mp3', volume: 1, isPlaying: false },
-                  { url: 'https://dls.music-fa.com/tagdl/ati/Behnam%20Bani%20-%20Zakhm%20Kari%20(128).mp3', volume: 1, isPlaying: false },
-                  { url: 'https://dls.music-fa.com/tagdl/downloads/Behnam%20Bani%20-%20Ghorse%20Ghamar%20(128).mp3', volume: 1, isPlaying: false },
-                ]
-              } />} />
-              <Route path='/libraries'>
-                <Route path='' element={<Libraries />} />
-                <Route path='styledComponents' element={<StyledComponents />} />
-                <Route path='reactIcons' element={<ReactIcons />} />
-                <Route path='reactIconSax' element={<ReactIconSax />} />
-                <Route path='bootstrap' element={<Bootstrap />} />
-                <Route path='chakraUI' element={<ChakraUI />} />
-                <Route path='materialUI' element={<MaterialUI />} />
-                <Route path='framerMotion' element={<FramerMotion />} />
-                <Route path='customHooks' element={<CustomHooks />} />
-                <Route path='reactPdf' element={<ReactPdf />} />
-                <Route path='axios' element={<Axios />} />
-                <Route path='reCaptcha' element={<ReCaptcha />} />
-                <Route path='i8Next' element={<I8NextSample />} />
-                <Route path='recharts' element={<RechartsSample />} />
-                <Route path='swal' element={<SwalSample />} />
-                <Route path='swal2' element={<Swal2Sample />} />
-                <Route path='reactSpinners' element={<ReactSpinners />} />
-                <Route path='customHover' element={<CustomHover />} />
-                <Route path='awesomeReveal' element={<AwesomeReveal />} />
-                <Route path='notistackSample' element={<NotistackSample />} />
-                <Route path='lottieSample' element={<LottieSample />} />
-                <Route path='reactourSample' element={<ReactourSample />} />
-                <Route path='vibrateSample' element={<VibrateSample />} />
-                <Route path='springBottomSheet' element={<SpringBottomSheet />} />
-                <Route path='reactVirtualized' element={<ReactVirtualized />} />
-                <Route path='scrollableFeedSample' element={<ScrollableFeedSample />} />
-                <Route path='reactWindow' element={<ReactWindow />} />
-                <Route path='cryptoSample' element={<CryptoSample />} />
-                <Route path='animation' element={<Animation />} />
-                <Route path='download1' element={<DownloadSample1 />} />
-                <Route path='download2' element={<DownloadSample2 />} />
-                <Route path='download3' element={<DownloadSample3 />} />
-                <Route path='speedMeter' element={<SpeedMeter />} />
-                <Route path='circularProgressbarSample' element={<CircularProgressbarSample percentage={60} />} />
-              </Route>
-              <Route path='/particles'>
-                <Route path='' element={<ParticlesPages />} />
-                <Route path='snow' element={<ParticlesSnow />} />
-                <Route path='bubbles' element={<ParticlesBubbles />} />
-                <Route path='confetti' element={<ParticlesConfetti />} />
-                <Route path='fire' element={<ParticlesFire />} />
-                <Route path='firefly' element={<ParticlesFirefly />} />
-                <Route path='fireworks' element={<ParticlesFireworks />} />
-                <Route path='fountain' element={<ParticlesFountain />} />
-                <Route path='hyperspace' element={<ParticlesHyperspace />} />
-                <Route path='triangles' element={<ParticlesTriangles />} />
-                <Route path='links' element={<ParticlesLinks />} />
-                <Route path='stars' element={<ParticlesStars />} />
-              </Route>
-              <Route path='/backgroundAnimation'>
-                <Route path='' element={<Index />} />
-                <Route path='sample1' element={<Sample1 />} />
-              </Route>
-              <Route path='/useParams/:name?/:family?' element={<UseParams />} />
-              <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
             </Route>
-          </Route>
-        </Routes>
+          </Routes>
+        </Suspense>
       </Provider>
     </div>
   );
