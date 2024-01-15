@@ -45,6 +45,7 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/locationSample')}>LocationSample</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/libraries')}>Libraries</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/particles')}>Particles</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/animationSamples')}>AnimationSamples</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/backgroundAnimation')}>BackgroundAnimation</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/audioPlayer')}>AudioPlayer</button>
 
@@ -68,6 +69,7 @@ const Home = () => {
         <Link to='/locationSample'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>LocationSample</h1></Link>
         <Link to='/libraries'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Libraries</h1></Link>
         <Link to='/particles'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Particles</h1></Link>
+        <Link to='/animationSamples'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>AnimationSamples</h1></Link>
         <Link to='/backgroundAnimation'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>BackgroundAnimation</h1></Link>
         <Link to='/audioPlayer'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>AudioPlayer</h1></Link>
       </nav>
