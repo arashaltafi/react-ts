@@ -71,6 +71,10 @@ import ReactIconSax from './Components/ReactIconSax';
 import ScrollableFeedSample from './Components/ScrollableFeedSample';
 import CircularProgressbarSample from './Components/CircularProgressbarSample';
 import FirebaseSample from './firebase/FirebaseSample';
+import AnimationSamples from './AnimationSamples/AnimationSamples';
+import AnimationSamples1 from './AnimationSamples/AnimationSamples1';
+import AnimationSamples2 from './AnimationSamples/AnimationSamples2';
+import AnimationSamples3 from './AnimationSamples/AnimationSamples3';
 
 function App() {
 
@@ -174,6 +178,12 @@ function App() {
                   <Route path='download3' element={<DownloadSample3 />} />
                   <Route path='speedMeter' element={<SpeedMeter />} />
                   <Route path='circularProgressbarSample' element={<CircularProgressbarSample percentage={60} />} />
+                </Route>
+                <Route path='/animationSamples'>
+                  <Route path='' element={<AnimationSamples />} />
+                  <Route path='sample1' element={<AnimationSamples1 />} />
+                  <Route path='sample2' element={<AnimationSamples2 />} />
+                  <Route path='sample3' element={<AnimationSamples3 />} />
                 </Route>
                 <Route path='/particles'>
                   <Route path='' element={<ParticlesPages />} />
