@@ -50,6 +50,7 @@ const AnimationSamples3 = () => {
         <AnimateKeyframes
           play
           duration={1}
+          direction='alternate'
           keyframes={['opacity: 0', 'opacity: 1']} // same as CSS @keyframes { 0% { ... } 100% { ... }}
         >
           <h3>AnimateKeyframes Sample 1</h3>
@@ -58,6 +59,7 @@ const AnimationSamples3 = () => {
         <AnimateKeyframes
           play
           duration={0.5}
+          direction='alternate-reverse'
           keyframes={[
             { 0: 'opacity: 0' }, // 0%
             { 50: 'opacity: 0.5' }, // 50%
