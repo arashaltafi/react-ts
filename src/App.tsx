@@ -166,7 +166,7 @@ function App() {
                   <Route path='awesomeReveal' element={<AwesomeReveal />} />
                   <Route path='notistackSample' element={<NotistackSample />} />
                   <Route path='lottieSample' element={<LottieSample />} />
-                  <Route pathgit pullement={<ReactourSample />} />
+                  <Route path='reactourSample' element={<ReactourSample />} />
                   <Route path='vibrateSample' element={<VibrateSample />} />
                   <Route path='springBottomSheet' element={<SpringBottomSheet />} />
                   <Route path='reactVirtualized' element={<ReactVirtualized />} />
