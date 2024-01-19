@@ -4,7 +4,7 @@ const AnimationSamples4 = () => {
 
   return (
     <div className="w-full py-8 flex flex-col gap-16">
-      <h1 className='title'>AnimationSamples 3</h1>
+      <h1 className='title'>AnimationSamples 4</h1>
       <div className='w-full h-full flex items-center justify-center flex-col gap-8 pb-8'>
 
         <JackInTheBox triggerOnce={true} cascade>
