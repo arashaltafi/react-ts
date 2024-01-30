@@ -127,6 +127,20 @@ const AnimationSamples6 = () => {
         config: { duration: 1000 },
     });
 
+    // Slide in from left
+    const slideLeft = useSpring({
+        from: { transform: 'translateX(-100%)' },
+        to: { transform: 'translateX(0)' },
+        config: { duration: 1000 },
+    });
+
+    // Slide in from right
+    const slideRight = useSpring({
+        from: { transform: 'translateX(100%)' },
+        to: { transform: 'translateX(0)' },
+        config: { duration: 1000 },
+    });
+
     return (
         <div className="w-full h-screen py-8 flex flex-col gap-16">
             <h1 className='title'>AnimationSamples 6</h1>
@@ -182,6 +196,12 @@ const AnimationSamples6 = () => {
 
                     {/* Flip Animation */}
                     <animated.div style={flip} className="w-1/2 h-1/2 bg-pink-500" />
+
+                    {/* Slide in from left */}
+                    <animated.div style={slideLeft} className="w-1/2 h-1/2 bg-red-500" />
+
+                    {/* Slide in from right */}
+                    <animated.div style={slideRight} className="w-1/2 h-1/2 bg-green-500" />
                 </div>
             </div>
         </div >
