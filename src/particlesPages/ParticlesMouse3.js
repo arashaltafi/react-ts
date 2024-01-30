@@ -1,9 +1,20 @@
+import { useEffect, useState } from "react";
 import MouseParticles from "react-mouse-particles";
 
 const ParticlesMouse1 = () => {
+    const [visible, setVisible] = useState(true);
+
+    useEffect(() => {
+        setVisible(true)
+
+        return () => {
+            setVisible(false)
+        }
+    }, [])
+
     return (
         <>
-            <div>
+            <div className={`${visible ? 'block' : 'hidden'}`}>
                 <MouseParticles
                     g={0.3}
                     num={9}
