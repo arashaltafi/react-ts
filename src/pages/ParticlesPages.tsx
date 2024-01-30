@@ -14,7 +14,9 @@ const ParticlesPages = () => {
             <Link to={'/particles/triangles'} className='btnSuccess bg-cyan-500'>Sample Triangles</Link>
             <Link to={'/particles/links'} className='btnSuccess bg-emerald-500'>Sample Links</Link>
             <Link to={'/particles/stars'} className='btnSuccess bg-pink-500'>Sample Stars</Link>
-            <Link to={'/particles/mouse'} className='btnSuccess bg-blue-500'>Sample Mouse</Link>
+            <Link to={'/particles/mouse1'} className='btnSuccess bg-blue-500'>Sample Mouse 1</Link>
+            <Link to={'/particles/mouse2'} className='btnSuccess bg-yellow-500'>Sample Mouse 2</Link>
+            <Link to={'/particles/mouse3'} className='btnSuccess bg-red-500'>Sample Mouse 3</Link>
         </div>
     )
 }

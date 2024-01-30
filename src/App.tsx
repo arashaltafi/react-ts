@@ -79,7 +79,9 @@ import AnimationSamples4 from './AnimationSamples/AnimationSamples4';
 import AnimationSamples5 from './AnimationSamples/AnimationSamples5';
 import AnimationSamples6 from './AnimationSamples/AnimationSamples6';
 import AnimationSamples7 from './AnimationSamples/AnimationSamples7';
-import ParticlesMouse from './particlesPages/ParticlesMouse';
+import ParticlesMouse1 from './particlesPages/ParticlesMouse1';
+import ParticlesMouse2 from './particlesPages/ParticlesMouse2';
+import ParticlesMouse3 from './particlesPages/ParticlesMouse3';
 
 function App() {
 
@@ -207,7 +209,9 @@ function App() {
                   <Route path='triangles' element={<ParticlesTriangles />} />
                   <Route path='links' element={<ParticlesLinks />} />
                   <Route path='stars' element={<ParticlesStars />} />
-                  <Route path='mouse' element={<ParticlesMouse />} />
+                  <Route path='mouse1' element={<ParticlesMouse1 />} />
+                  <Route path='mouse2' element={<ParticlesMouse2 />} />
+                  <Route path='mouse3' element={<ParticlesMouse3 />} />
                 </Route>
                 <Route path='/backgroundAnimation'>
                   <Route path='' element={<Index />} />
