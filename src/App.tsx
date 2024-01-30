@@ -78,6 +78,7 @@ import AnimationSamples3 from './AnimationSamples/AnimationSamples3';
 import AnimationSamples4 from './AnimationSamples/AnimationSamples4';
 import AnimationSamples5 from './AnimationSamples/AnimationSamples5';
 import AnimationSamples6 from './AnimationSamples/AnimationSamples6';
+import AnimationSamples7 from './AnimationSamples/AnimationSamples7';
 
 function App() {
 
@@ -190,6 +191,7 @@ function App() {
                   <Route path='sample4' element={<AnimationSamples4 />} />
                   <Route path='sample5' element={<AnimationSamples5 />} />
                   <Route path='sample6' element={<AnimationSamples6 />} />
+                  <Route path='sample7' element={<AnimationSamples7 />} />
                 </Route>
                 <Route path='/particles'>
                   <Route path='' element={<ParticlesPages />} />
