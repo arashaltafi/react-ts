@@ -44,6 +44,13 @@ const AnimationSamples = () => {
                     Sample 5
                 </button>
 
+                <button
+                    onClick={() => handleNavigate('sample6')}
+                    className='btnSuccess bg-green-500 text-2xl px-8 py-4'
+                >
+                    Sample 6
+                </button>
+
             </div>
         </div>
     )
