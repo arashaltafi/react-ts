@@ -82,6 +82,7 @@ import AnimationSamples7 from './AnimationSamples/AnimationSamples7';
 import ParticlesMouse1 from './particlesPages/ParticlesMouse1';
 import ParticlesMouse2 from './particlesPages/ParticlesMouse2';
 import ParticlesMouse3 from './particlesPages/ParticlesMouse3';
+import VideoPlayer from './pages/VideoPlayer';
 
 function App() {
 
@@ -143,6 +144,7 @@ function App() {
                 <Route path='/mapbox' element={<MapBox />} />
                 <Route path='/locationSample' element={<LocationSample />} />
                 <Route path='/firebaseSample' element={<FirebaseSample />} />
+                <Route path='/videoPlayer' element={<VideoPlayer />} />
                 <Route path='/audioPlayer' element={<AudioPlayer sounds={
                   [
                     { url: 'https://dls.music-fa.com/tagdl/1402/Reza%20Bahram%20-%20Mane%20Divane%20(320).mp3', volume: 1, isPlaying: false },

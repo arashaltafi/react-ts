@@ -48,6 +48,7 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/animationSamples')}>AnimationSamples</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/backgroundAnimation')}>BackgroundAnimation</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/audioPlayer')}>AudioPlayer</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/videoPlayer')}>VideoPlayer</button>
 
       <span className='w-[90%] h-[1px] bg-zinc-800' />
 
@@ -72,6 +73,7 @@ const Home = () => {
         <Link to='/animationSamples'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>AnimationSamples</h1></Link>
         <Link to='/backgroundAnimation'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>BackgroundAnimation</h1></Link>
         <Link to='/audioPlayer'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>AudioPlayer</h1></Link>
+        <Link to='/videoPlayer'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>VideoPlayer</h1></Link>
       </nav>
     </div>
   )
