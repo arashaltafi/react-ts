@@ -83,6 +83,7 @@ import ParticlesMouse1 from './particlesPages/ParticlesMouse1';
 import ParticlesMouse2 from './particlesPages/ParticlesMouse2';
 import ParticlesMouse3 from './particlesPages/ParticlesMouse3';
 import VideoPlayer from './pages/VideoPlayer';
+import HorizontalList from './pages/HorizontalList';
 
 function App() {
 
@@ -220,6 +221,7 @@ function App() {
                   <Route path='sample1' element={<Sample1 />} />
                 </Route>
                 <Route path='/useParams/:name?/:family?' element={<UseParams />} />
+                <Route path='horizontalList' element={<HorizontalList />} />
                 <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
               </Route>
             </Route>
