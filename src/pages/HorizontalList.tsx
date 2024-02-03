@@ -22,7 +22,7 @@ const HorizontalList = () => {
     }
 
     return (
-        <>
+        <div className='flex flex-col items-center justify-center gap-16 py-16'>
             <Swiper
                 effect={'cards'}
                 grabCursor={true}
@@ -73,54 +73,35 @@ const HorizontalList = () => {
             <Divider />
 
 
-            <div className='w-full py-32'>
-                <Swiper
-                    effect={'coverflow'}
-                    grabCursor={true}
-                    centeredSlides={true}
-                    slidesPerView={'auto'}
-                    coverflowEffect={{
-                        rotate: 50,
-                        stretch: 0,
-                        depth: 100,
-                        modifier: 1,
-                        slideShadows: true,
-                    }}
-                    pagination={true}
-                    modules={[EffectCoverflow, Pagination]}
-                    className="swiper1"
-                >
-                    <SwiperSlide className='swiper-slide1'>
-                        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide className='swiper-slide1'>
-                        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide className='swiper-slide1'>
-                        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide className='swiper-slide1'>
-                        <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide className='swiper-slide1'>
-                        <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide className='swiper-slide1'>
-                        <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide className='swiper-slide1'>
-                        <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide className='swiper-slide1'>
-                        <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide className='swiper-slide1'>
-                        <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                    </SwiperSlide>
-                </Swiper>
+            <Swiper
+                className="w-[80%] mx-auto"
+                spaceBetween={20}
+                slidesPerView={3}
+                loop={true}
+                modules={[Navigation]}
+                navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }}
+                pagination={{ clickable: true }}
+            >
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-00.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-01.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-02.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-03.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-04.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-05.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-06.jpg' /></SwiperSlide>
+
+
+            </Swiper>
+
+            <div className='flex flex-row items-center justify-center gap-8'>
+                <div className="swiper-button-prev btnError cursor-pointer">Prev</div>
+                <div className="swiper-button-next btnSuccess cursor-pointer">Next</div>
             </div>
 
-        </>
+        </div>
     );
 }
 
