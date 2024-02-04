@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
+import 'swiper/css/pagination';
 import { EffectCards, EffectCoverflow, Pagination, Navigation, EffectCube } from 'swiper/modules';
 import Carousel from "react-spring-3d-carousel";
 import { config } from "react-spring";
@@ -101,6 +102,40 @@ const HorizontalList = () => {
             <div className='flex flex-row items-center justify-center gap-8'>
                 <div className="swiper-button-prev1 btnError cursor-pointer">Prev</div>
                 <div className="swiper-button-next1 btnSuccess cursor-pointer">Next</div>
+            </div>
+
+
+
+
+            <Divider />
+
+
+
+
+            <p>basic slider with paging prev next</p>
+            <Swiper
+                className="w-[50%] h-[500px] mx-auto mySwiper"
+                spaceBetween={30}
+                slidesPerView={1}
+                loop={true}
+                pagination={{ clickable: true }}
+                modules={[Pagination, Navigation]}
+                navigation={{
+                    nextEl: '.swiper-button-next0',
+                    prevEl: '.swiper-button-prev0',
+                }}
+            >
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-00.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-01.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-02.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-03.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-04.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-05.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-06.jpg' /></SwiperSlide>
+            </Swiper>
+            <div className='flex flex-row items-center justify-center gap-8'>
+                <div className="swiper-button-prev0 btnError cursor-pointer">Prev</div>
+                <div className="swiper-button-next0 btnSuccess cursor-pointer">Next</div>
             </div>
 
 

@@ -86,7 +86,7 @@ code {
     width: 240px;
     height: 320px;
   }
-  
+
   .swiper-slide {
     display: flex;
     align-items: center;
@@ -96,7 +96,7 @@ code {
     font-weight: bold;
     color: #fff;
   }
-  
+
   /* .swiper-slide:nth-child(1n) {
     background-color: rgb(206, 17, 17);
   }
@@ -142,18 +142,18 @@ code {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
-}
+  }
 
-.swiper-slide1 {
+  .swiper-slide1 {
     background-position: center;
     background-size: cover;
     width: 500px;
     height: 300px;
-}
+  }
 
-.swiper-slide1 img {
+  .swiper-slide1 img {
     display: block;
     width: 100%;
-}
-  
+  }
+
 }
