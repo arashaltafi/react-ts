@@ -70,7 +70,10 @@ const HorizontalList = () => {
 
 
 
+
             <Divider />
+
+
 
 
             <Swiper
@@ -97,7 +100,6 @@ const HorizontalList = () => {
 
 
             </Swiper>
-
             <div className='flex flex-row items-center justify-center gap-8'>
                 <div className="swiper-button-prev btnError cursor-pointer">Prev</div>
                 <div className="swiper-button-next btnSuccess cursor-pointer">Next</div>
@@ -125,10 +127,6 @@ const HorizontalList = () => {
                     modifier: 1,
                     slideShadows: true,
                 }}
-                navigation={{
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                }}
                 pagination={{ clickable: true }}
             >
                 <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-00.jpg' /></SwiperSlide>
@@ -139,20 +137,14 @@ const HorizontalList = () => {
                 <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-05.jpg' /></SwiperSlide>
                 <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-06.jpg' /></SwiperSlide>
 
-
             </Swiper>
-
-            <div className='flex flex-row items-center justify-center gap-8'>
-                <div className="swiper-button-prev btnError cursor-pointer">Prev</div>
-                <div className="swiper-button-next btnSuccess cursor-pointer">Next</div>
-            </div>
-
 
 
             <Divider />
 
 
 
+            <p>coverflowEffect</p>
             <Swiper
                 className="w-[80%] mx-auto mySwiper"
                 grabCursor={true}
@@ -170,6 +162,39 @@ const HorizontalList = () => {
                 loop={true}
                 effect={'coverflow'}
                 modules={[EffectCoverflow, Pagination]}
+                pagination={{ clickable: true }}
+            >
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-00.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-01.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-02.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-03.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-04.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-05.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-06.jpg' /></SwiperSlide>
+
+
+            </Swiper>
+            <div className='flex flex-row items-center justify-center gap-8'>
+                <div className="swiper-button-prev btnError cursor-pointer">Prev</div>
+                <div className="swiper-button-next btnSuccess cursor-pointer">Next</div>
+            </div>
+
+
+
+
+            <Divider />
+
+
+
+
+            <p>cardsEffect</p>
+            <Swiper
+                className="w-1/3 mx-auto mySwiper"
+                spaceBetween={30}
+                loop={true}
+                grabCursor={true}
+                effect={'cards'}
+                modules={[EffectCards, Navigation]}
                 navigation={{
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
@@ -186,13 +211,14 @@ const HorizontalList = () => {
 
 
             </Swiper>
-
             <div className='flex flex-row items-center justify-center gap-8'>
                 <div className="swiper-button-prev btnError cursor-pointer">Prev</div>
                 <div className="swiper-button-next btnSuccess cursor-pointer">Next</div>
             </div>
 
 
+
+            <Divider />
 
 
         </div>
