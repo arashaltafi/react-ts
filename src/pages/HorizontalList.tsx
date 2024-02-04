@@ -75,7 +75,7 @@ const HorizontalList = () => {
 
 
 
-
+            <p>basic slider with prev next</p>
             <Swiper
                 className="w-[80%] mx-auto"
                 spaceBetween={30}
@@ -85,8 +85,8 @@ const HorizontalList = () => {
                 centeredSlides={true}
                 centeredSlidesBounds={true}
                 navigation={{
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '.swiper-button-next1',
+                    prevEl: '.swiper-button-prev1',
                 }}
                 pagination={{ clickable: true }}
             >
@@ -97,12 +97,10 @@ const HorizontalList = () => {
                 <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-04.jpg' /></SwiperSlide>
                 <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-05.jpg' /></SwiperSlide>
                 <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-06.jpg' /></SwiperSlide>
-
-
             </Swiper>
             <div className='flex flex-row items-center justify-center gap-8'>
-                <div className="swiper-button-prev btnError cursor-pointer">Prev</div>
-                <div className="swiper-button-next btnSuccess cursor-pointer">Next</div>
+                <div className="swiper-button-prev1 btnError cursor-pointer">Prev</div>
+                <div className="swiper-button-next1 btnSuccess cursor-pointer">Next</div>
             </div>
 
 
@@ -111,7 +109,7 @@ const HorizontalList = () => {
 
 
 
-
+            <p>basic slider</p>
             <Swiper
                 className="w-[80%] mx-auto"
                 spaceBetween={30}
@@ -161,8 +159,12 @@ const HorizontalList = () => {
                 slidesPerView={3}
                 loop={true}
                 effect={'coverflow'}
-                modules={[EffectCoverflow, Pagination]}
+                modules={[EffectCoverflow, Pagination, Navigation]}
                 pagination={{ clickable: true }}
+                navigation={{
+                    nextEl: '.swiper-button-next2',
+                    prevEl: '.swiper-button-prev2',
+                }}
             >
                 <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-00.jpg' /></SwiperSlide>
                 <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-01.jpg' /></SwiperSlide>
@@ -175,8 +177,8 @@ const HorizontalList = () => {
 
             </Swiper>
             <div className='flex flex-row items-center justify-center gap-8'>
-                <div className="swiper-button-prev btnError cursor-pointer">Prev</div>
-                <div className="swiper-button-next btnSuccess cursor-pointer">Next</div>
+                <div className="swiper-button-prev2 btnError cursor-pointer">Prev</div>
+                <div className="swiper-button-next2 btnSuccess cursor-pointer">Next</div>
             </div>
 
 
@@ -196,8 +198,8 @@ const HorizontalList = () => {
                 effect={'cards'}
                 modules={[EffectCards, Navigation]}
                 navigation={{
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '.swiper-button-next3',
+                    prevEl: '.swiper-button-prev3',
                 }}
                 pagination={{ clickable: true }}
             >
@@ -212,8 +214,8 @@ const HorizontalList = () => {
 
             </Swiper>
             <div className='flex flex-row items-center justify-center gap-8'>
-                <div className="swiper-button-prev btnError cursor-pointer">Prev</div>
-                <div className="swiper-button-next btnSuccess cursor-pointer">Next</div>
+                <div className="swiper-button-prev3 btnError cursor-pointer">Prev</div>
+                <div className="swiper-button-next3 btnSuccess cursor-pointer">Next</div>
             </div>
 
 
