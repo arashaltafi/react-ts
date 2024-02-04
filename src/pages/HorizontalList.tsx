@@ -75,10 +75,12 @@ const HorizontalList = () => {
 
             <Swiper
                 className="w-[80%] mx-auto"
-                spaceBetween={20}
+                spaceBetween={30}
                 slidesPerView={3}
                 loop={true}
                 modules={[Navigation]}
+                centeredSlides={true}
+                centeredSlidesBounds={true}
                 navigation={{
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
@@ -100,6 +102,98 @@ const HorizontalList = () => {
                 <div className="swiper-button-prev btnError cursor-pointer">Prev</div>
                 <div className="swiper-button-next btnSuccess cursor-pointer">Next</div>
             </div>
+
+
+
+            <Divider />
+
+
+
+
+            <Swiper
+                className="w-[80%] mx-auto"
+                spaceBetween={30}
+                slidesPerView={3}
+                loop={true}
+                centeredSlides={true}
+                centeredSlidesBounds={true}
+                effect={'coverflow'}
+                coverflowEffect={{
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                }}
+                navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }}
+                pagination={{ clickable: true }}
+            >
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-00.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-01.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-02.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-03.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-04.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-05.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-06.jpg' /></SwiperSlide>
+
+
+            </Swiper>
+
+            <div className='flex flex-row items-center justify-center gap-8'>
+                <div className="swiper-button-prev btnError cursor-pointer">Prev</div>
+                <div className="swiper-button-next btnSuccess cursor-pointer">Next</div>
+            </div>
+
+
+
+            <Divider />
+
+
+
+            <Swiper
+                className="w-[80%] mx-auto mySwiper"
+                grabCursor={true}
+                centeredSlides={true}
+                centeredSlidesBounds={true}
+                coverflowEffect={{
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                }}
+                spaceBetween={30}
+                slidesPerView={3}
+                loop={true}
+                effect={'coverflow'}
+                modules={[EffectCoverflow, Pagination]}
+                navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }}
+                pagination={{ clickable: true }}
+            >
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-00.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-01.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-02.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-03.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-04.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-05.jpg' /></SwiperSlide>
+                <SwiperSlide className="size-[200px] rounded-lg overflow-hidden"><img className='w-full h-full' src='https://arashaltafi.ir/Social_Media/story-06.jpg' /></SwiperSlide>
+
+
+            </Swiper>
+
+            <div className='flex flex-row items-center justify-center gap-8'>
+                <div className="swiper-button-prev btnError cursor-pointer">Prev</div>
+                <div className="swiper-button-next btnSuccess cursor-pointer">Next</div>
+            </div>
+
+
+
 
         </div>
     );
