@@ -6,6 +6,7 @@ import { EffectCards, EffectCoverflow, Pagination, Navigation, EffectCube } from
 import Carousel from "react-spring-3d-carousel";
 import { config } from "react-spring";
 import Divider from '../Components/Divider';
+import { useState } from 'react';
 const Coverflow = require('react-coverflow');
 
 //npm install swiper react-spring-3d-carousel
@@ -13,6 +14,38 @@ const Coverflow = require('react-coverflow');
 //npm install react-coverflow
 
 const HorizontalList = () => {
+    const [items, setItems] = useState<string[]>([
+        'test 1',
+        'test 2',
+        'test 3',
+        'test 4',
+        'test 5',
+        'test 6',
+        'test 7',
+        'test 8',
+        'test 9',
+        'test 10',
+        'test 11',
+        'test 12',
+        'test 13',
+        'test 14',
+        'test 15',
+        'test 16',
+        'test 17',
+        'test 18',
+        'test 19',
+        'test 20',
+        'test 21',
+        'test 22',
+        'test 23',
+        'test 24',
+        'test 25',
+        'test 26',
+        'test 27',
+        'test 28',
+        'test 29',
+        'test 30',
+    ])
 
     const handleOnClick = () => {
 
@@ -23,7 +56,7 @@ const HorizontalList = () => {
     }
 
     return (
-        <div className='flex flex-col items-center justify-center gap-16 py-16'>
+        <div className='flex flex-col items-center justify-center gap-16 py-16 overflow-x-hidden'>
             <Swiper
                 effect={'cards'}
                 grabCursor={true}
@@ -292,7 +325,18 @@ const HorizontalList = () => {
                 <div className="swiper-button-next4 btnSuccess cursor-pointer">Next</div>
             </div>
 
+
+
             <Divider />
+
+
+            <div className='w-1/2 flex items-center justify-center mx-auto gap-8 bg-sky-500 overflow-x-auto scrollbar-hide'>
+                {
+                    items.map((item, index) => (
+                        <p key={index} className='bg-red-500 text-white rounded-lg px-4 py-2 text-center'>{item}</p>
+                    ))
+                }
+            </div>
 
 
         </div>
