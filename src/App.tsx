@@ -85,7 +85,8 @@ import ParticlesMouse3 from './particlesPages/ParticlesMouse3';
 import VideoPlayer from './pages/VideoPlayer';
 import HorizontalList from './pages/HorizontalList';
 import ToolbarCollapse from './pages/ToolbarCollapse';
-import SideBar from './pages/SideBar';
+import SideBar1 from './pages/SideBar1';
+import SideBar2 from './pages/SideBar2';
 
 function App() {
 
@@ -225,7 +226,8 @@ function App() {
                 <Route path='/useParams/:name?/:family?' element={<UseParams />} />
                 <Route path='horizontalList' element={<HorizontalList />} />
                 <Route path='toolbarCollapse' element={<ToolbarCollapse />} />
-                <Route path='sideBar' element={<SideBar />} />
+                <Route path='sideBar1' element={<SideBar1 />} />
+                <Route path='sideBar2' element={<SideBar2 />} />
                 <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
               </Route>
             </Route>

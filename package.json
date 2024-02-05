@@ -66,6 +66,7 @@
     "react-localization": "^1.0.19",
     "react-mapbox-gl": "^5.1.1",
     "react-mouse-particles": "^1.1.5",
+    "react-pro-sidebar": "^1.1.0",
     "react-redux": "^9.0.2",
     "react-round-carousel": "^1.5.0",
     "react-router": "^6.20.1",
