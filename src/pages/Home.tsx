@@ -50,6 +50,7 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/audioPlayer')}>AudioPlayer</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/videoPlayer')}>VideoPlayer</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/horizontalList')}>HorizontalList</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/toolbarCollapse')}>ToolbarCollapse</button>
 
       <span className='w-[90%] h-[1px] bg-zinc-800' />
 
@@ -76,6 +77,7 @@ const Home = () => {
         <Link to='/audioPlayer'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>AudioPlayer</h1></Link>
         <Link to='/videoPlayer'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>VideoPlayer</h1></Link>
         <Link to='/horizontalList'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>HorizontalList</h1></Link>
+        <Link to='/toolbarCollapse'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>ToolbarCollapse</h1></Link>
       </nav>
     </div>
   )
