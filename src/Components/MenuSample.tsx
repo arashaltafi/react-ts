@@ -46,7 +46,6 @@ const MenuSample = () => {
     return (
         <div onContextMenu={handleOpenMenu} className='w-full h-screen flex flex-col items-center justify-start gap-16 py-8 px-32'>
             <div className='w-full flex flex-row items-center justify-between'>
-
                 <div className='flex items-center justify-center'>
                     <PopupState variant="popover" popupId="demo-popup-menu">
                         {(popupState: any) => (
@@ -89,7 +88,6 @@ const MenuSample = () => {
                         <MenuItem onClick={handleClose}>Logout</MenuItem>
                     </Menu>
                 </div>
-
             </div>
 
             <div>
