@@ -87,6 +87,7 @@ import HorizontalList from './pages/HorizontalList';
 import ToolbarCollapse from './pages/ToolbarCollapse';
 import SideBar1 from './pages/SideBar1';
 import SideBar2 from './pages/SideBar2';
+import SwipeableListSample from './Components/SwipeableListSample';
 
 function App() {
 
@@ -191,6 +192,7 @@ function App() {
                   <Route path='download3' element={<DownloadSample3 />} />
                   <Route path='speedMeter' element={<SpeedMeter />} />
                   <Route path='circularProgressbarSample' element={<CircularProgressbarSample percentage={60} />} />
+                  <Route path='swipeableList' element={<SwipeableListSample />} />
                 </Route>
                 <Route path='/animationSamples'>
                   <Route path='' element={<AnimationSamples />} />
