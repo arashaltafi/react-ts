@@ -93,6 +93,7 @@ import TripleToggleSwitch from './Components/TripleToggleSwitch';
 import Night from "./Night.svg";
 import Sun from "./Sun.svg";
 import Auto from "./Auto.svg";
+import FilePickerSample from './Components/FilePickerSample';
 
 function App() {
 
@@ -235,6 +236,7 @@ function App() {
                     labels={labels}
                     onChange={handleChangeTripleSwitch}
                   />} />
+                  <Route path='filePickerSample' element={<FilePickerSample />} />
                 </Route>
                 <Route path='/animationSamples'>
                   <Route path='' element={<AnimationSamples />} />
