@@ -166,4 +166,8 @@ code {
     display: none;
   }
 
+  .zIndex100 {
+    z-index: 100 !important;
+  }
+
 }
