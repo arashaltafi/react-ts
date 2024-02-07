@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import snackBarSlice from '../redux/snackBarSlice';
+import SnackBarInAllApp from '../Components/SnackBarInAllApp';
 
 const Home = () => {
-
+  const dispatch = useDispatch()
   const navigate = useNavigate();
 
   const [orientation, setOrientation] = useState<number | null>(null);
@@ -14,8 +17,18 @@ const Home = () => {
     });
   }, [])
 
+  const showSnackBar = () => {
+    dispatch(snackBarSlice.actions.setSnackBar({
+      isOpen: true,
+      message: 'this is test message to show snackbar with mui',
+      duration: 3000,
+    }))
+  }
+
   return (
     <div className='py-16 px-8 flex flex-col justify-center items-center gap-16 bg-zinc-200'>
+      <SnackBarInAllApp />
+
       <p
         style={{ color: 'red', backgroundColor: 'yellow', padding: '10px', borderRadius: '10px', fontWeight: 'bold', fontSize: '20px' }}>
         Welcome to Home
@@ -27,6 +40,8 @@ const Home = () => {
           <p>Portrait</p>
         )}
       </div>
+
+      <p onClick={showSnackBar} className='cursor-pointer text-lg bg-pink-500 text-white text-center p-4 rounded-lg -mb-4'>Show SnackBar</p>
 
       <p className='text-lg bg-zinc-800 text-white text-center p-4 rounded-lg -mb-4'>Navigate with useNavigate</p>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/bestReference')}>BestReference</button>

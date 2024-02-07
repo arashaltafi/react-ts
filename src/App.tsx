@@ -151,7 +151,6 @@ function App() {
       <Provider store={store}>
         <Suspense fallback={<div>Loading...</div>}>
           <>
-            <SnackBarInAllApp />
             <Routes>
               <Route element={<ScrollToTop />}>
                 <Route element={<Hoc />}>
@@ -279,7 +278,7 @@ function App() {
                   <Route path='toolbarCollapse' element={<ToolbarCollapse />} />
                   <Route path='sideBar1' element={<SideBar1 />} />
                   <Route path='sideBar2' element={<SideBar2 />} />
-                  <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
+                  <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />                
                 </Route>
               </Route>
             </Routes>
