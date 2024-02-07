@@ -89,6 +89,10 @@ import SideBar1 from './pages/SideBar1';
 import SideBar2 from './pages/SideBar2';
 import SwipeableListSample from './Components/SwipeableListSample';
 import MenuSample from './Components/MenuSample';
+import TripleToggleSwitch from './Components/TripleToggleSwitch';
+import Night from "./Night.svg";
+import Sun from "./Sun.svg";
+import Auto from "./Auto.svg";
 
 function App() {
 
@@ -106,6 +110,38 @@ function App() {
     console.log(location);
     console.log('i18n', i18n.languages);
   }, [location])
+
+  //TripleToggleSwitch
+  const labels = {
+    left: {
+      icon: Night,
+      value: "left",
+    },
+    right: {
+      icon: Sun,
+      value: "right",
+    },
+    center: {
+      icon: Auto,
+      value: "center",
+    },
+  };
+
+  const handleChangeTripleSwitch = (value: any) => {
+    switch (value) {
+      case "left": //dark
+        console.log('dark')
+        break;
+      case "center": //auto
+        console.log('auto')
+        break;
+      case "right": //light
+        console.log('light')
+        break;
+      default:
+        break;
+    }
+  }
 
   return (
     <div className="h-screen w-full">
@@ -195,6 +231,10 @@ function App() {
                   <Route path='circularProgressbarSample' element={<CircularProgressbarSample percentage={60} />} />
                   <Route path='swipeableList' element={<SwipeableListSample />} />
                   <Route path='menuSample' element={<MenuSample />} />
+                  <Route path='tripleToggleSwitch' element={<TripleToggleSwitch
+                    labels={labels}
+                    onChange={handleChangeTripleSwitch}
+                  />} />
                 </Route>
                 <Route path='/animationSamples'>
                   <Route path='' element={<AnimationSamples />} />
