@@ -151,6 +151,7 @@ function App() {
       <Provider store={store}>
         <Suspense fallback={<div>Loading...</div>}>
           <>
+            <SnackBarInAllApp />
             <Routes>
               <Route element={<ScrollToTop />}>
                 <Route element={<Hoc />}>

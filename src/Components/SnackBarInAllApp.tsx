@@ -1,7 +1,7 @@
 import Fade from '@mui/material/Fade';
 import { TransitionProps } from '@mui/material/transitions';
 import Snackbar from '@mui/material/Snackbar'
-import { ComponentType, ReactElement, useState } from 'react';
+import { ComponentType, ReactElement, useEffect, useState } from 'react';
 import { Alert } from '@mui/material';
 import { useSelector } from 'react-redux';
 
@@ -19,6 +19,13 @@ const SnackBarInAllApp = () => {
         open: snackbarSetting.isOpen,
         Transition: Fade,
     });
+
+    useEffect(() => {
+        setState({
+            ...state,
+            open: snackbarSetting.isOpen,
+        });
+    }, [snackbarSetting])
 
     const handleClose = () => {
         setState({
