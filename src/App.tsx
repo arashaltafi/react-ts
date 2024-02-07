@@ -96,6 +96,7 @@ import Auto from "./Auto.svg";
 import FilePickerSample from './Components/FilePickerSample';
 import SnackbarSample from './Components/SnackbarSample';
 import SnackBarInAllApp from './Components/SnackBarInAllApp';
+import PagingApiSample from './pages/PagingApiSample';
 
 function App() {
 
@@ -279,6 +280,7 @@ function App() {
                   <Route path='toolbarCollapse' element={<ToolbarCollapse />} />
                   <Route path='sideBar1' element={<SideBar1 />} />
                   <Route path='sideBar2' element={<SideBar2 />} />
+                  <Route path='pagingApiSample' element={<PagingApiSample />} />
                   <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />                
                 </Route>
               </Route>
