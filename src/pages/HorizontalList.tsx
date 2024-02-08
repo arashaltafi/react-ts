@@ -6,7 +6,7 @@ import { EffectCards, EffectCoverflow, Pagination, Navigation, EffectCube } from
 import Carousel from "react-spring-3d-carousel";
 import { config } from "react-spring";
 import Divider from '../Components/Divider';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 const Coverflow = require('react-coverflow');
 
 //npm install swiper react-spring-3d-carousel
@@ -45,6 +45,16 @@ const HorizontalList = () => {
         'test 28',
         'test 29',
         'test 30',
+        'test 31',
+        'test 32',
+        'test 33',
+        'test 34',
+        'test 35',
+        'test 36',
+        'test 37',
+        'test 38',
+        'test 39',
+        'test 40',
     ])
 
     const handleOnClick = () => {
@@ -54,6 +64,29 @@ const HorizontalList = () => {
     const handleOnKeyDown = () => {
 
     }
+
+
+    const containerRef1 = useRef<HTMLDivElement>(null);
+    const [isDragging1, setIsDragging1] = useState(false);
+    const [startX1, setStartX1] = useState(0);
+    const [scrollLeft1, setScrollLeft1] = useState(0);
+
+    const handleMouseDown1 = (event: React.MouseEvent<HTMLDivElement>) => {
+        setIsDragging1(true);
+        setStartX1(event.pageX - (containerRef1.current?.offsetLeft || 0));
+        setScrollLeft1(containerRef1.current?.scrollLeft || 0);
+    };
+
+    const handleMouseMove1 = (event: React.MouseEvent<HTMLDivElement>) => {
+        if (!isDragging1 || !containerRef1.current) return;
+        const x = event.pageX - (containerRef1.current.offsetLeft || 0);
+        const walk = (x - startX1) * 2; // Adjust the scrolling speed if needed
+        containerRef1.current.scrollLeft = scrollLeft1 - walk;
+    };
+
+    const handleMouseUp1 = () => {
+        setIsDragging1(false);
+    };
 
     return (
         <div className='flex flex-col items-center justify-center gap-16 py-16 overflow-x-hidden'>
@@ -330,7 +363,14 @@ const HorizontalList = () => {
             <Divider />
 
 
-            <div className='w-1/2 flex items-center justify-center mx-auto gap-8 bg-sky-500 overflow-x-auto scrollbar-hide'>
+            <div
+                ref={containerRef1}
+                onMouseDown={handleMouseDown1}
+                onMouseMove={handleMouseMove1}
+                onMouseUp={handleMouseUp1}
+                onMouseLeave={handleMouseUp1}
+                className='select-none w-[90%] sm:w-3/4 md:w-2/3 lg:w-1/2 flex items-center justify-start gap-8 bg-sky-500 overflow-x-auto cursor-grab overflow-y-hidden scrollbar-hide'
+            >
                 {
                     items.map((item, index) => (
                         <p key={index} className='bg-red-500 text-white rounded-lg px-4 py-2 text-center'>{item}</p>
