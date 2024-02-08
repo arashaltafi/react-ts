@@ -66,6 +66,7 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/sideBar1')}>SideBar 1</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/sideBar2')}>SideBar 2</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/pagingApiSample')}>PagingApiSample</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/swipeRefresh')}>SwipeRefresh</button>
 
       <span className='w-[90%] h-[1px] bg-zinc-800' />
 
@@ -96,6 +97,7 @@ const Home = () => {
         <Link to='/sideBar1'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>SideBar 1</h1></Link>
         <Link to='/sideBar2'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>SideBar 2</h1></Link>
         <Link to='/pagingApiSample'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>PagingApiSample</h1></Link>
+        <Link to='/swipeRefresh'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>SwipeRefresh</h1></Link>
       </nav>
     </div>
   )

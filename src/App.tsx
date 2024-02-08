@@ -97,6 +97,7 @@ import FilePickerSample from './Components/FilePickerSample';
 import SnackbarSample from './Components/SnackbarSample';
 import SnackBarInAllApp from './Components/SnackBarInAllApp';
 import PagingApiSample from './pages/PagingApiSample';
+import SwipeRefresh from './Components/SwipeRefresh';
 
 function App() {
 
@@ -281,6 +282,7 @@ function App() {
                   <Route path='sideBar1' element={<SideBar1 />} />
                   <Route path='sideBar2' element={<SideBar2 />} />
                   <Route path='pagingApiSample' element={<PagingApiSample />} />
+                  <Route path='swipeRefresh' element={<SwipeRefresh />} />
                   <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />                
                 </Route>
               </Route>

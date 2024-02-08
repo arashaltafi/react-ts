@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { callApi } from '../utils/networkUtils/callApi';
 import { List, InfiniteLoader } from "react-virtualized";
 
@@ -10,8 +10,9 @@ const PagingApiSample = () => {
         avatar: string
     }[]>([]);
 
-    const [pageNumber, setPageNumber] = useState<number>()
+    const [pageNumber, setPageNumber] = useState<number>(1);
     const pageSize = 5;
+    const mainRef = useRef<any>()
 
     const callApiPaging = async () => {
         try {
@@ -32,16 +33,15 @@ const PagingApiSample = () => {
         callApiPaging()
     }, [])
 
+    useEffect(() => {
+        callApiPaging()
+    }, [pageNumber])
+
     return (
-        <div dir='rtl' className='w-full flex flex-col items-center justify-center gap-8 py-8'>
-            <h1 className='mb-16'>PagingApiSample</h1>
-            <SwipeRefresh
-                handleSwipeStart={() => setPreventCounter(preventCounter + 1)}
-                handleSwipeEnd={() => setPreventCounter(preventCounter + 1)}
-                onRefresh={handleRefresh}
-                loading={swipeLoading}
-                setLoading={setSwipeLoading}
-            >
+        <div ref={mainRef}>
+            <h1 className='mb-16 w-full text-center'>PagingApiSample</h1>
+
+            <div dir='rtl' className='w-full flex flex-col items-center justify-center gap-8 py-8'>
                 {
                     response.map((item, index) => (
                         <div key={index} className='w-[80%] rounded-3xl flex flex-col items-center justify-center gap-4 bg-slate-500 text-white py-8'>
@@ -52,7 +52,7 @@ const PagingApiSample = () => {
                         </div>
                     ))
                 }
-            </SwipeRefresh>
+            </div>
 
             {/* <InfiniteLoader
                 isRowLoaded={isRowLoaded}
