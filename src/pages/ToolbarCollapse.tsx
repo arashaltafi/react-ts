@@ -21,15 +21,23 @@ const ToolbarCollapse = () => {
     const { height } = useSpring({
         height:
             scrollPosition > 100
-                ? scrollPosition > 200
-                    ? scrollPosition > 300
-                        ? scrollPosition > 400
-                            ? scrollPosition > 500
-                                ? 500
-                                : 500
-                            : 400
-                        : 300
-                    : 200
+                ? scrollPosition > 150
+                    ? scrollPosition > 200
+                        ? scrollPosition > 250
+                            ? scrollPosition > 300
+                                ? scrollPosition > 350
+                                    ? scrollPosition > 400
+                                        ? scrollPosition > 450
+                                            ? scrollPosition > 500
+                                                ? 500
+                                                : 500
+                                            : 450
+                                        : 400
+                                    : 350
+                                : 300
+                            : 250
+                        : 200
+                    : 150
                 : 100,
     });
 
