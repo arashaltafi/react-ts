@@ -38,21 +38,19 @@ const PagingApiSample = () => {
     }, [pageNumber])
 
     return (
-        <div ref={mainRef}>
-            <h1 className='mb-16 w-full text-center'>PagingApiSample</h1>
+        <div ref={mainRef} className='w-full flex flex-col items-center justify-start gap-8 py-8'>
+            <h1 className='h1'>PagingApiSample</h1>
 
-            <div dir='rtl' className='w-full flex flex-col items-center justify-center gap-8 py-8'>
-                {
-                    response.map((item, index) => (
-                        <div key={index} className='w-[80%] rounded-3xl flex flex-col items-center justify-center gap-4 bg-slate-500 text-white py-8'>
-                            <img className='w-72 h-72 rounded-full' src={item.avatar} alt={item.name} />
-                            <p className='text-xl font-bold'>id: <span className='text-xl font-light'>{item.id}</span></p>
-                            <p className='text-xl font-bold'>name: <span className='text-xl font-light'>{item.name}</span></p>
-                            <p className='text-xl font-bold'>family: <span className='text-xl font-light'>{item.family}</span></p>
-                        </div>
-                    ))
-                }
-            </div>
+            {
+                response.map((item, index) => (
+                    <div key={index} className='w-[80%] rounded-3xl flex flex-col items-center justify-center gap-4 bg-slate-500 text-white'>
+                        <img className='w-72 h-72 rounded-full' src={item.avatar} alt={item.name} />
+                        <p className='text-xl font-bold'>id: <span className='text-xl font-light'>{item.id}</span></p>
+                        <p className='text-xl font-bold'>name: <span className='text-xl font-light'>{item.name}</span></p>
+                        <p className='text-xl font-bold'>family: <span className='text-xl font-light'>{item.family}</span></p>
+                    </div>
+                ))
+            }
 
             {/* <InfiniteLoader
                 isRowLoaded={isRowLoaded}
