@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { callApi } from '../utils/networkUtils/callApi';
-import { List, InfiniteLoader } from "react-virtualized";
 
 const PagingApiSample = () => {
     const [response, setResponse] = useState<{
@@ -51,36 +50,6 @@ const PagingApiSample = () => {
                     </div>
                 ))
             }
-
-            {/* <InfiniteLoader
-                isRowLoaded={isRowLoaded}
-                loadMoreRows={loadMoreRows}
-                minimumBatchSize={5}
-                threshold={2}
-                onScroll={() => setPreventCounter(preventCounter + 1)}
-                rowCount={
-                    contactsList.length < total
-                        ? contactsList.length + 10
-                        : contactsList.length
-                }
-            >
-                {({ onRowsRendered, registerChild }) => (
-                    <List
-                        onRowsRendered={onRowsRendered}
-                        ref={registerChild}
-                        onScroll={() => setPreventCounter(preventCounter + 1)}
-                        rowHeight={64}
-                        rowRenderer={rowRenderer}
-                        rowCount={
-                            contactsList.length < total
-                                ? contactsList.length + 10
-                                : contactsList.length
-                        }
-                        width={window.innerWidth > 600 ? 600 : window.innerWidth}
-                        height={window.innerHeight - 153}
-                    />
-                )}
-            </InfiniteLoader> */}
         </div>
     )
 }
