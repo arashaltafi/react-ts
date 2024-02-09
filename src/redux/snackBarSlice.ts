@@ -3,7 +3,12 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 type snackbarSettingType = {
     isOpen: boolean,
     message: string,
-    duration: number,
+    duration?: number,
+    type?: 'success' | 'error' | 'warning' | 'info',
+    anchorOrigin?: {
+        vertical: 'top' | 'bottom',
+        horizontal: 'center' | 'left' | 'right'
+    }
 }
 
 interface NumberState {
@@ -15,6 +20,11 @@ const initialState: NumberState = {
         isOpen: false,
         message: '',
         duration: 3000,
+        type: 'success',
+        anchorOrigin: {
+            vertical: 'top',
+            horizontal: 'center'
+        }
     }
 }
 

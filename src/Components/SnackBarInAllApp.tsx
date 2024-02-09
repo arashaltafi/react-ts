@@ -15,15 +15,21 @@ const SnackBarInAllApp = () => {
                 children: ReactElement<any, any>;
             }
         >;
+        vertical: "top" | "bottom",
+        horizontal: "center" | "left" | "right",
     }>({
         open: snackbarSetting.isOpen,
         Transition: Fade,
+        vertical: "top",
+        horizontal: "center",
     });
 
     useEffect(() => {
         setState({
             ...state,
             open: snackbarSetting.isOpen,
+            vertical: snackbarSetting?.anchorOrigin?.vertical || 'top',
+            horizontal: snackbarSetting?.anchorOrigin?.horizontal || 'center',
         });
     }, [snackbarSetting])
 
@@ -37,16 +43,28 @@ const SnackBarInAllApp = () => {
     return (
         <>
             <Snackbar
+                className='mt-16 opacity-95'
                 open={state.open}
                 onClose={handleClose}
                 TransitionComponent={state.Transition}
                 message=""
                 key={state.Transition.name}
-                autoHideDuration={snackbarSetting.duration}
+                autoHideDuration={snackbarSetting?.duration || 3000}
+                anchorOrigin={{
+                    vertical: state.vertical,
+                    horizontal: state.horizontal
+                }}
+                sx={{
+                    '.MuiAlert-message': {
+                        width: '100%',
+                        direction: 'rtl'
+                    }
+                }}
             >
                 <Alert
+                    className='w-full text-right font-vazir'
                     onClose={handleClose}
-                    severity="success"
+                    severity={snackbarSetting.type}
                     variant="filled"
                     sx={{ width: '100%' }}
                 >
