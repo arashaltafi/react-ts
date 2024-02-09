@@ -53,6 +53,19 @@ const FilePickerSample = () => {
         }
     };
 
+    const removeBase64Prefix = (base64String: string): string => {
+        const prefixes = ["data:image/png;base64,", "data:image/jpeg;base64,", "data:image/jpg;base64,", "data:image/jpe;base64,"];
+    
+        for (const prefix of prefixes) {
+            if (base64String.startsWith(prefix)) {
+                return base64String.slice(prefix.length);
+            }
+        }
+    
+        // If the input string doesn't start with any of the known prefixes, return the original string
+        return base64String;
+    };
+
     return (
         <div className="w-full flex items-center justify-center mt-8">
             <button className='btnSuccess' onClick={() => setOpen(!open)}>FilePickerSample</button>
