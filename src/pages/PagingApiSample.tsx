@@ -17,7 +17,7 @@ const PagingApiSample = () => {
         try {
             await callApi({
                 method: "GET",
-                url: `test_paging/test_paging.php?page_number=${pageNumber}1&page_size=${pageSize}`,
+                url: `test_paging/test_paging.php?page_number=${pageNumber}&page_size=${pageSize}`,
                 callBack: (response: any) => {
                     console.log("handleClickGet response", response);
                     setResponse(response)

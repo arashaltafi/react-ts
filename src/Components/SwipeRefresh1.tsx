@@ -2,7 +2,7 @@ import { SwipeRefreshList } from "react-swipe-down-refresh";
 import "./react-swipe-refresh.css";
 
 //npm i react-swipe-down-refresh
-const SwipeRefresh = () => {
+const SwipeRefresh1 = () => {
     const swipeRefreshDuration = 5000
 
     const onRefreshRequested = () => {
@@ -20,7 +20,7 @@ const SwipeRefresh = () => {
     }
 
     return (
-        <div className="w-full h-screen py-8 overflow-hidden bg-slate-500 text-white">
+        <div className="w-full h-screen py-8 overflow-hidden bg-slate-500 text-white select-none">
             <SwipeRefreshList
                 onStartRefresh={onStartRefresh}
                 onRefresh={onRefreshRequested}
@@ -45,4 +45,4 @@ const SwipeRefresh = () => {
     );
 };
 
-export default SwipeRefresh;
+export default SwipeRefresh1;
