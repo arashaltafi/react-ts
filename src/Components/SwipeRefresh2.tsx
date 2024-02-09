@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { callApi } from '../utils/networkUtils/callApi';
 import PullToRefresh from 'react-simple-pull-to-refresh'
+import BounceLoader from 'react-spinners/BounceLoader';
 
 const SwipeRefresh2 = () => {
     const [response, setResponse] = useState<{
@@ -53,6 +54,8 @@ const SwipeRefresh2 = () => {
             resistance={3}
             pullDownThreshold={67}
             maxPullDownDistance={100}
+            refreshingContent={<BounceLoader className='w-full flex items-center justify-center' color="#f00" />}
+            pullingContent='pullingContent'
         >
             <div className='w-full flex flex-col items-center justify-start gap-8 py-8'>
                 {
