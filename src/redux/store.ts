@@ -10,5 +10,6 @@ export const store = configureStore({
         number: numberSlice.reducer,
         axios: axiosSlice.reducer,
         snackbar: snackBarSlice.reducer
-    }
+    },
+    devTools: true
 });
