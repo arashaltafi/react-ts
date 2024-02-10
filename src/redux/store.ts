@@ -11,5 +11,8 @@ export const store = configureStore({
         axios: axiosSlice.reducer,
         snackbar: snackBarSlice.reducer
     },
-    devTools: true
+    devTools: true,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: false
+    }),
 });

@@ -10,6 +10,7 @@ const AxiosProvider = () => {
     const [loading, setLoading] = useState<boolean | any>(null);
     const [error, setError] = useState<any>(null);
     const [data, setData] = useState<any>(null);
+    const [configAxios, setConfigAxios] = useState<any>(null);
 
     useEffect(() => {
         if (loading === null) return;
@@ -45,6 +46,14 @@ const AxiosProvider = () => {
         dispatch(axiosSlice.actions.setData({ data: data }))
     }, [data])
 
+    useEffect(() => {
+        if (configAxios === null) return;
+
+        customLog("configAxios", configAxios);
+
+        dispatch(axiosSlice.actions.setAxiosReq({ axiosReq: configAxios }))
+    }, [configAxios])
+
     axios.interceptors.request.use(
         (config: AxiosRequestConfig) => requestHandler(config),
         (error: AxiosError) => requestErrorHandler(error)
@@ -58,6 +67,7 @@ const AxiosProvider = () => {
     const requestHandler = (config: any) => {
         customLog("requestHandler", config);
         setLoading(true);
+        setConfigAxios(JSON.stringify(config))
         return config;
     };
 

@@ -57,6 +57,13 @@ const Axios = () => {
     }
   }
 
+  const handleRetry = async () => {
+    dispatch(axiosSlice.actions.setLoading({ isLoading: false }))
+    await callApi({ ...JSON.parse(axiosSelector.axiosReq), convert: false }).then((response) => {
+    }).catch((error) => {
+    })
+}
+
   return (
     <>
       <AxiosProvider />
@@ -72,7 +79,7 @@ const Axios = () => {
 
         <div className='title py-12 no-underline mt-8'>
           {
-            axiosSelector.error ? <>{axiosSelector.error}</> :
+            axiosSelector.error ? <p onClick={handleRetry}>{axiosSelector.error}</p> :
               axiosSelector.isLoading ? <Loading /> :
                 axiosSelector.data ? <code>{JSON.stringify(axiosSelector.data, null, 2)}</code> : <>Please Call Api</>
           }
