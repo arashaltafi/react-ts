@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
+import { customLog } from '../utils/CustomConsole';
 
 //npm i react-pro-sidebar
 const SideBar1 = () => {
@@ -23,7 +24,7 @@ const SideBar1 = () => {
                 breakPoint="sm"
                 backgroundColor='rgb(249, 249, 249, 0.7)'
                 // image='https://arashaltafi.ir/arash.jpg'
-                onBackdropClick={() => { console.log('onBackdropClick') }}
+                onBackdropClick={() => { customLog('onBackdropClick') }}
             >
 
                 <Menu

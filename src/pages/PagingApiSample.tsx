@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { callApi } from '../utils/networkUtils/callApi';
+import { customLog } from '../utils/CustomConsole';
 
 const PagingApiSample = () => {
     const [response, setResponse] = useState<{
@@ -19,12 +20,12 @@ const PagingApiSample = () => {
                 method: "GET",
                 url: `test_paging/test_paging.php?page_number=${pageNumber}&page_size=${pageSize}`,
                 callBack: (response: any) => {
-                    console.log("handleClickGet response", response);
+                    customLog("handleClickGet response", response);
                     setResponse(response)
                 },
             });
         } catch (error) {
-            console.log("handleClickGet error", error);
+            customLog("handleClickGet error", error);
         }
     }
 

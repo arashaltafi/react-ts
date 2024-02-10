@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { requestForToken, onMessageListener } from "./firebaseInit";
 import {Button, Toast} from 'react-bootstrap';
+import { customLog } from "../utils/CustomConsole";
 
 const FirebaseSample = () => {
 
@@ -10,12 +11,12 @@ const FirebaseSample = () => {
     requestForToken(setTokenFound);
 
     onMessageListener().then((payload: any) => {
-        console.log('success: ', payload);
+        customLog('success: ', payload);
         setNotification({ title: payload.notification.title, body: payload.notification.body })
         setShow(true);
-        console.log(payload);
+        customLog(payload);
     }).catch(err => {
-        console.log('failed: ', err)
+        customLog('failed: ', err)
     });
 
     const onShowNotificationClicked = () => {

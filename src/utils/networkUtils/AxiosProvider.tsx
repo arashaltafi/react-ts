@@ -3,6 +3,7 @@ import axios from "./customAxios";
 import { useEffect, useState } from "react";
 import axiosSlice from "../../redux/axiosSlice";
 import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
+import { customLog } from "../CustomConsole";
 
 const AxiosProvider = () => {
     const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const AxiosProvider = () => {
     useEffect(() => {
         if (loading === null) return;
 
-        console.log("loading", loading);
+        customLog("loading", loading);
 
         dispatch(axiosSlice.actions.setLoading({ isLoading: loading }))
     }, [loading])
@@ -21,7 +22,7 @@ const AxiosProvider = () => {
     useEffect(() => {
         if (error === null) return;
 
-        console.log("error", error);
+        customLog("error", error);
 
         if (!error.response) {
             dispatch(axiosSlice.actions.setError({ error: 'Internet Error!' }))
@@ -39,7 +40,7 @@ const AxiosProvider = () => {
     useEffect(() => {
         if (data === null) return;
 
-        console.log("data", data);
+        customLog("data", data);
 
         dispatch(axiosSlice.actions.setData({ data: data }))
     }, [data])
@@ -55,27 +56,27 @@ const AxiosProvider = () => {
     );
 
     const requestHandler = (config: any) => {
-        console.log("requestHandler", config);
+        customLog("requestHandler", config);
         setLoading(true);
         return config;
     };
 
     const requestErrorHandler = (error: AxiosError) => {
-        console.log("requestErrorHandler", error);
+        customLog("requestErrorHandler", error);
         setLoading(false);
         setError(error);
         return Promise.reject(error);
     };
 
     const responseHandler = (response: AxiosResponse) => {
-        console.log("responseHandler", response);
+        customLog("responseHandler", response);
         setLoading(false);
         setData(response.data);
         return response;
     };
 
     const responseErrorHandler = (error: AxiosError) => {
-        console.log("responseErrorHandler", error);
+        customLog("responseErrorHandler", error);
         setLoading(false)
         setError(error)
         return Promise.reject(error);

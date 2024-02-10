@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import strings from '../localiztion/localizations'
+import { customLog } from '../utils/CustomConsole';
 
 const LocaleLanguage = () => {
     const [language, setLanguage] = useState('en');
@@ -14,11 +15,11 @@ const LocaleLanguage = () => {
         strings.setLanguage(lang);
         setLanguage(lang);
         localStorage.setItem('language', lang)
-        console.log('handleChangeLang: ', lang);
+        customLog('handleChangeLang: ', lang);
     }
 
     useEffect(() => {
-        console.log('Language: ', strings.getLanguage());
+        customLog('Language: ', strings.getLanguage());
     }, [language]);
 
 

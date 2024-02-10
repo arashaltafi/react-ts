@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../localiztion/i18nextSetting';
 import { useTranslation } from 'react-i18next';
+import { customLog } from '../utils/CustomConsole';
 
 const I8NextSample = () => {
   const [language, setLanguage] = useState('en');
@@ -16,11 +17,11 @@ const I8NextSample = () => {
     i18n.changeLanguage(lang);
     setLanguage(lang);
     localStorage.setItem('language', lang)
-    console.log('handleChangeLang: ', lang);
+    customLog('handleChangeLang: ', lang);
   }
 
   useEffect(() => {
-    console.log('Language: ', i18n.changeLanguage());
+    customLog('Language: ', i18n.changeLanguage());
   }, [language]);
 
 

@@ -100,6 +100,7 @@ import PagingApiSample from './pages/PagingApiSample';
 import SwipeRefresh1 from './Components/SwipeRefresh1';
 import SwipeRefresh2 from './Components/SwipeRefresh2';
 import OtpInputSample from './Components/OtpInputSample';
+import { customLog } from './utils/CustomConsole';
 
 function App() {
 
@@ -109,13 +110,13 @@ function App() {
   const useId1 = useId();
   const useId2 = useId();
   const useId3 = useId();
-  console.log("idUnique 1", useId1)
-  console.log("idUnique 2", useId2)
-  console.log("idUnique 3", useId3)
+  customLog("idUnique 1", useId1)
+  customLog("idUnique 2", useId2)
+  customLog("idUnique 3", useId3)
 
   useEffect(() => {
-    console.log(location);
-    console.log('i18n', i18n.languages);
+    customLog(location);
+    customLog('i18n', i18n.languages);
   }, [location])
 
   //TripleToggleSwitch
@@ -137,13 +138,13 @@ function App() {
   const handleChangeTripleSwitch = (value: any) => {
     switch (value) {
       case "left": //dark
-        console.log('dark')
+        customLog('dark')
         break;
       case "center": //auto
-        console.log('auto')
+        customLog('auto')
         break;
       case "right": //light
-        console.log('light')
+        customLog('light')
         break;
       default:
         break;

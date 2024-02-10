@@ -1,5 +1,6 @@
 import { SwipeRefreshList } from "react-swipe-down-refresh";
 import "./react-swipe-refresh.css";
+import { customLog } from "../utils/CustomConsole";
 
 //npm i react-swipe-down-refresh
 const SwipeRefresh1 = () => {
@@ -12,11 +13,11 @@ const SwipeRefresh1 = () => {
     };
 
     const onStartRefresh = () => {
-        console.log('onStartRefresh')
+        customLog('onStartRefresh')
     }
 
     const onEndRefresh = () => {
-        console.log('onEndRefresh')
+        customLog('onEndRefresh')
     }
 
     return (

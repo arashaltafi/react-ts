@@ -2,6 +2,7 @@ import { CircularProgressbar, CircularProgressbarWithChildren, buildStyles } fro
 import 'react-circular-progressbar/dist/styles.css';
 import Divider from './Divider';
 import { useEffect, useState } from 'react';
+import { customLog } from '../utils/CustomConsole';
 
 interface CircularProgressbarSampleProps {
     percentage: number
@@ -18,7 +19,7 @@ const CircularProgressbarSample = (props: CircularProgressbarSampleProps) => {
             setProgress((prevProgress) => {
                 const newProgress = prevProgress + 1;
                 if (newProgress >= 100) {
-                    console.log('progress >= 100');
+                    customLog('progress >= 100');
                     clearInterval(interval);
                     return 100;
                 }

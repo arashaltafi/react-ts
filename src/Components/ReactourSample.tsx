@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Tour, { ReactourStep } from "reactour";
 import { DeviceUUID } from "device-uuid";
+import { customLog } from '../utils/CustomConsole';
 
 const ReactourSample = () => {
   const du = new DeviceUUID().parse();
@@ -10,7 +11,7 @@ const ReactourSample = () => {
       selector: ".btnSuccess",
       content: "Click here to see the tour",
       action: () => {
-        console.log('first tour');
+        customLog('first tour');
       },
       position: "bottom",
       stepInteraction: true,
@@ -26,7 +27,7 @@ const ReactourSample = () => {
       selector: ".btnError",
       content: "Click here to close the tour",
       action: () => {
-        console.log('second tour');
+        customLog('second tour');
       },
       position: "top",
       stepInteraction: false,

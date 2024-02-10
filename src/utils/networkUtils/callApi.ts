@@ -1,3 +1,4 @@
+import { customLog } from "../CustomConsole";
 import customAxios from "./customAxios";
 
 interface IAxios {
@@ -21,15 +22,15 @@ export async function callApi({
     headers: headers
   })
     .then((response) => {
-      console.log("response", response);
+      customLog("response", response);
       callBack(response.data);
       return response.data;
     })
     .catch((error) => {
-      console.log("error", error);
+      customLog("error", error);
       throw error;
     }).finally(() => {
-      console.log('finally');
+      customLog('finally');
     });
 
 

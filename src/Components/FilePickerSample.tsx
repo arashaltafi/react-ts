@@ -8,6 +8,7 @@ import {
     PhotoOutlined,
     SmartDisplayOutlined,
 } from "@mui/icons-material";
+import { customLog } from '../utils/CustomConsole';
 
 const FilePickerSample = () => {
     const [open, setOpen] = useState<boolean>(false);
@@ -29,25 +30,25 @@ const FilePickerSample = () => {
         const selectedFile = event.target.files && event.target.files[0];
         if (selectedFile) {
             if (!selectedFile.type.startsWith('image/')) {
-                console.log('Only image files are allowed.')
+                customLog('Only image files are allowed.')
                 return;
             }
 
             const maxSize = 1 * 1024 * 1024; // 1MB
             if (selectedFile.size > maxSize) {
-                console.log('File size exceeds the limit of 1MB.')
+                customLog('File size exceeds the limit of 1MB.')
                 return;
             }
 
-            console.log("Selected file:", selectedFile);
-            console.log("Selected name:", selectedFile.name);
-            console.log("Selected size:", selectedFile.size);
+            customLog("Selected file:", selectedFile);
+            customLog("Selected name:", selectedFile.name);
+            customLog("Selected size:", selectedFile.size);
 
             const reader = new FileReader();
             reader.onloadend = () => {
                 const base64String = reader.result?.toString();
                 setImageBase64(base64String);
-                console.log('base64String', base64String);
+                customLog('base64String', base64String);
             };
             reader.readAsDataURL(selectedFile);
         }

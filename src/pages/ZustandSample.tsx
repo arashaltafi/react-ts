@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useStore from "../zustand/store";
+import { customLog } from "../utils/CustomConsole";
 
 const ZustandSample = () => {
 
@@ -16,10 +17,10 @@ const ZustandSample = () => {
         setFamily(inputFamily);
         setPhone(inputPhone);
         setAge(inputAge);
-        console.log("inputName", inputName);
-        console.log("inputFamily", inputFamily);
-        console.log("inputPhone", inputPhone);
-        console.log("inputAge", inputAge);
+        customLog("inputName", inputName);
+        customLog("inputFamily", inputFamily);
+        customLog("inputPhone", inputPhone);
+        customLog("inputAge", inputAge);
     };
 
     return (

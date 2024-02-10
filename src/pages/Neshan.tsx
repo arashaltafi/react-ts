@@ -3,6 +3,7 @@ import { MapComponent, MapTypes } from "@neshan-maps-platform/mapbox-gl-react";
 import "@neshan-maps-platform/mapbox-gl-react/dist/style.css";
 import NeshanMap, { NeshanMapRef } from "@neshan-maps-platform/react-openlayers"
 import Divider from '../Components/Divider';
+import { customLog } from '../utils/CustomConsole';
 
 const Neshan = () => {
   //standard-night  ,  neshan  ,  osm-bright   ,  dreamy
@@ -14,8 +15,8 @@ const Neshan = () => {
       mapRef.current?.map.switchTrafficLayer(false)
       mapRef.current?.map.switchPoiLayer(false)
       // mapRef.current?.map.setMapType("standard-night")
-      console.log('isTrafficLayerEnabled', mapRef.current?.map.isTrafficLayerEnabled());
-      console.log('getAllLayers', mapRef.current?.map.getAllLayers());
+      customLog('isTrafficLayerEnabled', mapRef.current?.map.isTrafficLayerEnabled());
+      customLog('getAllLayers', mapRef.current?.map.getAllLayers());
     }
   }, [])
 

@@ -11,6 +11,7 @@ import { useHover } from 'usehooks-ts'
 import { useIsFirstRender } from 'usehooks-ts'
 import { useScreen } from 'usehooks-ts'
 import { useWindowSize } from 'usehooks-ts'
+import { customLog } from '../utils/CustomConsole'
 
 const CustomHooks = () => {
     //useBoolean
@@ -37,7 +38,7 @@ const CustomHooks = () => {
     useEffect(() => {
         // Do fetch here...
         // Triggers when "debouncedValue" changes
-        console.log('debouncedValue', debouncedValue);
+        customLog('debouncedValue', debouncedValue);
     }, [debouncedValue])
 
     //useDocumentTitle
@@ -47,10 +48,10 @@ const CustomHooks = () => {
     //useEffectOnce
     const [data, setData] = useState<number>(0)
     useEffect(() => {
-        console.log('Normal useEffect', { data })
+        customLog('Normal useEffect', { data })
     }, [data])
     useEffectOnce(() => {
-        console.log('Triggered only once, on mount', { data })
+        customLog('Triggered only once, on mount', { data })
     })
 
     //useHover
@@ -61,7 +62,7 @@ const CustomHooks = () => {
     const isFirst = useIsFirstRender()
     const [dataFirstRender, setDataFirstRender] = useState<number>(0)
     useEffect(() => {
-        console.log('Normal useEffect', dataFirstRender)
+        customLog('Normal useEffect', dataFirstRender)
     }, [dataFirstRender])
 
     //useScreen

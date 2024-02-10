@@ -1,4 +1,5 @@
 import GoBack from "../Components/GoBack"
+import { customLog } from "../utils/CustomConsole"
 
 interface ProfileProps {
     name: string
@@ -19,7 +20,7 @@ const getAge = (name: string): number => {
     return name === 'arash' ? 26 : 0
 }
 const age: number = getAge('arash')
-console.log(age);
+customLog(age);
 
 const Profile = (props: ProfileProps) => {
 

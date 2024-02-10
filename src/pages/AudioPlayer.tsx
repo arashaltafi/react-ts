@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Sound from 'react-sound';
 import Divider from '../Components/Divider';
+import { customLog } from '../utils/CustomConsole';
 
 interface SoundData {
   url: string;
@@ -55,19 +56,19 @@ const AudioPlayer = (props: MultiSoundPlayerProps) => {
   };
 
   const handleOnLoad = () => {
-    console.log('Sound loaded!');
+    customLog('Sound loaded!');
   };
 
   const handleOnPlay = () => {
-    console.log('Sound started playing');
+    customLog('Sound started playing');
   };
 
   const handleOnPause = () => {
-    console.log('Sound paused');
+    customLog('Sound paused');
   };
 
   const handleOnFinish = () => {
-    console.log('Sound finished playing');
+    customLog('Sound finished playing');
   };
 
   return (

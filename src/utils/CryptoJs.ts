@@ -1,5 +1,6 @@
 import CryptoJS from "crypto-js";
 import moment from 'moment';
+import { customLog } from "./CustomConsole";
 
 var CryptoJSAesJson = {
     stringify: (cipherParams: any) => {
@@ -53,7 +54,7 @@ const hashThis = (text: any, encrypt: any) => {
             return decrypted;
         }
     } catch (e: any) {
-        console.log("Exception@encrypt:", text, "Message:", e.message);
+        customLog("Exception@encrypt:", text, "Message:", e.message);
         return null;
     }
 }

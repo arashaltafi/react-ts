@@ -6,6 +6,7 @@ import loading4 from "../lotties/loading4.json";
 import loading5 from "../lotties/loading5.json";
 import { useLottie } from "lottie-react";
 import Divider from './Divider';
+import { customLog } from "../utils/CustomConsole";
 
 const LottieSample = () => {
 
@@ -25,7 +26,7 @@ const LottieSample = () => {
 
         <Divider />
 
-        <Lottie className='w-48 h-48' animationData={loading2} loop={false} onComplete={() => console.log("complete")} />
+        <Lottie className='w-48 h-48' animationData={loading2} loop={false} onComplete={() => customLog("complete")} />
 
         <Divider />
 

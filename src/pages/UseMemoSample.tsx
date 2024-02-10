@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react'
+import { customLog } from '../utils/CustomConsole';
 
 const UseMemoSample = () => {
 
@@ -10,7 +11,7 @@ const UseMemoSample = () => {
     }, [num]);
 
     useEffect(() => {
-        console.log(theme);
+        customLog(theme);
     }, [theme])
 
     return (

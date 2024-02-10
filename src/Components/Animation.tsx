@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { customLog } from "../utils/CustomConsole"
 
 //https://tools.css-tricks.ir/animate.css/
 const Animation = () => {
@@ -212,7 +213,7 @@ const Animation = () => {
                 setIsAddInfinite51(!isAddInfinite20)
                 break;
             default:
-                console.log("default")
+                customLog("default")
                 break;
         }
     }

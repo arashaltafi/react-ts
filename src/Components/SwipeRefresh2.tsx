@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { callApi } from '../utils/networkUtils/callApi';
 import PullToRefresh from 'react-simple-pull-to-refresh'
 import BounceLoader from 'react-spinners/BounceLoader';
+import { customLog } from '../utils/CustomConsole';
 
 const SwipeRefresh2 = () => {
     const [response, setResponse] = useState<{
@@ -19,13 +20,13 @@ const SwipeRefresh2 = () => {
                 method: "GET",
                 url: `test_paging/test_paging.php?page_number=${pageNumber}&page_size=${pageSize}`,
                 callBack: (res: any) => {
-                    console.log("handleClickGet response", res);
+                    customLog("handleClickGet response", res);
                     setResponse([...response, ...res])
                     setPageNumber(pageNumber + 1)
                 },
             });
         } catch (error) {
-            console.log("handleClickGet error", error);
+            customLog("handleClickGet error", error);
         }
     }
 

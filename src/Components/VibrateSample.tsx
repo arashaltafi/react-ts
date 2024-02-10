@@ -1,9 +1,11 @@
+import { customLog } from "../utils/CustomConsole";
+
 const VibrateSample = () => {
 
     const handleClickToVibrate = () => {
         if ('vibrate' in navigator) {
             navigator.vibrate(1500);
-            console.log('!!!vibrate!!!');
+            customLog('!!!vibrate!!!');
         } else {
             console.error('vibrate is not supported by your browser');
         }

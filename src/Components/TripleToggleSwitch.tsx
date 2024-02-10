@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import "./switch-style.css";
+import { customLog } from '../utils/CustomConsole';
 
 type ValueType = string | number | boolean;
 
@@ -33,7 +34,7 @@ const TripleToggleSwitch = (props: TripleToggleSwitchProps) => {
 
     const [position, setPosition] = useState<ValueType>('center');
     useEffect(() => {
-        console.log('test render')
+        customLog('test render')
         if (localStorage.getItem('theme') === 'dark') {
             setPosition("left")
             state.switchPosition = 'left'
@@ -46,7 +47,7 @@ const TripleToggleSwitch = (props: TripleToggleSwitchProps) => {
         }
     }, [])
 
-    console.log(position)
+    customLog(position)
 
     const getSwitchAnimation = (value: ValueType) => {
         const { switchPosition } = state;

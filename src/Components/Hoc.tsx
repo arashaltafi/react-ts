@@ -1,9 +1,10 @@
 import { Outlet, useLocation } from 'react-router';
+import { customLog } from '../utils/CustomConsole';
 
 const Hoc = () => {
 
     let location = useLocation();
-    console.log('hoc is active');
+    customLog('hoc is active');
 
     return <Outlet />;
 }

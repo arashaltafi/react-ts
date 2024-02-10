@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Lottie from "lottie-react";
 import internetOn from "../lotties/internet_on.json";
 import internetOff from "../lotties/internet_off.json";
+import { customLog } from '../utils/CustomConsole';
 
 const NetworkListener = () => {
 
@@ -35,12 +36,12 @@ const NetworkListener = () => {
     const offlineHandler = () => {
         setNetworkStatus(false);
         setNetworkOkIconShow(true);
-        console.log("offline");
+        customLog("offline");
     };
 
     const onlineHandler = () => {
         setNetworkStatus(true);
-        console.log("online");
+        customLog("online");
     };
 
     useEffect(() => {
@@ -56,7 +57,7 @@ const NetworkListener = () => {
                         animationData={internetOn}
                         className='w-28 h-28'
                         loop={true}
-                        onComplete={() => console.log("complete")}
+                        onComplete={() => customLog("complete")}
                     />
                 )
             ) : ( //offline
@@ -64,7 +65,7 @@ const NetworkListener = () => {
                     animationData={internetOff}
                     className='w-28 h-28'
                     loop={true}
-                    onComplete={() => console.log("complete")}
+                    onComplete={() => customLog("complete")}
                 />
             )}
         </>

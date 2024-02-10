@@ -4,6 +4,7 @@ import AxiosProvider from "../utils/networkUtils/AxiosProvider";
 import { useEffect } from "react";
 import axiosSlice from "../redux/axiosSlice";
 import Loading from "./Loading";
+import { customLog } from "../utils/CustomConsole";
 
 const Axios = () => {
 
@@ -48,11 +49,11 @@ const Axios = () => {
         method: "GET",
         url,
         callBack: (response: any) => {
-          console.log("handleClickGet response", response);
+          customLog("handleClickGet response", response);
         },
       });
     } catch (error) {
-      console.log("handleClickGet error", error);
+      customLog("handleClickGet error", error);
     }
   }
 

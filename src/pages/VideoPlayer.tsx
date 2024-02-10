@@ -2,19 +2,20 @@ import Plyr from "plyr-react";
 import "plyr-react/plyr.css";
 import { useRef } from "react";
 import ReactHlsPlayer, { HlsPlayerProps } from 'react-hls-player';
+import { customLog } from "../utils/CustomConsole";
 
 const VideoPlayer = () => {
 
   const handlePlay = () => {
-    console.log('Video is playing');
+    customLog('Video is playing');
   };
 
   const handlePause = () => {
-    console.log('Video is paused');
+    customLog('Video is paused');
   };
 
   const handleEnded = () => {
-    console.log('Video has ended');
+    customLog('Video has ended');
   };
 
   const playerRef = useRef<any>(null);
