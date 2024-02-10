@@ -99,6 +99,7 @@ import SnackBarInAllApp from './Components/SnackBarInAllApp';
 import PagingApiSample from './pages/PagingApiSample';
 import SwipeRefresh1 from './Components/SwipeRefresh1';
 import SwipeRefresh2 from './Components/SwipeRefresh2';
+import OtpInputSample from './Components/OtpInputSample';
 
 function App() {
 
@@ -245,6 +246,7 @@ function App() {
                     />} />
                     <Route path='filePickerSample' element={<FilePickerSample />} />
                     <Route path='snackbarSample' element={<SnackbarSample />} />
+                    <Route path='otpInputSample' element={<OtpInputSample />} />
                   </Route>
                   <Route path='/animationSamples'>
                     <Route path='' element={<AnimationSamples />} />
