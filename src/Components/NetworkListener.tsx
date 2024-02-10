@@ -8,6 +8,7 @@ const NetworkListener = () => {
     const [networkStatus, setNetworkStatus] = useState(true);
     const [networkOkIconShow, setNetworkOkIconShow] = useState(false);
 
+    //for first time
     useEffect(() => {
         try {
             if (navigator.onLine) {
@@ -21,6 +22,7 @@ const NetworkListener = () => {
         }
     }, []);
 
+    //when changing network status
     useEffect(() => {
         window.addEventListener("offline", offlineHandler, false);
         window.addEventListener("online", onlineHandler, false);
