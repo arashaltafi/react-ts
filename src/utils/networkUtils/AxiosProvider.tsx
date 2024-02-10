@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "./customAxios";
 import { useEffect, useState } from "react";
 import axiosSlice from "../../redux/axiosSlice";
@@ -11,6 +11,8 @@ const AxiosProvider = () => {
     const [error, setError] = useState<any>(null);
     const [data, setData] = useState<any>(null);
     const [configAxios, setConfigAxios] = useState<any>(null);
+    let configDone = false;
+    const axiosLoading = useSelector((state: any) => state.axios.axiosLoading);
 
     useEffect(() => {
         if (loading === null) return;
@@ -65,10 +67,13 @@ const AxiosProvider = () => {
     );
 
     const requestHandler = (config: any) => {
-        customLog("requestHandler", config);
-        setLoading(true);
-        setConfigAxios(JSON.stringify(config))
-        return config;
+        if (!configDone && !axiosLoading) {
+            configDone = true;
+            customLog("requestHandler", config);
+            setLoading(true);
+            setConfigAxios(JSON.stringify(config))
+            return config;
+        }
     };
 
     const requestErrorHandler = (error: AxiosError) => {

@@ -3,8 +3,9 @@ import { callApi } from "../utils/networkUtils/callApi"
 import AxiosProvider from "../utils/networkUtils/AxiosProvider";
 import { useEffect } from "react";
 import axiosSlice from "../redux/axiosSlice";
-import Loading from "./Loading";
 import { customLog } from "../utils/CustomConsole";
+import NetworkLoading from "./NetworkLoading";
+import NetworkErrorBottomSheet from "./NetworkErrorBottomSheet";
 
 const Axios = () => {
 
@@ -62,7 +63,7 @@ const Axios = () => {
     await callApi({ ...JSON.parse(axiosSelector.axiosReq), convert: false }).then((response) => {
     }).catch((error) => {
     })
-}
+  }
 
   return (
     <>
@@ -79,8 +80,8 @@ const Axios = () => {
 
         <div className='title py-12 no-underline mt-8'>
           {
-            axiosSelector.error ? <p onClick={handleRetry}>{axiosSelector.error}</p> :
-              axiosSelector.isLoading ? <Loading /> :
+            axiosSelector.error ? <NetworkErrorBottomSheet /> :
+              axiosSelector.isLoading ? <NetworkLoading /> :
                 axiosSelector.data ? <code>{JSON.stringify(axiosSelector.data, null, 2)}</code> : <>Please Call Api</>
           }
         </div>
@@ -88,7 +89,9 @@ const Axios = () => {
         <div className='flex items-end justify-center flex-grow pb-16'>
           <a className='subtitle text-center hover:text-sky-500 hover:underline'
             onClick={(e) => handleClick(e)}
-            href="https://axios-http.com/">React Axios</a>
+            href="https://axios-http.com/">
+            React Axios
+          </a>
         </div>
       </div>
     </>
