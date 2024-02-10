@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import snackBarSlice from '../redux/snackBarSlice';
+import NetworkListener from '../Components/NetworkListener';
+
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -26,6 +28,9 @@ const Home = () => {
 
   return (
     <div className='py-16 px-8 flex flex-col justify-center items-center gap-16 bg-zinc-200'>
+      <div className='absolute left-10 top-8'>
+        <NetworkListener />
+      </div>
       <p
         style={{ color: 'red', backgroundColor: 'yellow', padding: '10px', borderRadius: '10px', fontWeight: 'bold', fontSize: '20px' }}>
         Welcome to Home
