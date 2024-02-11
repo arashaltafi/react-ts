@@ -101,6 +101,7 @@ import SwipeRefresh1 from './Components/SwipeRefresh1';
 import SwipeRefresh2 from './Components/SwipeRefresh2';
 import OtpInputSample from './Components/OtpInputSample';
 import { customLog } from './utils/CustomConsole';
+import PeerJsSample from './pages/PeerJsSample';
 
 function App() {
 
@@ -288,6 +289,7 @@ function App() {
                   <Route path='pagingApiSample' element={<PagingApiSample />} />
                   <Route path='swipeRefresh1' element={<SwipeRefresh1 />} />
                   <Route path='swipeRefresh2' element={<SwipeRefresh2 />} />
+                  <Route path='peerJsSample' element={<PeerJsSample />} />
                   <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />                
                 </Route>
               </Route>

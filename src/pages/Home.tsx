@@ -73,6 +73,7 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/pagingApiSample')}>PagingApiSample</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/swipeRefresh1')}>SwipeRefresh1</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/swipeRefresh2')}>SwipeRefresh2</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/peerJsSample')}>PeerJsSample</button>
 
       <span className='w-[90%] h-[1px] bg-zinc-800' />
 
@@ -105,6 +106,7 @@ const Home = () => {
         <Link to='/pagingApiSample'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>PagingApiSample</h1></Link>
         <Link to='/swipeRefresh1'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>SwipeRefresh1</h1></Link>
         <Link to='/swipeRefresh2'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>SwipeRefresh2</h1></Link>
+        <Link to='/peerJsSample'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>PeerJsSample</h1></Link>
       </nav>
     </div>
   )
