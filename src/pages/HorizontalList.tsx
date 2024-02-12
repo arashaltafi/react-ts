@@ -13,6 +13,7 @@ const Coverflow = require('react-coverflow');
 //npm install swiper react-spring-3d-carousel
 //npm install react-round-carousel
 //npm install react-coverflow
+//npm install react-spring-carousel
 
 const HorizontalList = () => {
     const [items, setItems] = useState<string[]>([
