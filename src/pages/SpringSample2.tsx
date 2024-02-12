@@ -83,9 +83,9 @@ const SpringSample2 = () => {
 
 
             <div className='flex flex-row gap-8 items-center justify-center'>
-                <button onClick={() => handleClick('happy')}>Happy</button>
-                <button onClick={() => handleClick('sad')}>Sad</button>
-                <button onClick={() => handleClick('angry')}>Angry</button>
+                <button className='btnSuccess' onClick={() => handleClick('happy')}>Happy</button>
+                <button className='btnSuccess' onClick={() => handleClick('sad')}>Sad</button>
+                <button className='btnSuccess' onClick={() => handleClick('angry')}>Angry</button>
             </div>
 
             <div className='flex flex-row gap-8 items-center justify-center'>
@@ -120,9 +120,9 @@ const SpringSample2 = () => {
 
 
             <div className='flex flex-row gap-8 items-center justify-center'>
-                <button onClick={() => handleClick1('happy')}>Happy</button>
-                <button onClick={() => handleClick1('sad')}>Sad</button>
-                <button onClick={() => handleClick1('angry')}>Angry</button>
+                <button className='btnSuccess' onClick={() => handleClick1('happy')}>Happy</button>
+                <button className='btnSuccess' onClick={() => handleClick1('sad')}>Sad</button>
+                <button className='btnSuccess' onClick={() => handleClick1('angry')}>Angry</button>
             </div>
 
             <div className='flex flex-row gap-8 items-center justify-center'>
