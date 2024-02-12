@@ -1,6 +1,6 @@
 import * as React from 'react'
 import useMeasure from 'react-use-measure'
-import { useTrail, animated } from '@react-spring/web'
+import { useTrail, animated, useSpring, useTransition } from '@react-spring/web'
 import './StylesSpring.css'
 
 const fast = { tension: 1200, friction: 40 }
@@ -18,8 +18,36 @@ const SpringSample = () => {
         api.start({ xy: [e.clientX - left, e.clientY - top] })
     }
 
+    const springs = useSpring({
+        from: { x: 0, opacity: 0 },
+        to: { x: -100, opacity: 100 },
+        delay: 100,
+        loop: true,
+        reverse: true
+    })
+
+    const [trails] = useTrail(
+        2,
+        () => ({
+            from: { opacity: 0 },
+            to: { opacity: 100 },
+            delay: 100,
+            loop: true,
+            reverse: true
+        }),
+        []
+    )
+
+    const [transitions] = useTransition(2, () => ({
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 1 },
+    }))
+
     return (
-        <div className='overflow-hidden'>
+        <div className='overflow-x-hidden'>
+            <h1>React Spring Sample</h1>
+
             <svg style={{ position: 'absolute', width: 0, height: 0 }}>
                 <filter id="goo">
                     <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="30" />
@@ -34,6 +62,49 @@ const SpringSample = () => {
                     <animated.div key={index} style={{ transform: props.xy.to(trans) }} />
                 ))}
             </div>
+
+            <animated.div
+                style={{
+                    position: 'absolute',
+                    right: 0,
+                    top: 0,
+                    width: 80,
+                    height: 80,
+                    marginTop: 16,
+                    background: '#EF4444',
+                    borderRadius: 8,
+                    ...springs,
+                }}
+            />
+
+            <div>
+                {trails.map(props => (
+                    <animated.div
+                        style={{
+                            position: 'absolute',
+                            right: 0,
+                            top: 100,
+                            marginTop: 16,
+                            borderRadius: 8,
+                            ...props,
+                        }}
+                    >
+                        useTrail
+                    </animated.div>
+                ))}
+            </div>
+
+
+
+            <div> {
+                transitions((style, item) => (
+                    <animated.div style={style}>
+                        useTransition
+                    </animated.div>
+                ))
+            }
+            </div>
+
         </div>
     )
 }
