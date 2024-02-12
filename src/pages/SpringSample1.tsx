@@ -1,4 +1,3 @@
-import * as React from 'react'
 import useMeasure from 'react-use-measure'
 import { useTrail, animated, useSpring, useTransition } from '@react-spring/web'
 import './StylesSpring.css'
@@ -7,7 +6,7 @@ const fast = { tension: 1200, friction: 40 }
 const slow = { mass: 10, tension: 200, friction: 50 }
 const trans = (x: number, y: number) => `translate3d(${x}px,${y}px,0) translate3d(-50%,-50%,0)`
 
-const SpringSample = () => {
+const SpringSample1 = () => {
     const [trail, api] = useTrail(3, i => ({
         xy: [0, 0],
         config: i === 0 ? fast : slow,
@@ -135,4 +134,4 @@ const SpringSample = () => {
     )
 }
 
-export default SpringSample
+export default SpringSample1

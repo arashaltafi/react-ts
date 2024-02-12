@@ -74,7 +74,8 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/swipeRefresh1')}>SwipeRefresh1</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/swipeRefresh2')}>SwipeRefresh2</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/peerJsSample')}>PeerJsSample</button>
-      <button className='text-2xl btnSuccess' onClick={() => navigate('/springSample')}>SpringSample</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/springSample1')}>SpringSample 1</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/springSample2')}>SpringSample 2</button>
 
       <span className='w-[90%] h-[1px] bg-zinc-800' />
 
@@ -108,7 +109,8 @@ const Home = () => {
         <Link to='/swipeRefresh1'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>SwipeRefresh1</h1></Link>
         <Link to='/swipeRefresh2'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>SwipeRefresh2</h1></Link>
         <Link to='/peerJsSample'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>PeerJsSample</h1></Link>
-        <Link to='/springSample'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>SpringSample</h1></Link>
+        <Link to='/springSample1'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>SpringSample 1</h1></Link>
+        <Link to='/springSample2'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>SpringSample 2</h1></Link>
       </nav>
     </div>
   )
