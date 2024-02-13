@@ -1,13 +1,48 @@
-import { Controls } from 'reactour';
 import Divider from '../Components/Divider';
 import { PlayState, Reveal, ScrollTrigger, SplitChars, SplitWords, Timeline, Tween } from 'react-gsap';
 
 const GsapSample = () => {
 
   return (
-    <div className='flex flex-col items-center justify-center gap-8 w-full'>
-      <Tween to={{ x: '200px', rotation: 180 }} duration={2} ease="back.out(1.7)">
-        <div style={{ width: '100px', height: '100px', background: '#ccc' }} />
+    <div className='flex flex-col items-center justify-center gap-8 w-full py-16'>
+
+      <a className='title' href='https://bitworking.github.io/react-gsap/'> React Gsap Docs </a>
+
+
+
+      <Divider />
+
+
+
+      <Tween
+        to={{ x: '200px', rotation: 180 }}
+        duration={2}
+        ease="back.out(1.7)"
+        playState={PlayState.play}
+      >
+        <div style={{ width: '100px', height: '100px', background: '#f0f' }} />
+      </Tween>
+
+
+
+
+      <Divider />
+
+
+
+
+      <Tween
+        from={{ x: '100px' }}
+        to={{ x: '200px' }}
+        duration={1}
+        axis='y'
+        ease="back.out(2)"
+        playState={PlayState.play}
+        repeat={10}
+        each={10}
+        yoyo={true}
+      >
+        <div style={{ width: '100px', height: '100px', background: '#0f0' }} />
       </Tween>
 
 
@@ -20,7 +55,7 @@ const GsapSample = () => {
 
 
       <Tween from={{ x: '200px', rotation: 180 }} duration={2}>
-        <div style={{ width: '100px', height: '100px', background: '#ccc' }} />
+        <div style={{ width: '100px', height: '100px', background: '#ff0' }} />
       </Tween>
 
 
@@ -38,7 +73,7 @@ const GsapSample = () => {
         to={{ x: '200px', rotation: 135 }}
         duration={2}
       >
-        <div style={{ width: '100px', height: '100px', background: '#ccc' }} />
+        <div style={{ width: '100px', height: '100px', background: '#f00' }} />
       </Tween>
 
 
@@ -73,7 +108,7 @@ const GsapSample = () => {
 
       <Timeline
         target={
-          <div style={{ width: '100px', height: '100px', background: '#ccc' }} />
+          <div style={{ width: '100px', height: '100px', background: '#a12163' }} />
         }
       >
         <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} duration={2} />
@@ -154,6 +189,13 @@ const GsapSample = () => {
           }}
         >
           <div style={{ width: '100px', height: '100px', background: '#ccc' }} />
+        </Tween>
+        <Tween
+          to={{
+            x: '300px',
+          }}
+        >
+          <div style={{ width: '100px', height: '100px', background: '#999' }} />
         </Tween>
         <Tween
           to={{
