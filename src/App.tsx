@@ -104,6 +104,8 @@ import { customLog } from './utils/CustomConsole';
 import PeerJsSample from './pages/PeerJsSample';
 import SpringSample1 from './pages/SpringSample1';
 import SpringSample2 from './pages/SpringSample2';
+import LenisSample from './pages/LenisSample';
+import GsapSample from './pages/GsapSample';
 
 function App() {
 
@@ -294,6 +296,8 @@ function App() {
                   <Route path='peerJsSample' element={<PeerJsSample />} />
                   <Route path='springSample1' element={<SpringSample1 />} />
                   <Route path='springSample2' element={<SpringSample2 />} />
+                  <Route path='lenisSample' element={<LenisSample />} />
+                  <Route path='gsapSample' element={<GsapSample />} />
                   <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />                
                 </Route>
               </Route>
