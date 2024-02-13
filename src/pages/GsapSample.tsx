@@ -32,14 +32,12 @@ const GsapSample = () => {
 
 
       <Tween
-        from={{ x: '100px' }}
         to={{ x: '200px' }}
         duration={1}
         axis='y'
         ease="back.out(2)"
         playState={PlayState.play}
-        repeat={10}
-        each={10}
+        repeat={100}
         yoyo={true}
       >
         <div style={{ width: '100px', height: '100px', background: '#0f0' }} />
