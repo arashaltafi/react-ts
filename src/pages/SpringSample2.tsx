@@ -32,6 +32,26 @@ const SpringSample2 = () => {
 
 
 
+    //useSpring2
+    const springs2 = useSpring({
+        from: { background: '#000000', y: -40, x: 0, opacity: 0 },
+        to: [
+            { x: 80, background: '#ffff00', opacity: 1 },
+            { y: 40, background: '#00ff00', opacity: 0.5 },
+            { x: 0, background: '#0000ff', opacity: 1 },
+            { y: -40, background: '#ff0000', opacity: 0.5 },
+        ],
+
+        loop: true,
+        delay: 500,
+        reverse: true,
+        config: { mass: 5, tension: 1200, friction: 40 }
+    })
+
+
+
+
+
 
     //useTransition
     const [mood, setMood] = useState<string>('');
@@ -132,6 +152,18 @@ const SpringSample2 = () => {
                     </animated.div>
                 ))}
             </div>
+
+
+
+
+            <animated.div
+                style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: 4,
+                    ...springs2,
+                }}
+            />
 
         </div>
     )
