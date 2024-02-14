@@ -106,6 +106,7 @@ import SpringSample1 from './pages/SpringSample1';
 import SpringSample2 from './pages/SpringSample2';
 import LenisSample from './pages/LenisSample';
 import GsapSample from './pages/GsapSample';
+import LongPressSample from './Components/LongPressSample';
 
 function App() {
 
@@ -253,6 +254,7 @@ function App() {
                     <Route path='filePickerSample' element={<FilePickerSample />} />
                     <Route path='snackbarSample' element={<SnackbarSample />} />
                     <Route path='otpInputSample' element={<OtpInputSample />} />
+                    <Route path='longPressSample' element={<LongPressSample />} />
                   </Route>
                   <Route path='/animationSamples'>
                     <Route path='' element={<AnimationSamples />} />
