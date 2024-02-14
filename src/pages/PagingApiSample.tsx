@@ -4,14 +4,18 @@ import { customLog } from '../utils/CustomConsole';
 import { Pagination, PaginationItem, Stack } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Swal from 'sweetalert2';
+
+type responseType = {
+    id: number,
+    name: string,
+    family: string,
+    avatar: string
+}[]
 
 const PagingApiSample = () => {
-    const [response, setResponse] = useState<{
-        id: number,
-        name: string,
-        family: string,
-        avatar: string
-    }[]>([]);
+    const [response, setResponse] = useState<responseType>([]);
+    const [totalSize, setTotalSize] = useState<number>(100);
 
     const [page, setPage] = useState<number>(1);
     const pageSize = 5;
@@ -22,9 +26,18 @@ const PagingApiSample = () => {
             await callApi({
                 method: "GET",
                 url: `test_paging/test_paging.php?page_number=${page}&page_size=${pageSize}`,
-                callBack: (response: any) => {
+                callBack: (response: responseType) => {
                     customLog("handleClickGet response", response);
-                    setResponse(response)
+                    if (response && response.length > 0) {
+                        setResponse(response)
+                    } else {
+                        Swal.fire({
+                            title: `خطا`,
+                            text: `موردی یافت نشد`,
+                            icon: `error`
+                        });
+                        setPage(page - 1)
+                    }
                     window.scrollTo(0, 1000);
                     document.body.scrollTop = 0; // For Safari
                     document.body.scrollTo(0, 0); // For Safari
@@ -76,7 +89,7 @@ const PagingApiSample = () => {
                             fontSize: 22,
                         }
                     }}
-                    count={10}
+                    count={totalSize / pageSize}
                     disabled={false}
                     size="large"
                     shape="rounded"
