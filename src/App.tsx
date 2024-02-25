@@ -107,6 +107,7 @@ import SpringSample2 from './pages/SpringSample2';
 import LenisSample from './pages/LenisSample';
 import GsapSample from './pages/GsapSample';
 import LongPressSample from './Components/LongPressSample';
+import ReactToastifySample from './Components/ReactToastifySample';
 
 function App() {
 
@@ -255,6 +256,7 @@ function App() {
                     <Route path='snackbarSample' element={<SnackbarSample />} />
                     <Route path='otpInputSample' element={<OtpInputSample />} />
                     <Route path='longPressSample' element={<LongPressSample />} />
+                    <Route path='reactToastify' element={<ReactToastifySample />} />
                   </Route>
                   <Route path='/animationSamples'>
                     <Route path='' element={<AnimationSamples />} />
