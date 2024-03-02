@@ -11,6 +11,7 @@ const BestReference = () => {
         <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-sky-500" href="https://uiverse.io/" target="_blank" rel="noreferrer">Best Component</a>
         <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://animatedbackgrounds.me/" target="_blank" rel="noreferrer">Animated Backgrounds</a>
         <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://shadows.brumm.af/" target="_blank" rel="noreferrer">shadows.brumm.af</a>
+        <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://10015.io/tools/css-border-radius-generator" target="_blank" rel="noreferrer">css-border-radius-generator</a>
       </div>
     </div>
   )
