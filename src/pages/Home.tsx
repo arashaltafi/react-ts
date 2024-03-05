@@ -79,6 +79,7 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/lenisSample')}>Lenis Sample</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/gsapSample')}>Gsap Sample</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/swipeDetect')}>Swipe Detect</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/webCamSample')}>WebCam Sample</button>
 
       <span className='w-[90%] h-[1px] bg-zinc-800' />
 
@@ -117,6 +118,7 @@ const Home = () => {
         <Link to='/lenisSample'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Lenis Sample</h1></Link>
         <Link to='/gsapSample'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Gsap Sample</h1></Link>
         <Link to='/swipeDetect'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Swipe Detect</h1></Link>
+        <Link to='/webCamSample'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>WebCam Sample</h1></Link>
       </nav>
     </div>
   )
