@@ -5,6 +5,9 @@ import { useDropzone } from 'react-dropzone';
 const DragDropSampleUpload = () => {
     const [uploadedFiles, setUploadedFiles] = useState<any[]>([]);
     const { getRootProps, getInputProps } = useDropzone({
+        accept: {
+            'image/*': ['.png', '.jpg', '.jpeg', '.mp4']
+        },
         onDrop: (acceptedFiles: any) => {
             setUploadedFiles([...uploadedFiles, ...acceptedFiles]);
             // Call your backend API endpoint to upload files
