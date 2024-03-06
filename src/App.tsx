@@ -112,6 +112,7 @@ import SwipeDetect from './pages/SwipeDetect';
 import WebCamSample from './pages/WebCamSample';
 import DragDropSample from './pages/DragDropSample';
 import DragDropSampleUpload from './pages/DragDropSampleUpload';
+import DragDropTodo from './pages/DragDropTodo';
 
 function App() {
 
@@ -310,6 +311,7 @@ function App() {
                   <Route path='webCamSample' element={<WebCamSample />} />
                   <Route path='dragDropSample' element={<DragDropSample />} />
                   <Route path='dragDropSampleUpload' element={<DragDropSampleUpload />} />
+                  <Route path='dragDropTodo' element={<DragDropTodo />} />
                   <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />                
                 </Route>
               </Route>
