@@ -110,6 +110,8 @@ import LongPressSample from './Components/LongPressSample';
 import ReactToastifySample from './Components/ReactToastifySample';
 import SwipeDetect from './pages/SwipeDetect';
 import WebCamSample from './pages/WebCamSample';
+import DragDropSample from './pages/DragDropSample';
+import DragDropSampleUpload from './pages/DragDropSampleUpload';
 
 function App() {
 
@@ -306,6 +308,8 @@ function App() {
                   <Route path='gsapSample' element={<GsapSample />} />
                   <Route path='swipeDetect' element={<SwipeDetect />} />
                   <Route path='webCamSample' element={<WebCamSample />} />
+                  <Route path='dragDropSample' element={<DragDropSample />} />
+                  <Route path='dragDropSampleUpload' element={<DragDropSampleUpload />} />
                   <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />                
                 </Route>
               </Route>
