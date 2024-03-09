@@ -21,8 +21,8 @@ const VideoPlayer = () => {
   const playerRef = useRef<any>(null);
 
   const hlsPlayerProps: HlsPlayerProps = {
-    src: 'https://edge-uk8.manoto.click/live_1500.m3u8',
-    autoPlay: false,
+    src: 'https://hls.pmchd.live/hls/stream.m3u8',
+    autoPlay: true,
     controls: true,
     width: '50%',
     height: 'auto',
@@ -90,7 +90,7 @@ const VideoPlayer = () => {
         onEnded={handleEnded}
       />
 
-      <ReactHlsPlayer {...hlsPlayerProps} />
+      <ReactHlsPlayer className="w-full h-auto" {...hlsPlayerProps} />
     </div>
   )
 }
