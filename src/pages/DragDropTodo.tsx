@@ -99,8 +99,8 @@ const DragDropTodo = () => {
     };
 
     return (
-        <div className="w-full h-screen flex items-center justify-between flex-col">
-            <div className="flex items-center justify-center w-full">
+        <div className="w-full flex items-center justify-between overflow-x-hidden flex-col">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center justify-center w-full">
                 <DragDropContext onDragEnd={handleDragEnd}>
                     {Object.values(columns).map(column => (
                         <div
@@ -134,6 +134,7 @@ const DragDropTodo = () => {
                                                             padding: 16,
                                                             margin: "0 0 8px 0",
                                                             backgroundColor: "white",
+                                                            borderRadius: 8,
                                                             ...provided.draggableProps.style
                                                         }}
                                                     >
@@ -152,7 +153,7 @@ const DragDropTodo = () => {
             </div>
 
             <button
-                className="btnSuccess px-6 py-3 text-2xl font-bold flex items-center justify-center mb-8"
+                className="btnSuccess px-6 py-3 text-2xl font-bold flex items-center justify-center mt-16 mb-8"
                 onClick={handleLogLists}
             >
                 Log Lists
