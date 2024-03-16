@@ -84,6 +84,7 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/dragDropSampleUpload')}>DragDrop Sample Upload</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/dragDropTodo')}>DragDrop Todo</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/swagger')}>Swagger</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/sensor')}>Sensor</button>
 
       <span className='w-[90%] h-[1px] bg-zinc-800' />
 
@@ -127,6 +128,7 @@ const Home = () => {
         <Link to='/dragDropSampleUpload'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>DragDrop Sample Upload</h1></Link>
         <Link to='/dragDropTodo'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>DragDrop Todo</h1></Link>
         <Link to='/swagger'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Swagger</h1></Link>
+        <Link to='/sensor'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Sensor</h1></Link>
       </nav>
     </div>
   )

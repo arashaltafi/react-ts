@@ -114,6 +114,7 @@ import DragDropSample from './pages/DragDropSample';
 import DragDropSampleUpload from './pages/DragDropSampleUpload';
 import DragDropTodo from './pages/DragDropTodo';
 import Swagger from './swagger/Swagger';
+import SensorSample from './pages/SensorSample';
 
 function App() {
 
@@ -314,6 +315,7 @@ function App() {
                   <Route path='dragDropSampleUpload' element={<DragDropSampleUpload />} />
                   <Route path='dragDropTodo' element={<DragDropTodo />} />
                   <Route path='swagger' element={<Swagger />} />
+                  <Route path='sensor' element={<SensorSample />} />
                   <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />                
                 </Route>
               </Route>
