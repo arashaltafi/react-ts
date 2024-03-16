@@ -116,6 +116,9 @@ import DragDropTodo from './pages/DragDropTodo';
 import Swagger from './swagger/Swagger';
 import SensorSample from './pages/SensorSample';
 import ValidateSample from './pages/ValidateSample';
+import SkeletonSample from './skeleton/SkeletonSample';
+import SkeletonSample1 from './skeleton/SkeletonSample1';
+import SkeletonSample2 from './skeleton/SkeletonSample2';
 
 function App() {
 
@@ -275,6 +278,11 @@ function App() {
                     <Route path='sample5' element={<AnimationSamples5 />} />
                     <Route path='sample6' element={<AnimationSamples6 />} />
                     <Route path='sample7' element={<AnimationSamples7 />} />
+                  </Route>
+                  <Route path='/skeleton'>
+                    <Route path='' element={<SkeletonSample />} />
+                    <Route path='sample1' element={<SkeletonSample1 />} />
+                    <Route path='sample2' element={<SkeletonSample2 />} />
                   </Route>
                   <Route path='/particles'>
                     <Route path='' element={<ParticlesPages />} />
