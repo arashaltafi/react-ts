@@ -8,6 +8,9 @@ const ValidateSample = () => {
     const [isValidPhone, setIsValidPhone] = useState<boolean | null>(null);
     const [phone, setPhone] = useState<string>('');
 
+    const [isValidCartBank, setIsValidCartBank] = useState<boolean | null>(null);
+    const [cartBank, setCartBank] = useState<string>('');
+
     const isValidNationalCode = (code: string) => {
         if (code.length !== 10 || /(\d)(\1){9}/.test(code)) {
             setIsValid(false);
@@ -29,6 +32,31 @@ const ValidateSample = () => {
     const isValidPhoneNumber = (phone: string) => {
         const iranianPhoneRegex = /^09\d{9}$/;
         setIsValidPhone(iranianPhoneRegex.test(phone));
+    }
+
+    const isValidCartBankNumber = (card: string) => {
+        if (
+            typeof card === 'undefined' ||
+            card === undefined ||
+            card === null ||
+            isNaN(Number(card)) ||
+            card.length !== 16
+        ) {
+            setIsValidCartBank(false);
+        } else {
+            let cardTotal = 0;
+
+            for (let i = 0; i < 16; i += 1) {
+                const c = Number(card[i]);
+                if (i % 2 === 0) {
+                    cardTotal += c * 2 > 9 ? c * 2 - 9 : c * 2;
+                } else {
+                    cardTotal += c;
+                }
+            }
+
+            setIsValidCartBank(cardTotal % 10 === 0);
+        }
     }
 
     return (
@@ -59,6 +87,20 @@ const ValidateSample = () => {
                     />
                     <p className={`text-2xl font-bold text-center ${isValidPhone === null ? 'text-black' : isValidPhone ? 'text-green-500' : 'text-red-500'}`}>{isValidPhone !== null && (isValidPhone ? 'Valid' : 'Invalid')}</p>
                     <button className='btnSuccess' onClick={() => isValidPhoneNumber(phone)}>Check Validation Phone</button>
+                </div>
+
+                <Divider />
+
+                <div className="w-full h-full flex items-center justify-center flex-col gap-6">
+                    <h3 className='subtitle'>Validate Cart Bank</h3>
+                    <input
+                        className='w-1/3 px-4 py-3 border-2 border-solid border-black m-4 rounded-xl shadow-lg'
+                        type="text"
+                        placeholder='Enter Your Phone ...'
+                        onChange={(e) => setCartBank(e.target.value)}
+                    />
+                    <p className={`text-2xl font-bold text-center ${isValidCartBank === null ? 'text-black' : isValidCartBank ? 'text-green-500' : 'text-red-500'}`}>{isValidCartBank !== null && (isValidCartBank ? 'Valid' : 'Invalid')}</p>
+                    <button className='btnSuccess' onClick={() => isValidCartBankNumber(cartBank)}>Check Validation Cart Bank</button>
                 </div>
             </div>
         </div>
