@@ -87,6 +87,7 @@ const Home = () => {
       <button className='text-2xl btnSuccess' onClick={() => navigate('/sensor')}>Sensor</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/validate')}>Validate</button>
       <button className='text-2xl btnSuccess' onClick={() => navigate('/skeleton')}>Skeleton</button>
+      <button className='text-2xl btnSuccess' onClick={() => navigate('/webSocket')}>WebSocket</button>
 
       <span className='w-[90%] h-[1px] bg-zinc-800' />
 
@@ -133,6 +134,7 @@ const Home = () => {
         <Link to='/sensor'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Sensor</h1></Link>
         <Link to='/validate'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Validate</h1></Link>
         <Link to='/skeleton'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>Skeleton</h1></Link>
+        <Link to='/webSocket'><h1 className={'text-white text-center rounded-md shadow-lg text-xl m-4 p-4 bg-pink-400'}>WebSocket</h1></Link>
       </nav>
     </div>
   )

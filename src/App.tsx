@@ -119,6 +119,7 @@ import ValidateSample from './pages/ValidateSample';
 import SkeletonSample from './skeleton/SkeletonSample';
 import SkeletonSample1 from './skeleton/SkeletonSample1';
 import SkeletonSample2 from './skeleton/SkeletonSample2';
+import WebSocketClient from './pages/WebSocketClient';
 
 function App() {
 
@@ -326,6 +327,7 @@ function App() {
                   <Route path='swagger' element={<Swagger />} />
                   <Route path='sensor' element={<SensorSample />} />
                   <Route path='validate' element={<ValidateSample />} />
+                  <Route path='webSocket' element={<WebSocketClient />} />
                   <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />                
                 </Route>
               </Route>
