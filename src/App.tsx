@@ -120,6 +120,7 @@ import SkeletonSample from './skeleton/SkeletonSample';
 import SkeletonSample1 from './skeleton/SkeletonSample1';
 import SkeletonSample2 from './skeleton/SkeletonSample2';
 import WebSocketClient from './pages/WebSocketClient';
+import React18Hooks from './pages/React18Hooks';
 
 function App() {
 
@@ -328,6 +329,7 @@ function App() {
                   <Route path='sensor' element={<SensorSample />} />
                   <Route path='validate' element={<ValidateSample />} />
                   <Route path='webSocket' element={<WebSocketClient />} />
+                  <Route path='react18Hooks' element={<React18Hooks />} />
                   <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />                
                 </Route>
               </Route>
