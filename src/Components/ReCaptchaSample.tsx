@@ -5,8 +5,9 @@ const ReCaptchaSample = () => {
 
     const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false)
 
-    const verifyReCaptcha = () => {
+    const verifyReCaptcha = (value: any) => {
         setIsRecaptchaVerified(true);
+        console.log("Captcha value:", value);
     }
 
     return (
