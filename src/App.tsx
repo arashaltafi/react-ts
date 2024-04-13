@@ -121,6 +121,7 @@ import SkeletonSample1 from './skeleton/SkeletonSample1';
 import SkeletonSample2 from './skeleton/SkeletonSample2';
 import WebSocketClient from './pages/WebSocketClient';
 import React18Hooks from './pages/React18Hooks';
+import CanvasSample from './pages/CanvasSample';
 
 function App() {
 
@@ -330,6 +331,7 @@ function App() {
                   <Route path='validate' element={<ValidateSample />} />
                   <Route path='webSocket' element={<WebSocketClient />} />
                   <Route path='react18Hooks' element={<React18Hooks />} />
+                  <Route path='canvasSample' element={<CanvasSample />} />
                   <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />                
                 </Route>
               </Route>
