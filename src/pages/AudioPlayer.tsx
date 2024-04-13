@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Sound from 'react-sound';
 import Divider from '../Components/Divider';
 import { customLog } from '../utils/CustomConsole';
+import useSound from 'use-sound';
 
 interface SoundData {
   url: string;
@@ -71,11 +72,21 @@ const AudioPlayer = (props: MultiSoundPlayerProps) => {
     customLog('Sound finished playing');
   };
 
+
+
+
+  //way 3
+  const [volume3, setVolume3] = useState<number>(1)
+  const [playSound3, { stop, pause, duration }] = useSound('https://dls.music-fa.com/tagdl/1402/Javad%20Jarahi%20-%20Gol%20Be%20Jamale%20Domad%20(320).mp3', {
+    volume: volume3,
+  })
+
   return (
     <div className="w-full h-screen py-8 flex flex-col gap-16">
       <h1 className='title'>AudioPlayer</h1>
       <div className='w-full h-full flex items-center justify-center flex-col gap-8'>
 
+        <p className='font-bold text-lg text-green-500'>Audio Element</p>
         <div>
           {soundData.map((sound, index) => (
             <div key={index} className='w-full flex items-center justify-center gap-12 my-2'>
@@ -99,6 +110,7 @@ const AudioPlayer = (props: MultiSoundPlayerProps) => {
 
         <Divider />
 
+        <p className='font-bold text-lg text-green-500'>React Sound Package</p>
         <div>
           {soundData2.map((sound, index) => (
             <div key={index} className='flex items-center justify-center gap-4 my-2'>
@@ -128,6 +140,38 @@ const AudioPlayer = (props: MultiSoundPlayerProps) => {
               />
             </div>
           ))}
+        </div>
+
+        <Divider />
+
+        <p className='font-bold text-lg text-green-500'>Use Sound Package</p>
+        <div>
+          <div className='flex items-center justify-center gap-4 my-2'>
+            <button className='btnSuccess' onClick={() => {
+              playSound3()
+            }}>
+              Play
+            </button>
+            <button className='btnError' onClick={() => {
+              stop()
+            }}>
+              Stop
+            </button>
+            <button className='btnError bg-orange-500' onClick={() => {
+              pause()
+            }}>
+              Pause
+            </button>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              value={volume3 * 100}
+              onChange={(e) => setVolume3(parseInt(e.target.value, 10) / 100)}
+            />
+            <span className='subtitle'>{Math.round(volume3 * 100)}</span>
+          </div>
+          <span className='subtitle'>duration: {duration}</span>
         </div>
 
       </div>
