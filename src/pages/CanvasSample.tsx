@@ -54,13 +54,29 @@ const CanvasSample: React.FC = () => {
         lastPoint.current = { x: offsetX, y: offsetY };
     }
 
+    const clearCanvas = () => {
+        const canvas = canvasRef.current;
+        const context = canvas?.getContext("2d");
+        if (context) {
+            context.clearRect(0, 0, canvas?.width || 0, canvas?.height || 0);
+        }
+    }
+
     return (
-        <canvas
-            ref={canvasRef}
-            onMouseDown={startDrawing}
-            onMouseUp={finishDrawing}
-            onMouseMove={draw}
-        />
+        <div>
+            <button
+                onClick={clearCanvas}
+                className="bg-red-500 hover:bg-red-600 transition-all px-8 py-6 rounded-lg text-xl m-8 text-white"
+            >
+                Clear
+            </button>
+            <canvas
+                ref={canvasRef}
+                onMouseDown={startDrawing}
+                onMouseUp={finishDrawing}
+                onMouseMove={draw}
+            />
+        </div>
     )
 };
 
