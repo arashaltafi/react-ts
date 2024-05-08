@@ -13,6 +13,8 @@ const BestReference = () => {
         <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://shadows.brumm.af/" target="_blank" rel="noreferrer">shadows.brumm.af</a>
         <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://10015.io/tools/css-border-radius-generator" target="_blank" rel="noreferrer">css-border-radius-generator</a>
         <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://svgwave.in/" target="_blank" rel="noreferrer">svgwave</a>
+        <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://socialsharepreview.com/" target="_blank" rel="noreferrer">socialsharepreview seo</a>
+        <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://www.opengraph.xyz/" target="_blank" rel="noreferrer">opengraph seo</a>
       </div>
     </div>
   )
