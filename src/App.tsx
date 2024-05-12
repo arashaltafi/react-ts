@@ -1,7 +1,7 @@
 import { Profile, countries } from './pages/Profile';
 import Home from './pages/Home';
 import { Suspense, useEffect, useId } from 'react';
-import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import CustomHook from './pages/CustomHook';
 import Form from './pages/Form';
 import UseParams from './pages/UseParams';
@@ -122,6 +122,8 @@ import SkeletonSample2 from './skeleton/SkeletonSample2';
 import WebSocketClient from './pages/WebSocketClient';
 import React18Hooks from './pages/React18Hooks';
 import CanvasSample from './pages/CanvasSample';
+import ParallaxPage from './parallaxPages/ParallaxPage';
+import ParallaxSample1 from './parallaxPages/ParallaxSample1';
 
 function App() {
 
@@ -304,6 +306,10 @@ function App() {
                     <Route path='mouse2' element={<ParticlesMouse2 />} />
                     <Route path='mouse3' element={<ParticlesMouse3 />} />
                   </Route>
+                  <Route path='/parallax'>
+                    <Route path='' element={<ParallaxPage />} />
+                    <Route path='sample1' element={<ParallaxSample1 />} />
+                  </Route>
                   <Route path='/backgroundAnimation'>
                     <Route path='' element={<Index />} />
                     <Route path='sample1' element={<Sample1 />} />
@@ -332,7 +338,7 @@ function App() {
                   <Route path='webSocket' element={<WebSocketClient />} />
                   <Route path='react18Hooks' element={<React18Hooks />} />
                   <Route path='canvasSample' element={<CanvasSample />} />
-                  <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />                
+                  <Route path='*' element={<div className='title flex justify-center items-center w-full h-full'> Not Found 404 </div>} />
                 </Route>
               </Route>
             </Routes>
