@@ -124,6 +124,7 @@ import React18Hooks from './pages/React18Hooks';
 import CanvasSample from './pages/CanvasSample';
 import ParallaxPage from './parallaxPages/ParallaxPage';
 import ParallaxSample1 from './parallaxPages/ParallaxSample1';
+import ParallaxSample2 from './parallaxPages/ParallaxSample2';
 
 function App() {
 
@@ -309,6 +310,7 @@ function App() {
                   <Route path='/parallax'>
                     <Route path='' element={<ParallaxPage />} />
                     <Route path='sample1' element={<ParallaxSample1 />} />
+                    <Route path='sample2' element={<ParallaxSample2 />} />
                   </Route>
                   <Route path='/backgroundAnimation'>
                     <Route path='' element={<Index />} />

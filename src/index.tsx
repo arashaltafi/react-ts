@@ -6,16 +6,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-<Router basename='/'>
-    {/* <React.StrictMode> */}
+  <ParallaxProvider>
+    <Router basename='/'>
+      {/* <React.StrictMode> */}
       <App />
-    {/* </React.StrictMode> */}
-  </Router>
+      {/* </React.StrictMode> */}
+    </Router>
+  </ParallaxProvider>
 );
 
 // unregister() to register() below. Note this comes with some pitfalls.
