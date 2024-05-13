@@ -15,6 +15,7 @@ const BestReference = () => {
         <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://svgwave.in/" target="_blank" rel="noreferrer">svgwave</a>
         <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://socialsharepreview.com/" target="_blank" rel="noreferrer">socialsharepreview seo</a>
         <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://www.opengraph.xyz/" target="_blank" rel="noreferrer">opengraph seo</a>
+        <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://realfavicongenerator.net/" target="_blank" rel="noreferrer">realfavicongenerator</a>
       </div>
     </div>
   )
