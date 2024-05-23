@@ -16,6 +16,12 @@ const BestReference = () => {
         <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://socialsharepreview.com/" target="_blank" rel="noreferrer">socialsharepreview seo</a>
         <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://www.opengraph.xyz/" target="_blank" rel="noreferrer">opengraph seo</a>
         <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://realfavicongenerator.net/" target="_blank" rel="noreferrer">realfavicongenerator</a>
+        <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://bennettfeely.com/" target="_blank" rel="noreferrer">bennettfeely</a>
+        <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://bennettfeely.com/clippy/" target="_blank" rel="noreferrer">bennettfeely clippy</a>
+        <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://bennettfeely.com/scales/" target="_blank" rel="noreferrer">bennettfeely scales</a>
+        <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://bennettfeely.com/gradients/" target="_blank" rel="noreferrer">bennettfeely gradients</a>
+        <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://bennettfeely.com/image-effects/" target="_blank" rel="noreferrer">bennettfeely image-effects</a>
+        <a className="py-3 px-4 text-2xl no-underline text-white rounded-xl bg-green-500" href="https://scrollbar.app/" target="_blank" rel="noreferrer">scrollbar</a>
       </div>
     </div>
   )
