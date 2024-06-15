@@ -18,6 +18,32 @@ const DownloadSample2 = () => {
         document.body.removeChild(link);
     };
 
+    const handleDownloadFileTxt = (response: string) => {
+        // Create a Blob from the string
+        const blob = new Blob([response], { type: 'text/plain' });
+    
+        // Create a URL for the Blob
+        const url = URL.createObjectURL(blob);
+    
+        // Create an anchor element
+        const a = document.createElement("a");
+        console.log(response)
+    
+        // Set the download URL and filename
+        a.href = url;
+        a.download = "response.txt";
+    
+        // Append the anchor to the document body and trigger the click
+        document.body.appendChild(a);
+        a.click();
+    
+        // Remove the anchor from the document body
+        document.body.removeChild(a);
+    
+        // Revoke the Blob URL to free up memory
+        URL.revokeObjectURL(url);
+      };
+
     return (
         <div className="w-full h-screen py-8 flex flex-col gap-16">
             <h1 className='title'>Download 2</h1>
